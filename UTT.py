@@ -29,15 +29,16 @@ HUMAN = -1
 Game_Board = new_Board()
 
 
-def update_window(Win):
+def update_window(Win, Lines_color, Width):
     Win.fill(Bg)
+    Game_Board.draw_board(Win, Lines_color, Width)
     pygame.display.update()
 
 def main():
     run = True
     Game_Board.test()
     while run:
-        update_window(Win)
+        update_window(Win, Lines_color, Width)
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 quit()
