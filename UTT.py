@@ -2,6 +2,7 @@ import pygame
 import os
 import sys
 import random
+import Board
 
 pygame.font.init()
 Width, Height = 770,770
@@ -16,6 +17,7 @@ Cross = pygame.transform.scale(pygame.image.load(os.path.join("Assets", "cross.p
 Circle_small = pygame.transform.scale(pygame.image.load(os.path.join("Assets", "circle.png")), (Small_Square, Small_Square))
 Circle = pygame.transform.scale(pygame.image.load(os.path.join("Assets", "circle.png")), (Square, Square))
 
+Game_Board = Board.new_Board(Win)
 
 Bg = (255,255,255)
 Lines_color = (211,211,211)
@@ -30,6 +32,7 @@ def update_window(Win):
 
 def main():
     run = True
+    Game_Board.test()
     while run:
         update_window(Win)
         for event in pygame.event.get():
