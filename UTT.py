@@ -3,4 +3,7 @@ import os
 import sys
 import random
 
-print("hello world ")
+pygame.font.init()
+Width, Height = 750,750
+
+Win = pygame.display.set_mode((Width, Height))
