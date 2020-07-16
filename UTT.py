@@ -2,7 +2,7 @@ import pygame
 import os
 import sys
 import random
-import Board
+from Board import new_Board
 
 pygame.font.init()
 Width, Height = 770,770

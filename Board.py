@@ -1,12 +1,12 @@
 import pygame
 
 
-
 class new_Board():
     def __init__(self):
+        self.hi = "hello"
 
     def create_board(self):
-        return [[for x in range(3)] for y in range(3)]
+        return [[0 for x in range(3)] for y in range(3)]
 
     def draw_board(self, Win, Lines_color, Width):
         Height = Width
@@ -17,4 +17,4 @@ class new_Board():
             pygame.draw.line(Win, Lines_color, (Width*(j/3), 0), (Width*(j/3), Height), 1)
 
     def test(self):
-        print("test class new_Board")
+        print(self.hi)
