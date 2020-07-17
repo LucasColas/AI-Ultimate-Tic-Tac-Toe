@@ -34,6 +34,7 @@ def update_window(Win, Lines_color, Width):
     Game_Board.draw_board(Win, Lines_color, Width)
     pygame.display.update()
 
+
 def main():
     run = True
     Game_Board.test()
