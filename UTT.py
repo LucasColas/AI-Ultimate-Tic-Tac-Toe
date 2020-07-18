@@ -34,7 +34,10 @@ def update_window(Win, Lines_color, Width):
     pygame.display.update()
 
 main_board = Game_Board.create_board()
+small_boards = Game_Board.every_small_boards()
 
+print(main_board)
+print(small_boards)
 
 def main():
     run = True
