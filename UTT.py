@@ -28,9 +28,9 @@ HUMAN = -1
 Game_Board = new_Board()
 
 
-def update_window(Win, Lines_color, Width):
+def update_window(Win, Lines_color, Width, Square):
     Win.fill(Bg)
-    Game_Board.draw_board(Win, Lines_color, Width)
+    Game_Board.draw_board(Win, Lines_color, Width, Square)
     pygame.display.update()
 
 main_board = Game_Board.create_board()
@@ -43,7 +43,7 @@ def main():
     run = True
     Game_Board.test()
     while run:
-        update_window(Win, Lines_color, Width)
+        update_window(Win, Lines_color, Width, Square)
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 quit()
