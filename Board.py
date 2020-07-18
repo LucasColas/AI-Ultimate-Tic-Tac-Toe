@@ -13,9 +13,9 @@ class new_Board():
 
     def draw_board(self, Win, Lines_color, Lines_color_2,Width, Square, Small_Square, margin):
         Height = Width
-        for pl in range (1,6):
-            for x in range(1,2):
-                pygame.draw.line(Win, Lines_color, (margin, ((x*Small_Square)*pl)), (Square-margin,((x*Small_Square)*pl)), 1)
+
+        for x in range(1,3):
+            pygame.draw.line(Win, Lines_color, (margin, ((x*Small_Square))), (Square-margin,((x*Small_Square))), 1)
 
 
         for i in range(1,3): #Draw horizontal lines
