@@ -8,6 +8,7 @@ pygame.font.init()
 Width, Height = 770,770
 Square = Width//3
 Small_Square = Square//3
+margin = Width//20
 
 Win = pygame.display.set_mode((Width, Height))
 
@@ -20,6 +21,7 @@ Circle = pygame.transform.scale(pygame.image.load(os.path.join("Assets", "circle
 
 Bg = (255,255,255)
 Lines_color = (211,211,211)
+Lines_color_2 = (250, 0, 0)
 
 
 AI = 1
@@ -28,9 +30,9 @@ HUMAN = -1
 Game_Board = new_Board()
 
 
-def update_window(Win, Lines_color, Width, Square, Small_Square):
+def update_window(Win, Lines_color, Lines_color_2, Width, Square, Small_Square, margin):
     Win.fill(Bg)
-    Game_Board.draw_board(Win, Lines_color, Width, Square, Small_Square)
+    Game_Board.draw_board(Win, Lines_color, Lines_color_2,Width, Square, Small_Square, margin)
     pygame.display.update()
 
 main_board = Game_Board.create_board()
@@ -43,7 +45,7 @@ def main():
     run = True
     Game_Board.test()
     while run:
-        update_window(Win, Lines_color, Width, Square, Small_Square)
+        update_window(Win, Lines_color, Lines_color_2, Width, Square, Small_Square, margin)
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 quit()

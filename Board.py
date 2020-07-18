@@ -11,11 +11,11 @@ class new_Board():
     def every_small_boards(self):
         return [[[0 for x in range(3)] for y in range(3)] for z in range(3)]
 
-    def draw_board(self, Win, Lines_color, Width, Square, Small_Square):
+    def draw_board(self, Win, Lines_color, Lines_color_2,Width, Square, Small_Square, margin):
         Height = Width
         for pl in range (1,9):
             for x in range(1,3):
-                pygame.draw.line(Win, Lines_color, (0, (x*Small_Square)*pl), (Square,(x*Small_Square)*pl), 1)
+                pygame.draw.line(Win, Lines_color, (margin, ((x*Small_Square)*pl)), (Square-margin,((x*Small_Square)*pl)), 1)
 
 
         for i in range(1,3): #Draw horizontal lines
