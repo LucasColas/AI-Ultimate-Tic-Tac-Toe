@@ -18,7 +18,6 @@ Circle_small = pygame.transform.scale(pygame.image.load(os.path.join("Assets", "
 Circle = pygame.transform.scale(pygame.image.load(os.path.join("Assets", "circle.png")), (Square, Square))
 
 
-
 Bg = (255,255,255)
 Lines_color = (211,211,211)
 
@@ -33,6 +32,8 @@ def update_window(Win, Lines_color, Width):
     Win.fill(Bg)
     Game_Board.draw_board(Win, Lines_color, Width)
     pygame.display.update()
+
+main_board = Game_Board.create_board()
 
 
 def main():
