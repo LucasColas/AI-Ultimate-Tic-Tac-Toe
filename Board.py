@@ -22,7 +22,7 @@ class new_Board():
 
                 for bc in range(0,2):
                     for y in range(3): #Horizontal lines
-                        pygame.draw.line(Win, Lines_color_2, (Small_Square + bc*Small_Square, margin + ab*Square + move*Square), (Small_Square + bc*Small_Square, (Square-margin) + ab*Square + move*Square), 1)
+                        pygame.draw.line(Win, Lines_color_2, (Small_Square + bc*Small_Square + move*Square, margin + ab*Square), (Small_Square + bc*Small_Square + move*Square, (Square-margin) + ab*Square), 1)
 
         """
 
