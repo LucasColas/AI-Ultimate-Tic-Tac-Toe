@@ -33,7 +33,5 @@ class new_Board():
 
 
 
-
-
     def test(self):
         print(self.hi)
