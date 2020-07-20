@@ -26,6 +26,21 @@ Lines_color_2 = (250, 0, 0)
 
 Game_Board = new_Board()
 
+def valid_locations(board,x,y):
+    for row in board:
+        for col in row:
+            if board[y][x] == 0:
+                print("Valid")
+                return True
+
+def set_locations(board,x,y, player):
+    if valid_locations(board,x,y):
+        board[y][x] = player
+        return True
+    else:
+        return False
+
+
 
 def update_window(Win, Lines_color, Lines_color_2, Width, Square, Small_Square, margin):
     Win.fill(Bg)
@@ -39,7 +54,7 @@ def main():
     AI = 1
     HUMAN = -1
     Game_Board.test()
-    
+
     game_over = False
     main_board = Game_Board.create_board()
     small_boards = Game_Board.every_small_boards()
