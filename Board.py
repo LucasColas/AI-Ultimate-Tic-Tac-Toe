@@ -9,7 +9,7 @@ class new_Board():
         return [[0 for x in range(3)] for y in range(3)]
 
     def every_small_boards(self):
-        return [[[0 for x in range(3)] for y in range(3)] for z in range(3)]
+        return [[0 for y in range(9)] for z in range(9)]
 
     def draw_board(self, Win, Lines_color, Lines_color_2,Width, Square, Small_Square, margin):
         Height = Width

@@ -24,9 +24,6 @@ Lines_color = (211,211,211)
 Lines_color_2 = (250, 0, 0)
 
 
-AI = 1
-HUMAN = -1
-
 Game_Board = new_Board()
 
 
@@ -43,11 +40,26 @@ print(small_boards)
 
 def main():
     run = True
+    turn = random.choice([-1,1])
+    AI = 1
+    HUMAN = -1
     Game_Board.test()
+    game_over = False
     while run:
         update_window(Win, Lines_color, Lines_color_2, Width, Square, Small_Square, margin)
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 quit()
+
+            if event.type == pygame.KEYDOWN:
+                pass
+
+            if event.type == pygame.MOUSEBUTTONDOWN and turn == HUMAN and not game_over:
+                if pygame.mouse.get_pressed()[0] and turn == HUMAN and not game_over:
+                    pos = pygame.mouse.get_pos()
+                    if turn == HUMAN and not game_over:
+                        print("Yes", pos[0]//(Small_Square), pos[1]//(Small_Square))
+
+
 
 main()
