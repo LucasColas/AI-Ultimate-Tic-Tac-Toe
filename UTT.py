@@ -8,7 +8,7 @@ pygame.font.init()
 Width, Height = 770,770
 Square = Width//3
 Small_Square = Square//3
-margin = Width//25
+margin = Width//30
 
 Win = pygame.display.set_mode((Width, Height))
 
