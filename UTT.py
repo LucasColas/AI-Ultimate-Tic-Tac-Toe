@@ -32,11 +32,6 @@ def update_window(Win, Lines_color, Lines_color_2, Width, Square, Small_Square, 
     Game_Board.draw_board(Win, Lines_color, Lines_color_2,Width, Square, Small_Square, margin)
     pygame.display.update()
 
-main_board = Game_Board.create_board()
-small_boards = Game_Board.every_small_boards()
-
-print(main_board)
-print(small_boards)
 
 def main():
     run = True
@@ -44,7 +39,13 @@ def main():
     AI = 1
     HUMAN = -1
     Game_Board.test()
+    
     game_over = False
+    main_board = Game_Board.create_board()
+    small_boards = Game_Board.every_small_boards()
+
+    print(main_board)
+    print(small_boards)
     while run:
         update_window(Win, Lines_color, Lines_color_2, Width, Square, Small_Square, margin)
         for event in pygame.event.get():
@@ -59,7 +60,6 @@ def main():
                     pos = pygame.mouse.get_pos()
                     if turn == HUMAN and not game_over:
                         print("Yes", pos[0]//(Small_Square), pos[1]//(Small_Square))
-
 
 
 main()
