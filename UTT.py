@@ -41,7 +41,6 @@ def set_locations(board,x,y, player):
         return False
 
 
-
 def update_window(Win, Lines_color, Lines_color_2, Width, Square, Small_Square, margin):
     Win.fill(Bg)
     Game_Board.draw_board(Win, Lines_color, Lines_color_2,Width, Square, Small_Square, margin)
@@ -75,6 +74,7 @@ def main():
                     pos = pygame.mouse.get_pos()
                     if turn == HUMAN and not game_over:
                         print("Yes", pos[0]//(Small_Square), pos[1]//(Small_Square))
+                        set_locations()
 
 
 main()
