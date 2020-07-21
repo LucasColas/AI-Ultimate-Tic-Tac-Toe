@@ -40,6 +40,13 @@ def set_locations(board,x,y, player):
     else:
         return False
 
+def check_game(board,main_board, player):
+    for loop in range(7):
+        for row in board:
+            if row[0 + loop] == row[1+loop] == row[2+loop] == player:
+                print(player, "wins")
+
+        
 
 def update_window(Win, Lines_color, Lines_color_2, Width, Square, Small_Square, margin):
     Win.fill(Bg)
@@ -49,7 +56,7 @@ def update_window(Win, Lines_color, Lines_color_2, Width, Square, Small_Square, 
 
 def main():
     run = True
-    turn = random.choice([-1,1])
+    turn = -1
     AI = 1
     HUMAN = -1
     Game_Board.test()
@@ -74,7 +81,6 @@ def main():
                     pos = pygame.mouse.get_pos()
                     if turn == HUMAN and not game_over:
                         print("Yes", pos[0]//(Small_Square), pos[1]//(Small_Square))
-                        set_locations()
 
 
 main()
