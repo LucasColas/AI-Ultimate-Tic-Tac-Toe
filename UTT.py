@@ -46,7 +46,7 @@ def check_game(board,main_board, player):
             if row[0 + loop] == row[1+loop] == row[2+loop] == player:
                 print(player, "wins")
 
-        
+
 
 def update_window(Win, Lines_color, Lines_color_2, Width, Square, Small_Square, margin):
     Win.fill(Bg)
