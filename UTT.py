@@ -48,7 +48,7 @@ def check_game(board,main_board,x,y, player):
     for i in range(0,7,3):
         for row in board:
             if row[0+i] == row[1+i] == row[2+i] == player:
-                print(player, "wins")
+                print(player, "horizontal")
                 set_locations(main_board,x,y,player)
 
 
@@ -94,6 +94,7 @@ def main():
                         if check_game(small_boards, main_board, pos[0]//Square,pos[1]//Square, turn):
                             game_over = True
                         print(small_boards)
+                        print(main_board)
 
 
 main()
