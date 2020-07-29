@@ -53,7 +53,11 @@ def check_game(board,main_board,x,y, player):
 
 
 def reset(board, main_board, game_over):
-    pass
+    for x,row in enumerate(board):
+        for y in range(len(row)):
+            board[y][x] = 0
+            
+
 
 
 def update_window(Win, Lines_color, Lines_color_2, Width, Square, Small_Square, margin):
