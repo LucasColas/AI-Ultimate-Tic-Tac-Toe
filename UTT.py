@@ -52,13 +52,17 @@ def check_game(board,main_board,x,y, player):
                 set_locations(main_board,x,y,player)
 
 
-def reset(board, main_board, game_over):
-    for x,row in enumerate(board):
-        for y in range(len(row)):
-            board[y][x] = 0
+    for x in range(len(board[0])):
+        for row in board:
             
 
 
+
+def reset(board, main_board, game_over):
+    if game_over:
+        for x,row in enumerate(board):
+            for y in range(len(row)):
+                board[y][x] = 0
 
 def update_window(Win, Lines_color, Lines_color_2, Width, Square, Small_Square, margin):
     Win.fill(Bg)
@@ -85,7 +89,7 @@ def main():
             if event.type == pygame.QUIT:
                 quit()
 
-            if event.type == pygame.KEYDOWN:
+            if event.type == pygame.KEYDOWN and game_over:
                 reset(small_boards, main_board, game_over)
                 game_over = False
 
