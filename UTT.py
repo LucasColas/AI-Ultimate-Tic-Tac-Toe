@@ -41,11 +41,15 @@ def set_locations(board,x,y, player):
     else:
         return False
 
-def check_game(board,main_board, player):
+def check_game(board,main_board,x,y, player):
     for i in range(0,7,3):
         for row in board:
             if row[0+i] == row[1+i] == row[2+i] == player:
                 print(player, "wins")
+                return True
+
+def reset(board, main_board, game_over):
+    pass
 
 
 def update_window(Win, Lines_color, Lines_color_2, Width, Square, Small_Square, margin):
@@ -74,7 +78,8 @@ def main():
                 quit()
 
             if event.type == pygame.KEYDOWN:
-                pass
+                reset(small_boards, main_board, game_over)
+                game_over = False
 
             if event.type == pygame.MOUSEBUTTONDOWN and turn == HUMAN and not game_over:
                 if pygame.mouse.get_pressed()[0] and turn == HUMAN and not game_over:
@@ -82,7 +87,8 @@ def main():
                     if turn == HUMAN and not game_over:
                         print("Yes", pos[0]//(Small_Square), pos[1]//(Small_Square))
                         set_locations(small_boards, pos[0]//(Small_Square), pos[1]//(Small_Square), turn)
-                        check_game(small_boards, main_board,turn)
+                        if check_game(small_boards, main_board, pos[0]//Square,pos[1]//Square, turn):
+                            game_over = True
                         print(small_boards)
 
 
