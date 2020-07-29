@@ -54,7 +54,7 @@ def check_game(board,main_board,x,y, player):
 
     for x in range(len(board[0])):
         for row in board:
-            
+            pass
 
 
 
