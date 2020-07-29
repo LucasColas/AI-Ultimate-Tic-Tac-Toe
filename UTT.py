@@ -53,8 +53,9 @@ def check_game(board,main_board,x,y, player):
 
     for col in range(len(board)):
         check = []
-        for row in board:
-            check.append(row[col])
+        for i in range(4):
+            for row in board:
+                check.append(row[col])
 
 
 def reset(board, main_board, game_over):
