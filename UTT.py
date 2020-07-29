@@ -51,11 +51,10 @@ def check_game(board,main_board,x,y, player):
                 print(player, "horizontal")
                 set_locations(main_board,x,y,player)
 
-
-    for x in range(len(board[0])):
+    for col in range(len(board)):
+        check = []
         for row in board:
-            pass
-
+            check.append(row[col])
 
 
 def reset(board, main_board, game_over):
