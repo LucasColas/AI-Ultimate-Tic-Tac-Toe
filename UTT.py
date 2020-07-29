@@ -50,7 +50,7 @@ def check_game(board,main_board,x,y, player):
             if row[0+i] == row[1+i] == row[2+i] == player:
                 print(player, "wins")
                 set_locations(main_board,x,y,player)
-                return True
+
 
 def reset(board, main_board, game_over):
     pass
