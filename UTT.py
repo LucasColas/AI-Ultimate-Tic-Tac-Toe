@@ -5,6 +5,8 @@ import random
 
 
 from Board import new_Board
+from Frontend import fill
+from Frontend import Draw_pieces
 
 print("test")
 
