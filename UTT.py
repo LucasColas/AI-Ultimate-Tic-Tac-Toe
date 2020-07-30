@@ -54,6 +54,7 @@ def check_game(board,main_board,x,y, player):
     for col in range(len(board)):
         check = []
         for row in board:
+            print("check : ", check)
             if len(check) <= 3:
                 check.append(row[col])
             else:
