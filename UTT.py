@@ -30,6 +30,18 @@ Lines_color_2 = (250, 0, 0)
 
 Game_Board = new_Board()
 
+def fill(surface, color):
+    w, h = surface.get_size()
+    r, g, b, _ = color
+    for x in range(w):
+        for y in range(h):
+            a = surface.get_at((x, y))[3]
+            surface.set_at((x, y), pygame.Color(r, g, b, a))
+
+
+def place_small_images(Win,x,y, player):
+    pass
+
 def valid_locations(board,x,y):
     for row in board:
         for col in row:
@@ -85,13 +97,19 @@ def main():
     HUMAN = -1
     Game_Board.test()
 
+    green = (0,255,0,0)
+
     game_over = False
+
     main_board = Game_Board.create_board()
     small_boards = Game_Board.every_small_boards()
+
 
     print(main_board)
     print(small_boards)
     while run:
+        fill(Circle_small,green)
+        fill(Circle, green)
         update_window(Win, Lines_color, Lines_color_2, Width, Square, Small_Square, margin)
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
