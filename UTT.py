@@ -32,8 +32,6 @@ Lines_color_2 = (250, 0, 0)
 
 Game_Board = new_Board()
 
-
-
 def valid_locations(board,x,y):
     for row in board:
         for col in row:
