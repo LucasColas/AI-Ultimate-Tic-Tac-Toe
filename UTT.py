@@ -65,22 +65,6 @@ def check_game(board,main_board,x,y, player):
             else:
                 check.clear()
 
-    for col in range(len(board)):
-        check2 = []
-        for row in board:
-            #print("check2 : ", check2)
-            if len(check2) <= 2:
-                check.append(row[col])
-            elif check2.count(player) == len(check2) and check2[0] != 0:
-                print(player, "succeeds")
-                set_locations(main_board,x,y,player)
-            else:
-                check2.clear()
-
-
-
-
-
 def reset(board, main_board, game_over):
     if game_over:
         for x,row in enumerate(board):
