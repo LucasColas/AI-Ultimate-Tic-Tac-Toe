@@ -47,7 +47,7 @@ def set_locations(board,x,y, player):
         return False
 
 def check_game(board,main_board,x,y, player):
-    
+
     #Check horizontally
     for i in range(0,7,3):
         for row in board:
