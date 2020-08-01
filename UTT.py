@@ -54,7 +54,17 @@ def check_game(board,main_board,x,y, player):
                 set_locations(main_board,x,y,player)
 
 
-    
+     for col in range(len(board[0])):
+         check = []
+         for row in board:
+             check.append(row[col])
+             if len(check) == 3:
+                 if check.count(player) == len(check) and check[0] != 0:
+                     print(player, "succeeds")
+
+                 else:
+                     check.clear()
+
 
 def reset(board, main_board, game_over):
     if game_over:
