@@ -15,14 +15,14 @@ def Draw_pieces(Win, Small_Cross, Small_Circle,Cross, Circle, Small_Square, Squa
             if board[y1][x1] == -1:
                 Win.blit(Small_Circle, (x1*Small_Square, y1*Small_Square))
 
-            if board[y][x] == 1:
+            if board[y1][x1] == 1:
                 Win.blit(Small_Cross, (x1*Small_Square, y1*Small_Square))
 
 
-    for x1 in range(len(big_board)):
-        for y1 in range(len(board)):
-            if board[y][x] == -1:
+    for x2 in range(len(big_board)):
+        for y2 in range(len(board)):
+            if board[y2][x2] == -1:
                 Win.blit(Circle, (x2*Square, y2*Square))
 
-            if board[y][x] == 1:
+            if board[y2][x2] == 1:
                 Win.blit(Cross, (x1*Square, y1*Square))
