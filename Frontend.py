@@ -9,11 +9,19 @@ def fill(surface, color):
             surface.set_at((x, y), pygame.Color(r, g, b, a))
 
 
-def Draw_small_pieces(Win,x,y, Cross, Circle, board, Small_Square, player):
+def Draw_small_pieces(Win,x1,y1,x2,y2, Small_Cross, Small_Circle,Cross, Circle, board, big_board, Small_Square, player):
     for x in range(len(board)):
         for y in range(len(board)):
             if board[y][x] == -1:
-                Win.blit(Circle, (x*Small_Square, y*Small_Square))
+                Win.blit(Circle, (x1*Small_Square, y1*Small_Square))
 
             if board[y][x] == 1:
-                Win.blit(Cross, (x*Small_Square, y*Small_Square))
+                Win.blit(Cross, (x1*Small_Square, y1*Small_Square))
+
+
+    for x in range(len(big_board)):
+        for y in range(len(board)):
+            if board[y][x] == -1:
+                Win.blit(Circle, (x2*Small_Square, y2*Small_Square))
+
+            if board[y][x] == 1:
