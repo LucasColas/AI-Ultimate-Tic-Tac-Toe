@@ -9,7 +9,7 @@ def fill(surface, color):
             surface.set_at((x, y), pygame.Color(r, g, b, a))
 
 
-def Draw_small_pieces(Win,x1,y1,x2,y2, Small_Cross, Small_Circle,Cross, Circle, board, big_board, Small_Square, player):
+def Draw_small_pieces(Win,x1,y1,x2,y2, Small_Cross, Small_Circle,Cross, Circle, Small_Square, Square, board, big_board, Small_Square, player):
     for x in range(len(board)):
         for y in range(len(board)):
             if board[y][x] == -1:
