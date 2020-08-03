@@ -9,5 +9,5 @@ def fill(surface, color):
             surface.set_at((x, y), pygame.Color(r, g, b, a))
 
 
-def Draw_pieces(Win,x,y, player):
-    pass
+def Draw_small_pieces(Win,x,y, Cross, Circle, player): 
+    Win.blit()
