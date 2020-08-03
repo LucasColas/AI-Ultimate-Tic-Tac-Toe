@@ -100,7 +100,7 @@ def main():
     while run:
         fill(Circle_small,green)
         fill(Circle, green)
-        update_window(Win, Lines_color, Lines_color_2, Width, Square, Small_Square, margin, Small_Cross, Small_Circle, Cross, Circle, board, big_board, player)
+        update_window(Win, Lines_color, Lines_color_2, Width, Square, Small_Square, margin, Small_Cross, Small_Circle, Cross, Circle, small_boards, main_board, player)
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 quit()
