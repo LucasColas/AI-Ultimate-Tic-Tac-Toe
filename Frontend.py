@@ -26,7 +26,6 @@ def Draw_pieces(Win, Small_Cross, Small_Circle,Cross, Circle, Small_Square, Squa
                 Win.blit(Small_Cross, (x1*Small_Square, y1*Small_Square))
 
 
-
     for x2 in range(len(big_board)):
         for y2 in range(len(big_board)):
             if big_board[y2][x2] == -1:
