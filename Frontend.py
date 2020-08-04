@@ -29,7 +29,7 @@ def Draw_pieces(Win, Small_Cross, Small_Circle,Cross, Circle, Small_Square, Squa
 
 
 
-def draw_board(self, Win, Lines_color, Lines_color_2,Width, Square, Small_Square, margin):
+def draw_board(Win, Lines_color, Lines_color_2,Width, Square, Small_Square, margin):
     Height = Width
 
     #Small Boards
