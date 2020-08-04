@@ -76,7 +76,7 @@ def reset(board, main_board, game_over):
 def update_window(Win, Lines_color, Lines_color_2, Width, Square, Small_Square, margin, Small_Cross, Small_Circle, Cross, Circle,board,big_board, player):
     Win.fill(Bg)
     Game_Board.draw_board(Win, Lines_color, Lines_color_2,Width, Square, Small_Square, margin)
-    Draw_pieces(Win,Small_Cross, Small_Circle,Cross, Circle, Small_Square, Square, board, big_board, Small_Square, player)
+    Draw_pieces(Win,Small_Cross, Small_Circle,Cross, Circle, Small_Square, Square, board, big_board, player)
     pygame.display.update()
 
 
@@ -100,7 +100,7 @@ def main():
     while run:
         fill(Circle_small,green)
         fill(Circle, green)
-        update_window(Win, Lines_color, Lines_color_2, Width, Square, Small_Square, margin, Cross_small, Circle_small, Cross, Circle, small_boards, main_board, player)
+        update_window(Win, Lines_color, Lines_color_2, Width, Square, Small_Square, margin, Cross_small, Circle_small, Cross, Circle, small_boards, main_board, turn)
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 quit()
