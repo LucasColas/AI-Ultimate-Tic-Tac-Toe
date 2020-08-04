@@ -87,13 +87,12 @@ def main():
     HUMAN = -1
     Game_Board.test()
 
-    green = (0,255,0,0)
+    green = (0,178,0,0)
 
     game_over = False
 
     main_board = Game_Board.create_board()
     small_boards = Game_Board.every_small_boards()
-
 
     print(main_board)
     print(small_boards)
