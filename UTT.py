@@ -25,11 +25,9 @@ Cross = pygame.transform.scale(pygame.image.load(os.path.join("Assets", "cross.p
 Circle_small = pygame.transform.scale(pygame.image.load(os.path.join("Assets", "circle.png")), (Small_Square, Small_Square))
 Circle = pygame.transform.scale(pygame.image.load(os.path.join("Assets", "circle.png")), (Square, Square))
 
-
 Bg = (255,255,255)
 Lines_color = (211,211,211)
 Lines_color_2 = (250, 0, 0)
-
 
 Game_Board = new_Board()
 
