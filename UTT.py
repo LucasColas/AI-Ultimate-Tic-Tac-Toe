@@ -115,8 +115,8 @@ def main():
                     if turn == HUMAN and not game_over:
                         print("Yes", pos[0]//(Small_Square), pos[1]//(Small_Square))
                         set_locations(small_boards, pos[0]//(Small_Square), pos[1]//(Small_Square), turn)
-                        if check_game(small_boards, main_board, pos[0]//Square,pos[1]//Square, turn):
-                            game_over = True
+                        check_game(small_boards, main_board, pos[0]//Square,pos[1]//Square, turn):
+
                         print(small_boards)
                         print(main_board)
 
