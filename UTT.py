@@ -54,7 +54,7 @@ def check_game(board,main_board,x,y, player):
         for row in board:
             if row[0+i] == row[1+i] == row[2+i] == player:
                 print(player, "horizontal")
-                set_locations(main_board,x,y,player)
+
 
     #Check vertically
     for col in range(len(board[0])):
@@ -64,9 +64,10 @@ def check_game(board,main_board,x,y, player):
             if len(check) == 3:
                 if check.count(player) == len(check) and check[0] != 0:
                     print(player, "succeeds")
-                    set_locations(main_board,x,y,player)
+                    
                 else:
                     check.clear()
+
 
 def reset(board, main_board, game_over):
     if game_over:
