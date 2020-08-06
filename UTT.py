@@ -52,7 +52,7 @@ def check_game(board,main_board, player):
         for indx, row in enumerate(board):
             if row[0+i] == row[1+i] == row[2+i] == player:
                 print(player, "horizontal")
-                return [i,indx]
+                return [i,indx, True]
 
     #Check vertically
     for col in range(len(board[0])):
@@ -67,7 +67,9 @@ def check_game(board,main_board, player):
                     check.clear()
 
 def place_big_board(board, main_board, player):
-    i, indx =
+
+    i, indx = check_game(board, main_board, player)
+    main_board[indx//3][i] = player
 
 def reset(board, main_board, game_over):
     if game_over:
@@ -116,7 +118,8 @@ def main():
                     if turn == HUMAN and not game_over:
                         print("Yes", pos[0]//(Small_Square), pos[1]//(Small_Square))
                         set_locations(small_boards, pos[0]//(Small_Square), pos[1]//(Small_Square), turn)
-                        check_game(small_boards, main_board, turn):
+                        check_game(small_boards, main_board,turn)
+                        place_big_board
 
                         print(small_boards)
                         print(main_board)
