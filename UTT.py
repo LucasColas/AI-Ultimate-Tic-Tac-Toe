@@ -66,7 +66,7 @@ def check_game(board,main_board,x,y, player):
                     check.clear()
 
 def place_big_board(board, main_board, player):
-    
+    pass 
 
 def reset(board, main_board, game_over):
     if game_over:
