@@ -65,7 +65,6 @@ def check_game(board,main_board,x,y, player):
                 else:
                     check.clear()
 
-
 def reset(board, main_board, game_over):
     if game_over:
         for x,row in enumerate(board):
