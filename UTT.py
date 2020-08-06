@@ -49,7 +49,7 @@ def check_game(board,main_board,x,y, player):
 
     #Check horizontally
     for i in range(0,7,3):
-        for row in board:
+        for indx, row in enumerate(board):
             if row[0+i] == row[1+i] == row[2+i] == player:
                 print(player, "horizontal")
 
@@ -66,7 +66,7 @@ def check_game(board,main_board,x,y, player):
                     check.clear()
 
 def place_big_board(board, main_board, player):
-    pass 
+    pass
 
 def reset(board, main_board, game_over):
     if game_over:
