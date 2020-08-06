@@ -122,6 +122,7 @@ def main():
                         check_game(small_boards, main_board,turn)
                         if good:
                             place_big_board(small_boards, main_board, good, turn)
+                            
 
                         print(small_boards)
                         print(main_board)
