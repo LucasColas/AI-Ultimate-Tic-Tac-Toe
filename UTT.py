@@ -55,6 +55,7 @@ def check_game(board,main_board, player):
                 print(player, "horizontal")
                 good = True
                 if good:
+                    
 
                 return [i,indx, good]
 
