@@ -120,7 +120,7 @@ def main():
                     if turn == HUMAN and not game_over:
                         print("Yes", pos[0]//(Small_Square), pos[1]//(Small_Square))
                         set_locations(small_boards, pos[0]//(Small_Square), pos[1]//(Small_Square), turn)
-                        check_game(small_boards, main_board,turn)
+                        check_game(small_boards, main_board,good,turn)
                         if good:
                             place_big_board(small_boards, main_board, good, turn)
                             good = False
