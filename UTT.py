@@ -53,6 +53,7 @@ def check_game(board,main_board, good, player):
             if row[0+i] == row[1+i] == row[2+i] == player:
                 print(player, "horizontal")
                 good = True
+                print(good)
                 return [i,indx, good]
 
     #Check vertically
@@ -121,10 +122,10 @@ def main():
                         print("Yes", pos[0]//(Small_Square), pos[1]//(Small_Square))
                         set_locations(small_boards, pos[0]//(Small_Square), pos[1]//(Small_Square), turn)
                         check_game(small_boards, main_board,good,turn)
+                        print(good)
                         if good:
                             place_big_board(small_boards, main_board, good, turn)
                             good = False
-
 
                         print(small_boards)
                         print(main_board)
