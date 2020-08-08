@@ -45,7 +45,8 @@ def set_locations(board,x,y, player):
     else:
         return False
 
-def check_game(board,main_board, good, player):
+def check_game(board,main_board, player):
+    good = False
 
     #Check horizontally
     for i in range(0,7,3):
@@ -68,9 +69,8 @@ def check_game(board,main_board, good, player):
                 else:
                     check.clear()
 
-def place_big_board(board, main_board, player):
+def place_big_board(board, main_board,i, indx, player):
 
-    i, indx,good = check_game(board, main_board, player)
     main_board[indx//3][i] = player
 
 def reset(board, main_board, game_over):
@@ -122,10 +122,6 @@ def main():
                         print("Yes", pos[0]//(Small_Square), pos[1]//(Small_Square))
                         set_locations(small_boards, pos[0]//(Small_Square), pos[1]//(Small_Square), turn)
                         check_game(small_boards, main_board,good,turn)
-                        print(good)
-                        if good:
-                            place_big_board(small_boards, main_board, good, turn)
-                            good = False
 
                         print(small_boards)
                         print(main_board)
