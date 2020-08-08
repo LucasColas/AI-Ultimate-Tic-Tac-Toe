@@ -69,7 +69,7 @@ def check_game(board,main_board, good, player):
 
 def place_big_board(board, main_board, player):
 
-    i, indx = check_game(board, main_board, player)
+    i, indx,good = check_game(board, main_board, player)
     main_board[indx//3][i] = player
 
 def reset(board, main_board, game_over):
