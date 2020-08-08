@@ -52,7 +52,8 @@ def check_game(board,main_board, good, player):
         for indx, row in enumerate(board):
             if row[0+i] == row[1+i] == row[2+i] == player:
                 print(player, "horizontal")
-                return [i,indx, True]
+                good = True
+                return [i,indx, good]
 
     #Check vertically
     for col in range(len(board[0])):
@@ -122,7 +123,8 @@ def main():
                         check_game(small_boards, main_board,turn)
                         if good:
                             place_big_board(small_boards, main_board, good, turn)
-                            
+                            good = False
+
 
                         print(small_boards)
                         print(main_board)
