@@ -55,9 +55,8 @@ def check_game(board,main_board, player):
                 print(player, "horizontal")
                 good = True
                 if good:
-                    
+                    place_big_board(main_board,i,indx,player)
 
-                return [i,indx, good]
 
     #Check vertically
     for col in range(len(board[0])):
@@ -71,8 +70,7 @@ def check_game(board,main_board, player):
                 else:
                     check.clear()
 
-def place_big_board(board, main_board,i, indx, player):
-
+def place_big_board(main_board,i, indx, player):
     main_board[indx//3][i] = player
 
 def reset(board, main_board, game_over):
