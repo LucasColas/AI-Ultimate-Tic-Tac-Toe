@@ -17,7 +17,8 @@ Square = Width//3
 Small_Square = Square//3
 margin = Width//30
 
-Win = pygame.display.set_mode((Width, Height))
+Win = pygame.display.set_mode((Width, Height
+clock = pygame.time.Clock()
 
 Cross_small = pygame.transform.scale(pygame.image.load(os.path.join("Assets", "cross.png")), (Small_Square, Small_Square))
 Cross = pygame.transform.scale(pygame.image.load(os.path.join("Assets", "cross.png")), (Square, Square))
