@@ -105,6 +105,7 @@ def main():
     print(main_board)
     print(small_boards)
     while run:
+        clock.tick(FPS)
         fill(Circle_small,green)
         fill(Circle, green)
         update_window(Win, Lines_color, Lines_color_2, Width, Square, Small_Square, margin, Cross_small, Circle_small, Cross, Circle, small_boards, main_board, turn)
