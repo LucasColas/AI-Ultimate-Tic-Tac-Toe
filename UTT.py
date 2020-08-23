@@ -47,8 +47,7 @@ def set_locations(board,x,y, player):
         return False
 
 def check_game(board,main_board, player):
-    good = False
-
+    
     #Check horizontally
     for i in range(0,7,3):
         for indx, row in enumerate(board):
@@ -125,7 +124,7 @@ def main():
                     if turn == HUMAN and not game_over:
                         print("Yes", pos[0]//(Small_Square), pos[1]//(Small_Square))
                         set_locations(small_boards, pos[0]//(Small_Square), pos[1]//(Small_Square), turn)
-                        check_game(small_boards, main_board,good,turn)
+                        check_game(small_boards, main_board,turn)
 
                         print(small_boards)
                         print(main_board)
