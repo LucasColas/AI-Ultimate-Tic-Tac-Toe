@@ -94,6 +94,8 @@ def main():
     HUMAN = -1
     Game_Board.test()
 
+    FPS = 120
+
     green = (0,178,0,0)
 
     game_over = False
