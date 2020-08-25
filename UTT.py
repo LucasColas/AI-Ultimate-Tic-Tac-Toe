@@ -47,7 +47,7 @@ def set_locations(board,x,y, player):
         return False
 
 def check_game(board,main_board, player):
-    
+
     #Check horizontally
     for i in range(0,7,3):
         for indx, row in enumerate(board):
@@ -56,7 +56,6 @@ def check_game(board,main_board, player):
                 good = True
                 if good:
                     place_big_board(main_board,i,indx,player)
-
 
     #Check vertically
     for col in range(len(board[0])):
