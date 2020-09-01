@@ -41,7 +41,7 @@ def valid_locations(board,main_board,x,y):
                         print("Valid")
                         return True
 
-def set_locations(board,x,y, player):
+def set_locations(board,main_board, x,y, player):
     if valid_locations(board,x,y):
         board[y][x] = player
         return True
@@ -127,7 +127,7 @@ def main():
                     pos = pygame.mouse.get_pos()
                     if turn == HUMAN and not game_over:
                         print("Yes", pos[0]//(Small_Square), pos[1]//(Small_Square))
-                        set_locations(small_boards, pos[0]//(Small_Square), pos[1]//(Small_Square), turn)
+                        set_locations(small_boards, main_board, pos[0]//(Small_Square), pos[1]//(Small_Square), turn)
                         check_game(small_boards, main_board,turn)
 
                         print(small_boards)
