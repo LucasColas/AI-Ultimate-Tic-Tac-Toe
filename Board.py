@@ -1,4 +1,4 @@
-import pygame
+
 
 class new_Board():
     def __init__(self):
