@@ -42,7 +42,7 @@ def valid_locations(board,main_board,x,y):
                         return True
 
 def set_locations(board,main_board, x,y, player):
-    if valid_locations(board,x,y):
+    if valid_locations(board,main_board,x,y):
         board[y][x] = player
         return True
     else:
