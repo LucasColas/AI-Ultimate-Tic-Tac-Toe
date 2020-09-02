@@ -37,7 +37,7 @@ def valid_locations(board,main_board,x,y):
         for col in row:
             for i in range(0,7,3):
                 for indx, row in enumerate(board):
-                    if board[y][x] == 0 and main_board[indx//3][i//3] != 0:
+                    if board[y][x] == 0 and main_board[indx//3][i//3] == 0:
                         print("Valid")
                         return True
 
@@ -126,6 +126,7 @@ def main():
                 if pygame.mouse.get_pressed()[0] and turn == HUMAN and not game_over:
                     pos = pygame.mouse.get_pos()
                     if turn == HUMAN and not game_over:
+                        print("main board", main_board)
                         print("Yes", pos[0]//(Small_Square), pos[1]//(Small_Square))
                         set_locations(small_boards, main_board, pos[0]//(Small_Square), pos[1]//(Small_Square), turn)
                         check_game(small_boards, main_board,turn)
