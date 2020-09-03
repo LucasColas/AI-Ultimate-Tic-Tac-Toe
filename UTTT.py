@@ -33,9 +33,9 @@ Lines_color_2 = (250, 0, 0)
 Game_Board = new_Board()
 
 def valid_locations(board,main_board,x,y):
-    if board[y][x] == 0 and main_board[indx//3][i//3] == 0:
-        print("indx (vl) :", indx//3)
-        print("i (vl) :", i//3)
+    if board[y][x] == 0 and main_board[y//3][x//3] == 0:
+        print("indx (vl) :", y//3)
+        print("i (vl) :", x//3)
         print("Valid")
         return True
 
