@@ -34,9 +34,9 @@ Game_Board = new_Board()
 
 def valid_locations(board,main_board,x,y):
     if board[y][x] == 0 and main_board[y//3][x//3] == 0:
-        print("indx (vl) :", y//3)
-        print("i (vl) :", x//3)
-        print("Valid")
+        #print("indx (vl) :", y//3)
+        #print("i (vl) :", x//3)
+        #print("Valid")
         return True
 
 def set_locations(board,main_board, x,y, player):
