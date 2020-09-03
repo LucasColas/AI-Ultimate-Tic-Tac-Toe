@@ -32,12 +32,14 @@ Lines_color_2 = (250, 0, 0)
 
 Game_Board = new_Board()
 
-def valid_locations(board,main_board,x,y, indx,i):
-    if board[y][x] == 0 and main_board[indx//3][i//3] == 0:
-        print("indx :", indx//3)
-        print("i :", i//3)
-        print("Valid")
-        return True
+def valid_locations(board,main_board,x,y):
+    for i in range(0,7,3):
+        for indx, row in enumerate(board):
+            if board[y][x] == 0 and main_board[indx//3][i//3] == 0:
+                print("indx (vl) :", indx//3)
+                print("i (vl) :", i//3)
+                print("Valid")
+                return True
 
 def set_locations(board,main_board, x,y, player):
     if valid_locations(board,main_board,x,y):
