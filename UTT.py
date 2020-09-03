@@ -86,8 +86,8 @@ def reset(board, main_board, game_over):
 
 def update_window(Win, Lines_color, Lines_color_2, Width, Square, Small_Square, margin, Small_Cross, Small_Circle, Cross, Circle,board,big_board, player):
     Win.fill(Bg)
-    draw_board(Win, Lines_color, Lines_color_2,Width, Square, Small_Square, margin)
     Draw_pieces(Win,Small_Cross, Small_Circle,Cross, Circle, Small_Square, Square, board, big_board, player)
+    draw_board(Win, Lines_color, Lines_color_2,Width, Square, Small_Square, margin)
     pygame.display.update()
 
 
