@@ -55,7 +55,7 @@ def check_game(board,main_board, player):
                 print(player, "horizontal")
                 good = True
                 if good:
-                    place_big_board(main_board,i,indx,player)
+                    place_big_board(main_board,i//3,indx//3,player)
                     good = False
 
     #Check vertically
@@ -68,15 +68,15 @@ def check_game(board,main_board, player):
                     print(player, "succeeds")
                     good_col = True
                     if good_col:
-                        place_big_board(main_board,i,indx,player)
+                        place_big_board(main_board,row[col],col,player)
 
                 else:
                     check.clear()
 
 def place_big_board(main_board,i, indx, player):
-    print("indx//3 : ", indx//3)
-    print("i//3 : ", i//3)
-    main_board[indx//3][i//3] = player
+    print("indx : ", indx)
+    print("i : ", i)
+    main_board[indx][i] = player
 
 def reset(board, main_board, game_over):
     if game_over:
