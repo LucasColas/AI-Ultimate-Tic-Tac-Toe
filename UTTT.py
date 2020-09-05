@@ -59,16 +59,16 @@ def check_game(board,main_board, player):
                     good = False
 
     #Check vertically
-    for col in range(len(board[0])):
+    for indx, col in enumerate(board):
         check = []
         for i,row in board:
-            check.append(row[col])
+            check.append(row[indx])
             if len(check) == 3:
                 if check.count(player) == len(check) and check[0] != 0:
                     print(player, "succeeds")
                     good_col = True
                     if good_col:
-                        place_big_board(main_board,i,col,player)
+                        place_big_board(main_board,i//3,indx//3,player)
 
                 else:
                     check.clear()
