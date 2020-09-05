@@ -61,14 +61,14 @@ def check_game(board,main_board, player):
     #Check vertically
     for col in range(len(board[0])):
         check = []
-        for row in board:
+        for i,row in board:
             check.append(row[col])
             if len(check) == 3:
                 if check.count(player) == len(check) and check[0] != 0:
                     print(player, "succeeds")
                     good_col = True
                     if good_col:
-                        place_big_board(main_board,row[col],col,player)
+                        place_big_board(main_board,i,col,player)
 
                 else:
                     check.clear()
