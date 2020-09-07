@@ -69,7 +69,7 @@ def check_game(board,main_board, player):
                     print(player, "succeeds")
                     good_col = True
                     if good_col:
-                        place_big_board(main_board,i//3,indx//3,player)
+                        place_big_board(main_board,indx//3,i//3,player)
 
                 else:
                     check.clear()
