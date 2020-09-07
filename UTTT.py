@@ -61,7 +61,7 @@ def check_game(board,main_board, player):
     #Check vertically
     for indx, col in enumerate(board):
         check = []
-        for i,row in board:
+        for i,row in enumerate(board):
             check.append(row[indx])
             if len(check) == 3:
                 if check.count(player) == len(check) and check[0] != 0:
