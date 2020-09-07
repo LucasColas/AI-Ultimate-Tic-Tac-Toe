@@ -8,6 +8,7 @@ from Board import new_Board
 from Frontend import fill
 from Frontend import Draw_pieces
 from Frontend import draw_board
+from Frontend import draw_big_pieces
 
 print("test")
 
@@ -86,8 +87,9 @@ def reset(board, main_board, game_over):
 
 def update_window(Win, Lines_color, Lines_color_2, Width, Square, Small_Square, margin, Small_Cross, Small_Circle, Cross, Circle,board,big_board, player):
     Win.fill(Bg)
-    Draw_pieces(Win,Small_Cross, Small_Circle,Cross, Circle, Small_Square, Square, board, big_board, player)
+    Draw_pieces(Win,Small_Cross, Small_Circle,Cross, Circle, Small_Square, Square, board)
     draw_board(Win, Lines_color, Lines_color_2,Width, Square, Small_Square, margin)
+    draw_big_pieces(Win, big_board, Circle, Cross)
     pygame.display.update()
 
 
