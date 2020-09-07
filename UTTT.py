@@ -60,7 +60,7 @@ def check_game(board,main_board, player):
                     good = False
 
     #Check vertically
-    for indx, col in enumerate(board):
+    for indx in range(len(board)):
         check = []
         for i,row in enumerate(board):
             check.append(row[indx])
