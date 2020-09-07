@@ -89,7 +89,7 @@ def update_window(Win, Lines_color, Lines_color_2, Width, Square, Small_Square, 
     Win.fill(Bg)
     Draw_pieces(Win,Small_Cross, Small_Circle,Cross, Circle, Small_Square, Square, board)
     draw_board(Win, Lines_color, Lines_color_2,Width, Square, Small_Square, margin)
-    draw_big_pieces(Win, big_board, Circle, Cross)
+    draw_big_pieces(Win, big_board, Square, Circle, Cross)
     pygame.display.update()
 
 
