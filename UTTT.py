@@ -10,7 +10,7 @@ from Frontend import Draw_pieces
 from Frontend import draw_board
 from Frontend import draw_big_pieces
 
-from Check_game import Check
+from Check_game import Check_horizontally, Check_vertically
 
 print("test")
 
@@ -34,7 +34,6 @@ Lines_color = (211,211,211)
 Lines_color_2 = (250, 0, 0)
 
 Game_Board = new_Board()
-check = Check()
 
 def valid_locations(board,main_board,x,y):
     if board[y][x] == 0 and main_board[y//3][x//3] == 0:
@@ -55,10 +54,10 @@ def set_locations(board,main_board, x,y, player):
 def check_game(board,main_board, player):
 
     #Check horizontally
-    check.Check_horizontally(board, main_board, player)
+    Check_horizontally(board, main_board, player)
 
     #Check vertically
-    check.Check_vertically(board, main_board, player)
+    Check_vertically(board, main_board, player)
 
 
 
