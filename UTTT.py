@@ -34,6 +34,7 @@ Lines_color = (211,211,211)
 Lines_color_2 = (250, 0, 0)
 
 Game_Board = new_Board()
+check = Check()
 
 def valid_locations(board,main_board,x,y):
     if board[y][x] == 0 and main_board[y//3][x//3] == 0:
@@ -54,10 +55,10 @@ def set_locations(board,main_board, x,y, player):
 def check_game(board,main_board, player):
 
     #Check horizontally
-    Check_horizontally(board, main_board, player)
+    check.Check_horizontally(board, main_board, player)
 
     #Check vertically
-    Check_vertically(board, main_board, player)
+    check.Check_vertically(board, main_board, player)
 
 
 
