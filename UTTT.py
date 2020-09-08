@@ -47,9 +47,7 @@ def set_locations(board,main_board, x,y, player):
     else:
         return False
 
-def check_game(board,main_board, player):
-
-    #Check horizontally
+def Check_horiztonally(board, main_board, player):
     for i in range(0,7,3):
         for indx, row in enumerate(board):
             if row[0+i] == row[1+i] == row[2+i] == player:
@@ -59,7 +57,7 @@ def check_game(board,main_board, player):
                     place_big_board(main_board,i//3,indx//3,player)
                     good = False
 
-    #Check vertically
+def Check_vertically(board,main_board, player):
     for indx in range(len(board)):
         check = []
         for i,row in enumerate(board):
@@ -75,6 +73,17 @@ def check_game(board,main_board, player):
 
                 else:
                     check.clear()
+
+
+def check_game(board,main_board, player):
+
+    #Check horizontally
+    Check_horiztonally(board, main_board, player)
+
+    #Check vertically
+    Check_vertically(board, main_board, player)
+
+
 
 def place_big_board(main_board,i, indx, player):
     #print("indx : ", indx)
