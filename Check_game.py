@@ -1,4 +1,21 @@
 
+def empty_cells_small_boards(board):
+    empty_cells = []
+    for x,row in enumerate(board):
+        for y,case in enumerate(row):
+            if case == 0:
+                empty_cells.append([x,y])
+
+    return empty_cells
+
+def empty_cells_big_board(main_board):
+    empty_cells = []
+    for x,row in enumerate(main_board):
+        for y,case in enumerate(row):
+            if case == 0:
+                empty_cells.append([x,y])
+
+    return empty_cells
 
 def Check_horizontally(self,board, main_board, player):
     good = False
@@ -85,6 +102,3 @@ def Check_Big_Board(main_board, player):
             if col_stock.count(player) == len(col_stock):
                 print(player, "Wins the match")
                 return True
-
-
-    if 
