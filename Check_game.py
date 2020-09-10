@@ -84,6 +84,10 @@ def Check_diagonals(board, main_board, player):
         else:
             diag_2.clear()
 
+def check_empty_cells(board):
+    if len(empty_cells_small_boards(board)) == 0:
+        print("No one wins")
+
 
 def Check_Big_Board(main_board, player):
 
@@ -102,3 +106,23 @@ def Check_Big_Board(main_board, player):
             if col_stock.count(player) == len(col_stock):
                 print(player, "Wins the match")
                 return True
+
+    diag_1 = []
+    for indx in range(len(main_board)):
+        diag_1.append(main_board[indx][indx])
+    if len(diag_1) == diag_1.count(player):
+        print(player, "Wins the Match")
+        return True
+
+
+    diag_2 = []
+    for indx, rev_indx in enumerate(reversed(range(len(main_board)))):
+        diag_2.append(main_board[indx][rev_indx])
+    if diag_2.count(player) == len(diag_2):
+        print(player, "Wins the Match")
+        return True
+
+
+    if len(empty_cells_big_board(main_board)) == 0:
+        print("No One Wins")
+        return True
