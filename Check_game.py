@@ -31,9 +31,9 @@ def Check_vertically(board,main_board, player):
                         check.clear()
 
 def Check_diagonals(board, main_board, player):
+
     diag_1 = []
     good_diag = False
-
     for indx in range(len(board)):
         diags_1s.append(board[indx][indx])
         if len(diag_1) == 3:
@@ -46,5 +46,3 @@ def Check_diagonals(board, main_board, player):
 
                 else:
                     diag_1.clear()
-
-    
