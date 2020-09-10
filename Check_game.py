@@ -46,7 +46,23 @@ def Check_diagonals(board, main_board, player):
 
                 else:
                     diag_1.clear()
+        else:
+            diag_1.clear()
 
     diag_2 = []
     good_rev_diag = False
-    for indx
+    for indx, rev_indx in enumerate(reversed(range(len(board)))):
+        diag_2.append(board[indx][rev_indx])
+        if len(diag_2) == 3:
+            if diag_2.count(player) == len(diag_2):
+                print("succeeds")
+                good_rev_diag = True
+
+                if good_rev_diag:
+                    place_big_board(main_boardn indx//3, indx//3, player)
+
+                else:
+                    diag_2.clear()
+                    
+        else:
+            diag_2.clear()
