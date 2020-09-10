@@ -63,6 +63,19 @@ def Check_diagonals(board, main_board, player):
 
                 else:
                     diag_2.clear()
-                    
+
         else:
             diag_2.clear()
+
+
+def Check_Big_Board(main_board, player):
+
+    for row in board:
+        row_stock = []
+        for i in range(len(board)):
+            row_stock.append(row[i])
+            if row_stock.count(player) == len(row_stock):
+                print(player, "Wins the match")
+                return True
+
+    for 
