@@ -40,3 +40,6 @@ def Check_diagonals(board, main_board, player):
             if diag_1.count(player) == len(diag_1):
                 print(player, "succeeds")
                 good_diag = True
+
+                if good_diag:
+                    place_big_board(main_board, stg, stg, player)
