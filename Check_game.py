@@ -46,3 +46,7 @@ def Check_diagonals(board, main_board, player):
 
                 else:
                     diag_1.clear()
+
+    diag_2 = []
+    good_rev_diag = False
+    for indx

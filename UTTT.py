@@ -11,7 +11,7 @@ from Frontend import draw_board
 
 from Frontend import draw_big_pieces
 
-from Check_game import Check_horizontally, Check_vertically
+from Check_game import Check_horizontally, Check_vertically, Check_diagonals
 
 print("test")
 
