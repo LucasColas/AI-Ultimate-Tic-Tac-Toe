@@ -12,6 +12,7 @@ def Check_horizontally(self,board, main_board, player):
                     good = False
 
 def Check_vertically(board,main_board, player):
+    good_col = False
     for indx in range(len(board)):
         check = []
         for i,row in enumerate(board):
@@ -31,10 +32,11 @@ def Check_vertically(board,main_board, player):
 
 def Check_diagonals(board, main_board, player):
     diag_1 = []
-    good_diag
+    good_diag = False
 
     for indx in range(len(board)):
         diags_1s.append(board[indx][indx])
         if len(diag_1) == 3:
             if diag_1.count(player) == len(diag_1):
                 print(player, "succeeds")
+                good_diag = True
