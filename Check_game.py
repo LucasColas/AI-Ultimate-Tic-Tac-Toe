@@ -43,3 +43,8 @@ def Check_diagonals(board, main_board, player):
 
                 if good_diag:
                     place_big_board(main_board, indx//3, indx//3, player)
+
+                else:
+                    diag_1.clear()
+
+    
