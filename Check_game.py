@@ -1,6 +1,7 @@
 
 
 def Check_horizontally(self,board, main_board, player):
+    good = False
     for i in range(0,7,3):
         for indx, row in enumerate(board):
             if row[0+i] == row[1+i] == row[2+i] == player:
@@ -23,6 +24,17 @@ def Check_vertically(board,main_board, player):
                         #print("indx : ", indx)
                         #print("i : ", i)
                         place_big_board(main_board,indx//3,i//3,player)
+                        good_col = False
 
                     else:
                         check.clear()
+
+def Check_diagonals(board, main_board, player):
+    diag_1 = []
+    good_diag
+
+    for indx in range(len(board)):
+        diags_1s.append(board[indx][indx])
+        if len(diag_1) == 3:
+            if diag_1.count(player) == len(diag_1):
+                print(player, "succeeds")
