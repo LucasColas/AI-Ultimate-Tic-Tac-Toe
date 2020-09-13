@@ -84,7 +84,7 @@ def Check_diagonals(board, main_board, player):
         else:
             diag_2.clear()
 
-def check_empty_cells(board):
+def Check_empty_cells(board):
     if len(empty_cells_small_boards(board)) == 0:
         print("No one wins")
 
