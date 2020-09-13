@@ -49,12 +49,12 @@ def Check_vertically(board,main_board, player):
 
 def Check_diagonals(board, main_board, player):
 
-    diag_1 = []
+    diag_1s = []
     good_diag = False
     for indx in range(len(board)):
         diags_1s.append(board[indx][indx])
-        if len(diag_1) == 3:
-            if diag_1.count(player) == len(diag_1):
+        if len(diag_1s) == 3:
+            if diag_1s.count(player) == len(diag_1s):
                 print(player, "succeeds")
                 good_diag = True
 
@@ -62,9 +62,9 @@ def Check_diagonals(board, main_board, player):
                     place_big_board(main_board, indx//3, indx//3, player)
 
                 else:
-                    diag_1.clear()
+                    diag_1s.clear()
         else:
-            diag_1.clear()
+            diag_1s.clear()
 
     diag_2 = []
     good_rev_diag = False
