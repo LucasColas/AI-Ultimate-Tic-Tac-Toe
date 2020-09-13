@@ -48,7 +48,13 @@ def Check_vertically(board,main_board, player):
                         check.clear()
 
 def Check_diagonals(board, main_board, player):
-
+    for x in range(0,8, 3):
+        #print(x)
+        for y in range(0,8,3):
+            print(x,y)
+            for i in range(1,3):
+                print("x+i : ", x+i, "y+i :", y+i)
+"""
     diag_1s = []
     good_diag = False
     for indx in range(len(board)):
@@ -83,6 +89,7 @@ def Check_diagonals(board, main_board, player):
 
         else:
             diag_2.clear()
+"""
 
 def Check_empty_cells(board):
     if len(empty_cells_small_boards(board)) == 0:
