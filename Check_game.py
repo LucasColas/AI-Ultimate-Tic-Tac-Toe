@@ -50,9 +50,12 @@ def Check_vertically(board,main_board, player):
 def Check_diagonals(board, main_board, player):
     for x in range(0,8, 3):
         #print(x)
+        stock_indx = []
         for y in range(0,8,3):
             print(x,y)
+            stock_indx.append(board[y][x])
             for i in range(1,3):
+                stock_indx.append(board[y+i][x+i])
                 print("x+i : ", x+i, "y+i :", y+i)
 """
     diag_1s = []
