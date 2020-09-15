@@ -57,6 +57,14 @@ def Check_diagonals(board, main_board, player):
             for i in range(1,3):
                 stock_indx.append(board[y+i][x+i])
                 print("x+i : ", x+i, "y+i :", y+i)
+                if len(stock_indx) >= 3:
+
+                    if stock_indx.count(player) == len(stock_indx):
+                        print(player, "wins")
+                        stock_indx.clear()
+
+                    else:
+                        stock_indx.clear()
 """
     diag_1s = []
     good_diag = False
