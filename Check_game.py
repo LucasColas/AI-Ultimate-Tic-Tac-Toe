@@ -60,47 +60,12 @@ def Check_diagonals(board, main_board, player):
                 if len(stock_indx) >= 3:
 
                     if stock_indx.count(player) == len(stock_indx):
-                        print(player, "wins")
+                        print(player, "succeeds")
+                        place_big_board(main_board, x//3, y//3, player)
                         stock_indx.clear()
 
                     else:
                         stock_indx.clear()
-"""
-    diag_1s = []
-    good_diag = False
-    for indx in range(len(board)):
-        diags_1s.append(board[indx][indx])
-        if len(diag_1s) == 3:
-            if diag_1s.count(player) == len(diag_1s):
-                print(player, "succeeds")
-                good_diag = True
-
-                if good_diag:
-                    place_big_board(main_board, indx//3, indx//3, player)
-
-                else:
-                    diag_1s.clear()
-        else:
-            diag_1s.clear()
-
-    diag_2 = []
-    good_rev_diag = False
-    for indx, rev_indx in enumerate(reversed(range(len(board)))):
-        diag_2.append(board[indx][rev_indx])
-        if len(diag_2) == 3:
-            if diag_2.count(player) == len(diag_2):
-                print("succeeds")
-                good_rev_diag = True
-
-                if good_rev_diag:
-                    place_big_board(main_boardn indx//3, indx//3, player)
-
-                else:
-                    diag_2.clear()
-
-        else:
-            diag_2.clear()
-"""
 
 def Check_empty_cells(board):
     if len(empty_cells_small_boards(board)) == 0:
