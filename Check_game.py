@@ -77,6 +77,7 @@ def Check_diagonals(board, main_board, player):
                 if len(stock_nindx) == 3:
                     if stock_nindx.count(player) == len(stock_nindx):
                         print(player, "succeeds")
+                        
 
 def Check_empty_cells(board):
     if len(empty_cells_small_boards(board)) == 0:
