@@ -124,6 +124,9 @@ def main():
 
                         print(small_boards)
                         print(main_board)
+                        if Check_Big_Board(main_board, player):
+                            game_over = True
+                            
 
 
 main()

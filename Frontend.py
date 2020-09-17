@@ -81,3 +81,15 @@ def draw_board(Win, Lines_color, Lines_color_2,Width, Square, Small_Square, marg
 
     for j in range(1,3): #Draw vertical lines
         pygame.draw.line(Win, Lines_color, (Square*j, 0), (Square*j, Height), 2)
+
+
+
+def Winner(player):
+    if player == -1:
+        print("Human wins")
+
+    if player == 1:
+        print("AI wins")
+
+    else:
+        print("no one wins")
