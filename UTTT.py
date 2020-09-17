@@ -60,6 +60,8 @@ def check_game(board,main_board, player):
     #Check vertically
     Check_vertically(board, main_board, player)
 
+    Check_diagonals(board, main_board, player)
+
 
 def place_big_board(main_board,i, indx, player):
     #print("indx : ", indx)
