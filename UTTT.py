@@ -51,7 +51,6 @@ def set_locations(board,main_board, x,y, player):
         return False
 
 
-
 def check_game(board,main_board, player):
 
     #Check horizontally
@@ -63,7 +62,7 @@ def check_game(board,main_board, player):
     #Check diagonals
     Check_diagonals(board, main_board, player)
 
-    #Check empty cells 
+    #Check empty cells
     Check_empty_cells(board)
 
 
