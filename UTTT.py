@@ -95,8 +95,6 @@ def main():
     main_board = Game_Board.create_board()
     small_boards = Game_Board.every_small_boards()
 
-    print(main_board)
-    print(small_boards)
     while run:
         clock.tick(FPS)
 
@@ -124,7 +122,6 @@ def main():
                         print(main_board)
                         if Check_Big_Board(main_board, player):
                             game_over = True
-
 
 
 main()
