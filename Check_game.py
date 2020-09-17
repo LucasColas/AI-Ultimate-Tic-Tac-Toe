@@ -1,3 +1,7 @@
+def place_big_board(main_board,i, indx, player):
+    #print("indx : ", indx)
+    #print("i : ", i)
+    main_board[indx][i] = player
 
 def empty_cells_small_boards(board):
     empty_cells = []
@@ -17,7 +21,7 @@ def empty_cells_big_board(main_board):
 
     return empty_cells
 
-def Check_horizontally(self,board, main_board, player):
+def Check_horizontally(board, main_board, player):
     good = False
     for i in range(0,7,3):
         for indx, row in enumerate(board):
@@ -52,11 +56,11 @@ def Check_diagonals(board, main_board, player):
         #print(x)
         stock_indx = []
         for y in range(0,8,3):
-            print(x,y)
+            #print(x,y)
             stock_indx.append(board[y][x])
             for i in range(1,3):
                 stock_indx.append(board[y+i][x+i])
-                print("x+i : ", x+i, "y+i :", y+i)
+                #print("x+i : ", x+i, "y+i :", y+i)
                 if len(stock_indx) >= 3:
                     if stock_indx.count(player) == len(stock_indx):
                         print(player, "succeeds")

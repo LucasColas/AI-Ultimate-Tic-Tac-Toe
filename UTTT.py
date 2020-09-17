@@ -11,7 +11,7 @@ from Frontend import draw_board
 
 from Frontend import draw_big_pieces
 
-from Check_game import Check_horizontally, Check_vertically, Check_diagonals, Check_Big_Board, Check_empty_cells
+from Check_game import Check_horizontally, Check_vertically, Check_diagonals, Check_Big_Board, empty_cells_big_board, Check_empty_cells
 
 print("test")
 
@@ -62,11 +62,9 @@ def check_game(board,main_board, player):
 
     Check_diagonals(board, main_board, player)
 
+    Check_empty_cells(board)
 
-def place_big_board(main_board,i, indx, player):
-    #print("indx : ", indx)
-    #print("i : ", i)
-    main_board[indx][i] = player
+
 
 def reset(board, main_board, game_over):
     if game_over:
