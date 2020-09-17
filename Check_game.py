@@ -68,10 +68,10 @@ def Check_diagonals(board, main_board, player):
                         stock_indx.clear()
 
 
-    for x in range(0, 9, 2):
-        for y in range(2,9, 3):
-            for i in range(0,3):
-                print(x+i,y-i)
+    for x in range(0,9,3):
+        print(x)
+        for y in range(2,9,3):
+            print(x,y)
 
 def Check_empty_cells(board):
     if len(empty_cells_small_boards(board)) == 0:
