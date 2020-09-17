@@ -60,8 +60,10 @@ def check_game(board,main_board, player):
     #Check vertically
     Check_vertically(board, main_board, player)
 
+    #Check diagonals
     Check_diagonals(board, main_board, player)
 
+    #Check empty cells 
     Check_empty_cells(board)
 
 
