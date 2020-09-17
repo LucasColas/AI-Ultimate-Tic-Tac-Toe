@@ -87,9 +87,7 @@ def main():
     Game_Board.test()
 
     FPS = 120
-
     green = (0,178,0,0)
-
     game_over = False
     good = False
 
