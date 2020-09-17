@@ -69,11 +69,14 @@ def Check_diagonals(board, main_board, player):
 
 
     for x in range(0,9,3):
-        print(x)
+        stock_nindx = []
         for y in range(2,9,3):
-            print(x,y)
+            #print(x,y)
             for i in range(3):
-                print(x+i, y-i)
+                stock_nindx.append(board[y][x])
+                if len(stock_nindx) == 3:
+                    if stock_nindx.count(player) == len(stock_nindx):
+                        print(player, "succeeds")
 
 def Check_empty_cells(board):
     if len(empty_cells_small_boards(board)) == 0:
