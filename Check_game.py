@@ -26,7 +26,7 @@ def Check_horizontally(board, main_board, player):
     for i in range(0,7,3):
         for indx, row in enumerate(board):
             if row[0+i] == row[1+i] == row[2+i] == player:
-                print(player, "horizontal")
+                print(player, "horizontal (horizontally)")
                 good = True
                 if good:
                     place_big_board(main_board,i//3,indx//3,player)
@@ -40,7 +40,7 @@ def Check_vertically(board,main_board, player):
             check.append(row[indx])
             if len(check) == 3:
                 if check.count(player) == len(check) and check[0] != 0:
-                    print(player, "succeeds")
+                    print(player, "succeeds (vertically)")
                     good_col = True
                     if good_col:
                         #print("indx : ", indx)
@@ -63,7 +63,7 @@ def Check_diagonals(board, main_board, player):
                 #print("x+i : ", x+i, "y+i :", y+i)
                 if len(stock_indx) >= 3:
                     if stock_indx.count(player) == len(stock_indx):
-                        print(player, "succeeds")
+                        print(player, "succeeds (positive diags)")
                         place_big_board(main_board, x//3, y//3, player)
                         stock_indx.clear()
 
@@ -75,10 +75,10 @@ def Check_diagonals(board, main_board, player):
         for y in range(2,9,3):
             #print(x,y)
             for i in range(3):
-                stock_nindx.append(board[y][x])
+                stock_nindx.append(board[y-1][x+1])
                 if len(stock_nindx) == 3:
                     if stock_nindx.count(player) == len(stock_nindx):
-                        print(player, "succeeds")
+                        print(player, "succeeds (negative diags)")
                         place_big_board(main_board, y//3, x//3, player)
                         stock_nindx.clear()
                     else:
