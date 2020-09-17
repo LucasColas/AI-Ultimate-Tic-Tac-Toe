@@ -65,7 +65,6 @@ def check_game(board,main_board, player):
     Check_empty_cells(board)
 
 
-
 def reset(board, main_board, game_over):
     if game_over:
         for x,row in enumerate(board):
@@ -126,7 +125,7 @@ def main():
                         print(main_board)
                         if Check_Big_Board(main_board, player):
                             game_over = True
-                            
+
 
 
 main()
