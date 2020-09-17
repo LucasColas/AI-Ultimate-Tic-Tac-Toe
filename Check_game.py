@@ -58,7 +58,6 @@ def Check_diagonals(board, main_board, player):
                 stock_indx.append(board[y+i][x+i])
                 print("x+i : ", x+i, "y+i :", y+i)
                 if len(stock_indx) >= 3:
-
                     if stock_indx.count(player) == len(stock_indx):
                         print(player, "succeeds")
                         place_big_board(main_board, x//3, y//3, player)
@@ -66,7 +65,6 @@ def Check_diagonals(board, main_board, player):
 
                     else:
                         stock_indx.clear()
-
 
     for x in range(0,9,3):
         stock_nindx = []
@@ -78,6 +76,9 @@ def Check_diagonals(board, main_board, player):
                     if stock_nindx.count(player) == len(stock_nindx):
                         print(player, "succeeds")
                         place_big_board(main_board, y//3, x//3, player)
+                        stock_nindx.clear()
+                    else:
+                        stock_nindx.clear()
 
 def Check_empty_cells(board):
     if len(empty_cells_small_boards(board)) == 0:
