@@ -38,7 +38,8 @@ def Check_vertically(board,main_board, player):
         check = []
         for i,row in enumerate(board):
             check.append(row[indx])
-            if len(check) == 3:
+            print(check)
+            if len(check) >= 3:
                 if check.count(player) == len(check) and check[0] != 0:
                     print(player, "succeeds (vertically)")
                     good_col = True
@@ -50,6 +51,8 @@ def Check_vertically(board,main_board, player):
 
                     else:
                         check.clear()
+                else:
+                    check.clear()
 
 def Check_diagonals(board, main_board, player):
     for x in range(0,8, 3):
@@ -69,6 +72,8 @@ def Check_diagonals(board, main_board, player):
 
                     else:
                         stock_indx.clear()
+                else:
+                    stock_indx.clear()
 
     for x in range(0,9,3):
         stock_nindx = []
@@ -83,6 +88,9 @@ def Check_diagonals(board, main_board, player):
                         stock_nindx.clear()
                     else:
                         stock_nindx.clear()
+
+                else:
+                    stock_indx.clear()
 
 def Check_empty_cells(board):
     if len(empty_cells_small_boards(board)) == 0:
