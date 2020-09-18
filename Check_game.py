@@ -86,7 +86,7 @@ def Check_diagonals(board, main_board, player):
                     print(stock_nindx)
                     if stock_nindx.count(player) == len(stock_nindx):
                         print(y-1,x+i)
-                        place_big_board(main_board, (y-i)//3, (x+i)//3, player)
+                        place_big_board(main_board, (y)//3, (x)//3, player)
                         stock_nindx.clear()
                     else:
                         stock_nindx.clear()
