@@ -78,17 +78,18 @@ def Check_diagonals(board, main_board, player):
         for y in range(2,9,3):
             #print(x,y)
             for i in range(3):
-                stock_nindx.append(board[y-1][x+1])
-                print("added a value to check a negative diagonal")
-                print(stock_nindx)
-            if len(stock_nindx) >= 3:
-                print(stock_nindx)
-                if stock_nindx.count(player) == len(stock_nindx):
-                    print(player, "succeeds (negative diags)")
-                    place_big_board(main_board, y//3, x//3, player)
-                    stock_nindx.clear()
-                else:
-                    stock_nindx.clear()
+                stock_nindx.append(board[y-i][x+i])
+                print(y-i,x+1)
+                #print("added a value to check a negative diagonal")
+                #print(stock_nindx)
+                if len(stock_nindx) >= 3:
+                    print(stock_nindx)
+                    if stock_nindx.count(player) == len(stock_nindx):
+                        print(y-1,x+i)
+                        place_big_board(main_board, (y-i)//3, (x+i)//3, player)
+                        stock_nindx.clear()
+                    else:
+                        stock_nindx.clear()
 
 
 def Check_empty_cells(board):
