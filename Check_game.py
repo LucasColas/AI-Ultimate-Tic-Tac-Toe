@@ -81,7 +81,8 @@ def Check_diagonals(board, main_board, player):
             #print(x,y)
             for i in range(3):
                 stock_nindx.append(board[y-1][x+1])
-                if len(stock_nindx) == 3:
+                if len(stock_nindx) >= 3:
+                    print(stock_indx)
                     if stock_nindx.count(player) == len(stock_nindx):
                         print(player, "succeeds (negative diags)")
                         place_big_board(main_board, y//3, x//3, player)
