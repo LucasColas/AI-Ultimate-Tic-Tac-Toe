@@ -120,7 +120,7 @@ def main():
 
                         print(small_boards)
                         print(main_board)
-                        if Check_Big_Board(main_board, player):
+                        if Check_Big_Board(main_board, turn):
                             game_over = True
 
 
