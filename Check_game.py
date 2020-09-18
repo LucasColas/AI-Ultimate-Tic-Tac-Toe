@@ -66,8 +66,8 @@ def Check_diagonals(board, main_board, player):
                 #print("x+i : ", x+i, "y+i :", y+i)
                 if len(stock_indx) >= 3:
                     if stock_indx.count(player) == len(stock_indx):
-                        print(player, "succeeds (positive diags)")
-                        place_big_board(main_board, x//3, y//3, player)
+                        a,b = y+i, x+i
+                        place_big_board(main_board, b//3, a//3, player)
                         stock_indx.clear()
 
                     else:
