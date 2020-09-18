@@ -43,8 +43,8 @@ def Check_vertically(board,main_board, player):
                     print(player, "succeeds (vertically)")
                     good_col = True
                     if good_col:
-                        #print("indx : ", indx)
-                        #print("i : ", i)
+                        print("indx : ", indx)
+                        print("i : ", i)
                         place_big_board(main_board,indx//3,i//3,player)
                         good_col = False
 
