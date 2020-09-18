@@ -1,7 +1,7 @@
-def place_big_board(main_board,i, indx, player):
+def place_big_board(main_board,x, y, player):
     #print("indx : ", indx)
     #print("i : ", i)
-    main_board[indx][i] = player
+    main_board[y][x] = player
 
 def empty_cells_small_boards(board):
     empty_cells = []
@@ -79,14 +79,14 @@ def Check_diagonals(board, main_board, player):
             #print(x,y)
             for i in range(3):
                 stock_nindx.append(board[y-i][x+i])
-                print(y-i,x+1)
+                print(y-i,x+i)
                 #print("added a value to check a negative diagonal")
                 #print(stock_nindx)
                 if len(stock_nindx) >= 3:
                     print(stock_nindx)
                     if stock_nindx.count(player) == len(stock_nindx):
-                        print(y-1,x+i)
-                        place_big_board(main_board, (y)//3, (x)//3, player)
+                        a,b = y-i, x+i
+                        place_big_board(main_board, b//3, a//3, player)
                         stock_nindx.clear()
                     else:
                         stock_nindx.clear()
