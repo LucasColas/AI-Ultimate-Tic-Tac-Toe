@@ -38,14 +38,14 @@ def Check_vertically(board,main_board, player):
         check = []
         for i,row in enumerate(board):
             check.append(row[indx])
-            print(check)
+            #print(check)
             if len(check) >= 3:
                 if check.count(player) == len(check) and check[0] != 0:
                     print(player, "succeeds (vertically)")
                     good_col = True
                     if good_col:
-                        print("indx : ", indx)
-                        print("i : ", i)
+                        #print("indx : ", indx)
+                        #print("i : ", i)
                         place_big_board(main_board,indx//3,i//3,player)
                         good_col = False
 
