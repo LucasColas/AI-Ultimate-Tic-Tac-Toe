@@ -95,17 +95,17 @@ def Check_Big_Board(main_board, player):
         row_stock = []
         for i in range(len(main_board)):
             row_stock.append(row[i])
-            if row_stock.count(player) == len(row_stock):
-                print(player, "Wins the match")
-                return True
+        if row_stock.count(player) == len(row_stock):
+            print(player, "Wins the match")
+            return True
 
     for col in range(len(main_board)):
         col_stock = []
         for row in main_board:
             col_stock.append(row[col])
-            if col_stock.count(player) == len(col_stock):
-                print(player, "Wins the match")
-                return True
+        if col_stock.count(player) == len(col_stock) and col_stock[0] != 0:
+            print(player, "Wins the match")
+            return True
 
     diag_1 = []
     for indx in range(len(main_board)):
