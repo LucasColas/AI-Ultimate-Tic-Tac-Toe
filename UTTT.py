@@ -106,8 +106,9 @@ def main():
                 quit()
 
             if event.type == pygame.KEYDOWN and game_over:
-                reset(small_boards, main_board, game_over)
-                game_over = False
+                if event.key == pygame.K_SPACE and game_over:
+                    reset(small_boards, main_board, game_over)
+                    game_over = False
 
             if event.type == pygame.MOUSEBUTTONDOWN and turn == HUMAN and not game_over:
                 if pygame.mouse.get_pressed()[0] and turn == HUMAN and not game_over:

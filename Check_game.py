@@ -26,7 +26,7 @@ def Check_horizontally(board, main_board, player):
     for i in range(0,7,3):
         for indx, row in enumerate(board):
             if row[0+i] == row[1+i] == row[2+i] == player:
-                print(player, "horizontal (horizontally)")
+                print(player, "horizontal")
                 good = True
                 if good:
                     place_big_board(main_board,i//3,indx//3,player)
@@ -67,6 +67,7 @@ def Check_diagonals(board, main_board, player):
                 if len(stock_indx) >= 3:
                     if stock_indx.count(player) == len(stock_indx):
                         a,b = y+i, x+i
+                        print(player, "succeeds with a negative diagonal")
                         place_big_board(main_board, b//3, a//3, player)
                         stock_indx.clear()
 
@@ -79,13 +80,12 @@ def Check_diagonals(board, main_board, player):
             #print(x,y)
             for i in range(3):
                 stock_nindx.append(board[y-i][x+i])
-                print(y-i,x+i)
-                #print("added a value to check a negative diagonal")
-                #print(stock_nindx)
+
                 if len(stock_nindx) >= 3:
                     print(stock_nindx)
                     if stock_nindx.count(player) == len(stock_nindx):
                         a,b = y-i, x+i
+                        print(player, "succeeds with a negative diagonal")
                         place_big_board(main_board, b//3, a//3, player)
                         stock_nindx.clear()
                     else:
