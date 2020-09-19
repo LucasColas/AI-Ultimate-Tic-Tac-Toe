@@ -8,12 +8,10 @@ from Board import new_Board
 from Frontend import fill
 from Frontend import Draw_pieces
 from Frontend import draw_board
-
 from Frontend import draw_big_pieces
 
 from Check_game import Check_horizontally, Check_vertically, Check_diagonals, Check_Big_Board, empty_cells_big_board, Check_empty_cells
 
-print("test")
 
 pygame.font.init()
 Width, Height = 800,800
@@ -64,8 +62,6 @@ def check_game(board,main_board, player):
 
     #Check empty cells
     Check_empty_cells(board)
-
-
 
 
 def update_window(Win, Lines_color, Lines_color_2, Width, Square, Small_Square, margin, Small_Cross, Small_Circle, Cross, Circle,board,big_board, player):
