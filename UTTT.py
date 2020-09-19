@@ -66,15 +66,7 @@ def check_game(board,main_board, player):
     Check_empty_cells(board)
 
 
-def reset(board, main_board, game_over):
-    if game_over:
-        for x,row in enumerate(board):
-            for y in range(len(row)):
-                board[y][x] = 0
 
-        for x,row in enumerate(main_board):
-            for y in range(len(row)):
-                main_board[y][x] = 0
 
 def update_window(Win, Lines_color, Lines_color_2, Width, Square, Small_Square, margin, Small_Cross, Small_Circle, Cross, Circle,board,big_board, player):
     Win.fill(Bg)
@@ -111,20 +103,20 @@ def main():
 
             if event.type == pygame.KEYDOWN and game_over:
                 if event.key == pygame.K_SPACE and game_over:
-                    reset(small_boards, main_board, game_over)
+                    Game_Board.reset(small_boards, main_board, game_over)
                     game_over = False
 
             if event.type == pygame.MOUSEBUTTONDOWN and turn == HUMAN and not game_over:
                 if pygame.mouse.get_pressed()[0] and turn == HUMAN and not game_over:
                     pos = pygame.mouse.get_pos()
                     if turn == HUMAN and not game_over:
-                        print("main board", main_board)
-                        print("Yes", pos[0]//(Small_Square), pos[1]//(Small_Square))
+                        #print("main board", main_board)
+                        #print("Yes", pos[0]//(Small_Square), pos[1]//(Small_Square))
                         set_locations(small_boards, main_board, pos[0]//(Small_Square), pos[1]//(Small_Square), turn)
                         check_game(small_boards, main_board,turn)
 
-                        print(small_boards)
-                        print(main_board)
+                        #print(small_boards)
+                        #print(main_board)
                         if Check_Big_Board(main_board, turn):
                             game_over = True
 

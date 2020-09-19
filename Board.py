@@ -12,3 +12,13 @@ class new_Board():
 
     def test(self):
         print(self.hi)
+
+    def reset(self, board, main_board, game_over):
+        if game_over:
+            for x,row in enumerate(board):
+                for y in range(len(row)):
+                    board[y][x] = 0
+
+            for x,row in enumerate(main_board):
+                for y in range(len(row)):
+                    main_board[y][x] = 0
