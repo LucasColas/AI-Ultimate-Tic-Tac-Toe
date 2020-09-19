@@ -13,43 +13,12 @@ def Draw_pieces(Win, Small_Cross, Small_Circle,Cross, Circle, Small_Square, Squa
     for x1 in range(len(board)):
         for y1 in range(len(board)):
             if board[y1][x1] == -1:
-                if x1 > 2 and x1 < 6:
-                    Win.blit(Small_Circle, (x1*Small_Square, y1*Small_Square))
 
-                elif x1 > 5:
-                    Win.blit(Small_Circle, (x1*Small_Square, y1*Small_Square))
-
-                else:
-                    Win.blit(Small_Circle, (x1*Small_Square, y1*Small_Square))
-
-                if y1 > 2 and y1 < 6:
-                    Win.blit(Small_Circle, (x1*Small_Square, y1*Small_Square))
-
-                elif y1 > 5:
-                    Win.blit(Small_Circle, (x1*Small_Square, y1*Small_Square))
-
-                else:
-                    Win.blit(Small_Circle, (x1*Small_Square, y1*Small_Square))
+                Win.blit(Small_Circle, (x1*Small_Square, y1*Small_Square))
 
             if board[y1][x1] == 1:
-                if x1 > 2 and x1 < 6:
-                    Win.blit(Small_Cross, (x1*Small_Square, y1*Small_Square))
 
-                elif x1 > 5:
-                    Win.blit(Small_Cross, (x1*Small_Square, y1*Small_Square))
-
-                else:
-                    Win.blit(Small_Cross, (x1*Small_Square, y1*Small_Square))
-
-                if y1 > 2 and y1 < 6:
-                    Win.blit(Small_Cross, (x1*Small_Square, y1*Small_Square))
-
-                elif y1 > 5:
-                    Win.blit(Small_Cross, (x1*Small_Square, y1*Small_Square))
-
-                else:
-                    Win.blit(Small_Cross, (x1*Small_Square, y1*Small_Square))
-
+                Win.blit(Small_Cross, (x1*Small_Square, y1*Small_Square))
 
 def draw_big_pieces(Win, big_board, Square, Circle, Cross):
     for x2 in range(len(big_board)):
