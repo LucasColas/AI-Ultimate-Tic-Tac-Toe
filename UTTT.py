@@ -72,6 +72,10 @@ def reset(board, main_board, game_over):
             for y in range(len(row)):
                 board[y][x] = 0
 
+        for x,row in enumerate(main_board):
+            for y in range(len(row)):
+                main_board[y][x] = 0
+
 def update_window(Win, Lines_color, Lines_color_2, Width, Square, Small_Square, margin, Small_Cross, Small_Circle, Cross, Circle,board,big_board, player):
     Win.fill(Bg)
     Draw_pieces(Win,Small_Cross, Small_Circle,Cross, Circle, Small_Square, Square, board)
