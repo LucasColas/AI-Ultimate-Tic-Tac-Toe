@@ -14,7 +14,7 @@ from Check_game import Check_horizontally, Check_vertically, Check_diagonals, Ch
 
 
 pygame.font.init()
-Width, Height = 800,800
+Width, Height = 810,810
 Square = Width//3
 Small_Square = Square//3
 margin = Width//30
