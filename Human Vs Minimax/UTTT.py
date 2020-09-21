@@ -106,13 +106,10 @@ def main():
                 if pygame.mouse.get_pressed()[0] and turn == HUMAN and not game_over:
                     pos = pygame.mouse.get_pos()
                     if turn == HUMAN and not game_over:
-                        #print("main board", main_board)
-                        #print("Yes", pos[0]//(Small_Square), pos[1]//(Small_Square))
+                        
                         set_locations(small_boards, main_board, pos[0]//(Small_Square), pos[1]//(Small_Square), turn)
                         check_game(small_boards, main_board,turn)
 
-                        #print(small_boards)
-                        #print(main_board)
                         if Check_Big_Board(main_board, turn):
                             game_over = True
 
