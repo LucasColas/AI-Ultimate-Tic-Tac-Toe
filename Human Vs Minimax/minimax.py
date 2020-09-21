@@ -1,0 +1,1 @@
+from Check_game import empty_cells_small_boards
