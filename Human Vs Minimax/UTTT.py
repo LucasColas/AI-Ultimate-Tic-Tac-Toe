@@ -36,9 +36,7 @@ Game_Board = new_Board()
 
 def valid_locations(board,main_board,x,y):
     if board[y][x] == 0 and main_board[y//3][x//3] == 0:
-        #print("indx (vl) :", y//3)
-        #print("i (vl) :", x//3)
-        #print("Valid")
+
         return True
 
 def set_locations(board,main_board, x,y, player):
@@ -106,7 +104,7 @@ def main():
                 if pygame.mouse.get_pressed()[0] and turn == HUMAN and not game_over:
                     pos = pygame.mouse.get_pos()
                     if turn == HUMAN and not game_over:
-                        
+
                         set_locations(small_boards, main_board, pos[0]//(Small_Square), pos[1]//(Small_Square), turn)
                         check_game(small_boards, main_board,turn)
 
