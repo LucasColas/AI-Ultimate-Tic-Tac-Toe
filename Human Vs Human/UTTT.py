@@ -75,8 +75,8 @@ def update_window(Win, Lines_color, Lines_color_2, Width, Square, Small_Square, 
 def main():
     run = True
     turn = random.choice([-1,1])
-    AI = 1
-    HUMAN = -1
+    Player_1 = 1
+    Player_2 = -1
     Game_Board.test()
 
     FPS = 120
@@ -105,16 +105,21 @@ def main():
             if event.type == pygame.MOUSEBUTTONDOWN and not game_over:
                 if pygame.mouse.get_pressed()[0]:
                     pos = pygame.mouse.get_pos()
-                    if turn == HUMAN and not game_over:
-                        #print("main board", main_board)
-                        #print("Yes", pos[0]//(Small_Square), pos[1]//(Small_Square))
-                        set_locations(small_boards, main_board, pos[0]//(Small_Square), pos[1]//(Small_Square), turn)
-                        check_game(small_boards, main_board,turn)
 
-                        #print(small_boards)
-                        #print(main_board)
-                        if Check_Big_Board(main_board, turn):
-                            game_over = True
+                    #print("main board", main_board)
+                    #print("Yes", pos[0]//(Small_Square), pos[1]//(Small_Square))
+                    set_locations(small_boards, main_board, pos[0]//(Small_Square), pos[1]//(Small_Square), turn)
+                    check_game(small_boards, main_board,turn)
+
+                    #print(small_boards)
+                    #print(main_board)
+                    if Check_Big_Board(main_board, turn):
+                        game_over = True
+
+                    if turn == Player_1:
+                        turn = Player_2
+                    else:
+                        turn = Player_1
 
 
 main()
