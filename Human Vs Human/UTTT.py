@@ -74,7 +74,7 @@ def update_window(Win, Lines_color, Lines_color_2, Width, Square, Small_Square, 
 
 def main():
     run = True
-    turn = -1
+    turn = random.choice([-1,1])
     AI = 1
     HUMAN = -1
     Game_Board.test()
@@ -102,8 +102,8 @@ def main():
                     Game_Board.reset(small_boards, main_board, game_over)
                     game_over = False
 
-            if event.type == pygame.MOUSEBUTTONDOWN and turn == HUMAN and not game_over:
-                if pygame.mouse.get_pressed()[0] and turn == HUMAN and not game_over:
+            if event.type == pygame.MOUSEBUTTONDOWN and not game_over:
+                if pygame.mouse.get_pressed()[0]:
                     pos = pygame.mouse.get_pos()
                     if turn == HUMAN and not game_over:
                         #print("main board", main_board)
