@@ -91,6 +91,7 @@ def Check_diagonals(board, main_board, player):
                     else:
                         stock_nindx.clear()
 
+
 def Check_empty_cells(board):
     if len(empty_cells_small_boards(board)) == 0:
         print("No one wins")
