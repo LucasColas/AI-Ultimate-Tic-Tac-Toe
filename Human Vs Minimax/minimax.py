@@ -3,6 +3,4 @@ from Check_game import Check_Big_Board
 
 def minimax(node, depth, player, MaximizingPlayer):
     if depth == 0 or Check_Big_Board:
-        return
-
-    
+        return evaluate,node
