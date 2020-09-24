@@ -1,9 +1,9 @@
 from Check_game import empty_cells_small_boards
 from Check_game import Check_Big_Board
 
-def minimax(position, big_board, depth, player, MaximizingPlayer):
+def minimax(node, big_board, depth, player, MaximizingPlayer):
     if depth == 0 or Check_Big_Board(big_board):
-        return evaluate(position),position
+        return evaluate(node),position
 
     if MaximizingPlayer:
         for move in get_moves():
