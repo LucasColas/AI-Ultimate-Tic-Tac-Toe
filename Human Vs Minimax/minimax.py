@@ -9,6 +9,9 @@ def minimax(node, big_board, depth, player, MaximizingPlayer):
         for move in get_moves():
             pass
 
+    else:
+        pass
+
 
 def evaluate(big_board):
     score = 0
