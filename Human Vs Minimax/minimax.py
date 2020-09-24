@@ -2,7 +2,7 @@ from Check_game import empty_cells_small_boards
 from Check_game import Check_Big_Board
 
 def terminal_node():
-    pass 
+    return empty_cells_small_boards(board) or Check_Big_Board(big_board, 1) or Check_Big_Board(big_board, -1)
 
 def minimax(node, big_board, depth, player, MaximizingPlayer):
     if depth == 0 or Check_Big_Board(big_board, player):
