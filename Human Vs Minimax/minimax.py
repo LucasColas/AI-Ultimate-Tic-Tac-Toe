@@ -33,4 +33,7 @@ def evaluate(big_board):
     return score
 
 def get_moves():
-    pass
+    moves = []
+    for empty_cell in empty_cells_small_boards(board):
+        new_board = board.copy()
+        
