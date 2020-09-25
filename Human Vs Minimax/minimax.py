@@ -10,7 +10,8 @@ def minimax(node, board, big_board, depth, player, MaximizingPlayer):
 
     if MaximizingPlayer:
         for node in empty_cells_small_boards(board):
-            pass
+            evaluate = minimax(node, board, big_board, depth, -player, False)[0]
+            
 
     else:
         pass
