@@ -36,4 +36,5 @@ def get_moves():
     moves = []
     for empty_cell in empty_cells_small_boards(board):
         new_board = board.copy()
+        x,y = empty_cell[0], empty_cell[1]
         
