@@ -37,4 +37,7 @@ def get_moves():
     for empty_cell in empty_cells_small_boards(board):
         new_board = board.copy()
         x,y = empty_cell[0], empty_cell[1]
-        
+        new_board[y][x] = player
+        moves.append(new_board)
+
+    return moves
