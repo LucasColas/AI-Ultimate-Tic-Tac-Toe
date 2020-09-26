@@ -6,10 +6,11 @@ def terminal_node(board, big_board):
 
 """
 To do :
--calculate the score of a Board :
+-calculate the score of a Board (each time there are a piece in the big board : +1 or -1) :
     *
 -get a new board for a move
 -stock those boards
+
 """
 
 def minimax(node, board, big_board, depth, player, MaximizingPlayer):
