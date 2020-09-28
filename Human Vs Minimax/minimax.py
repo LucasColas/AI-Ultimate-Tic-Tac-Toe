@@ -18,7 +18,7 @@ def minimax(node, board, big_board, depth, player, MaximizingPlayer):
         return evaluate(node),position
 
     if MaximizingPlayer:
-        for node in get_moves():
+        for node in empty_cells_small_boards(board):
             evaluate = minimax(node, board, big_board, depth, -player, False)[0]
 
     else:
@@ -27,11 +27,3 @@ def minimax(node, board, big_board, depth, player, MaximizingPlayer):
 def evaluate(node):
     score = 0
     return score
-
-def get_moves():
-    moves = []
-    for empty_cell in empty_cells_small_boards(board):
-        x,y = empty_cell[0], empty_cell[1]
-        moves.append(new_board)
-
-    return moves
