@@ -24,21 +24,14 @@ def minimax(node, board, big_board, depth, player, MaximizingPlayer):
     else:
         pass
 
-def evaluate(big_board):
+def evaluate(node):
     score = 0
-    for row in big_board:
-        for x in row:
-            if x == 1:
-                score += 1
-
     return score
 
 def get_moves():
     moves = []
     for empty_cell in empty_cells_small_boards(board):
-        new_board = board.copy()
         x,y = empty_cell[0], empty_cell[1]
-        new_board[y][x] = player
         moves.append(new_board)
 
     return moves
