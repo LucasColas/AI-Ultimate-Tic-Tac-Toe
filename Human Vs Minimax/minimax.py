@@ -27,4 +27,5 @@ def evaluate(big_board):
     return score
 
 def get_moves(board, player):
-    pass
+    for empty_cells in empty_cells_small_boards(board):
+        new_board = board.copy()
