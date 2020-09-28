@@ -1,6 +1,8 @@
 from Check_game import empty_cells_small_boards
 from Check_game import Check_Big_Board
 
+from copy import deepcopy
+
 def terminal_node(board, big_board):
     return len(empty_cells_small_boards(board)) == 0 or Check_Big_Board(big_board, 1) or Check_Big_Board(big_board, -1)
 
@@ -29,3 +31,5 @@ def evaluate(big_board):
 def get_moves(board, player):
     for empty_cells in empty_cells_small_boards(board):
         new_board = board.copy()
+        x,y = empty_cells[0], empty_cells[1]
+        new_board[y][x] = player
