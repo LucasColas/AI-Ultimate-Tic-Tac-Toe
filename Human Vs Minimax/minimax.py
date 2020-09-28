@@ -6,7 +6,7 @@ def terminal_node(board, big_board):
 
 def minimax(node, big_board, depth, player, MaximizingPlayer):
     if depth == 0 or terminal_node(board, big_board):
-        return evaluate(node),position
+        return evaluate(big_board),position
 
     if MaximizingPlayer:
         for node in get_moves(board, player):
@@ -15,8 +15,15 @@ def minimax(node, big_board, depth, player, MaximizingPlayer):
     else:
         pass
 
-def evaluate(node):
+def evaluate(big_board):
     score = 0
+    for row in big_board:
+        for value in row:
+            if value == -1:
+                score -= 2
+            elif value == 1:
+                score += 1
+
     return score
 
 def get_moves(board, player):
