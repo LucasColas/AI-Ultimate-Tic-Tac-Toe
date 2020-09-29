@@ -31,7 +31,7 @@ def evaluate(node):
 def get_moves(board, player):
     moves = []
     for empty_cells in empty_cells_small_boards(board):
-        new_board = board.copy()
+        new_board = deepcopy(board)
         x,y = empty_cells[0], empty_cells[1]
         new_board[y][x] = player
         moves.append(new_board)
