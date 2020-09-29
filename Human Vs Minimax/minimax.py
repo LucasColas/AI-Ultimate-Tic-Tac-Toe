@@ -18,6 +18,7 @@ def minimax(node, big_board, depth, player, MaximizingPlayer):
         pass
 
 def evaluate(node):
+    """
     score = 0
     for row in node:
         for value in row:
@@ -27,6 +28,7 @@ def evaluate(node):
                 score += 1
 
     return score
+    """
 
 def get_moves(board, player):
     moves = []
