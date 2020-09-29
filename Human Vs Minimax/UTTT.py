@@ -10,7 +10,7 @@ from Frontend import Draw_pieces
 from Frontend import draw_board
 from Frontend import draw_big_pieces
 
-from Check_game import Check_horizontally, Check_vertically, Check_diagonals, Check_Big_Board, empty_cells_big_board, Check_empty_cells
+from Check_game import Check_horizontally, Check_vertically, Check_diagonals, Check_Big_Board, empty_cells_big_board, Check_empty_cells, check_game
 
 
 pygame.font.init()
@@ -47,19 +47,7 @@ def set_locations(board,main_board, x,y, player):
         return False
 
 
-def check_game(board,main_board, player):
 
-    #Check horizontally
-    Check_horizontally(board, main_board, player)
-
-    #Check vertically
-    Check_vertically(board, main_board, player)
-
-    #Check diagonals
-    Check_diagonals(board, main_board, player)
-
-    #Check empty cells
-    Check_empty_cells(board)
 
 
 def update_window(Win, Lines_color, Lines_color_2, Width, Square, Small_Square, margin, Small_Cross, Small_Circle, Cross, Circle,board,big_board, player):
