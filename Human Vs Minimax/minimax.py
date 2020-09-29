@@ -1,7 +1,14 @@
 from Check_game import empty_cells_small_boards
-from Check_game import Check_Big_Board
+from Check_game import Check_Big_Board, Check_horizontally, Check_diagonals, Check_vertically
 
 from copy import deepcopy
+
+"""
+evalu :
+
+
+
+"""
 
 def terminal_node(board, big_board):
     return len(empty_cells_small_boards(board)) == 0 or Check_Big_Board(big_board, 1) or Check_Big_Board(big_board, -1)
