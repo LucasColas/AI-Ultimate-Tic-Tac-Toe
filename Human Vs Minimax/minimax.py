@@ -11,9 +11,6 @@ evalu :
 """
 
 def terminal_node(board, big_board, player):
-    Check_horizontally(board, big_board,player)
-    Check_vertically(board, big_board, player)
-    Check_diagonals(board, big_board, player)
 
     return len(empty_cells_small_boards(board)) == 0 or Check_Big_Board(big_board, 1) or Check_Big_Board(big_board, -1)
 
@@ -29,7 +26,7 @@ def minimax(node, big_board, depth, player, MaximizingPlayer):
         pass
 
 def evaluate(node):
-    """
+
     score = 0
     for row in node:
         for value in row:
@@ -39,7 +36,6 @@ def evaluate(node):
                 score += 1
 
     return score
-    """
 
 def get_moves(board, player):
     moves = []
