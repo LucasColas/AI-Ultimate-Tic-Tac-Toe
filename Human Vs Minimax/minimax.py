@@ -1,5 +1,5 @@
 from Check_game import empty_cells_small_boards
-from Check_game import Check_Big_Board, Check_horizontally, Check_diagonals, Check_vertically
+from Check_game import check_game, place_big_board
 
 from copy import deepcopy
 
@@ -37,12 +37,16 @@ def evaluate(node):
 
     return score
 
-def get_moves(board, player):
+def get_moves(board, big_board,player):
     moves = []
     for empty_cells in empty_cells_small_boards(board):
         new_board = deepcopy(board)
         x,y = empty_cells[0], empty_cells[1]
         new_board[y][x] = player
         moves.append(new_board)
+        new_big_board = deepcopy(big_board)
+        check_game(new_board,new_big_board, player)
+
+
 
     return moves
