@@ -12,6 +12,7 @@ from Frontend import draw_big_pieces
 
 from Check_game import Check_horizontally, Check_vertically, Check_diagonals, Check_Big_Board, empty_cells_big_board, Check_empty_cells, check_game
 
+from minimax import minimax
 
 pygame.font.init()
 Width, Height = 810,810
@@ -47,9 +48,6 @@ def set_locations(board,main_board, x,y, player):
         return False
 
 
-
-
-
 def update_window(Win, Lines_color, Lines_color_2, Width, Square, Small_Square, margin, Small_Cross, Small_Circle, Cross, Circle,board,big_board, player):
     Win.fill(Bg)
     Draw_pieces(Win,Small_Cross, Small_Circle,Cross, Circle, Small_Square, Square, board)
@@ -60,7 +58,7 @@ def update_window(Win, Lines_color, Lines_color_2, Width, Square, Small_Square, 
 
 def main():
     run = True
-    turn = -1
+    turn = random.choice([-1,1])
     AI = 1
     HUMAN = -1
     Game_Board.test()
@@ -98,6 +96,13 @@ def main():
 
                         if Check_Big_Board(main_board, turn):
                             game_over = True
+
+                        turn = AI
+
+        if turn == AI and not game_over:
+            depth = 5
+            alpha, beta = 
+            value, board = minimax(small_boards, main_board, )
 
 
 main()
