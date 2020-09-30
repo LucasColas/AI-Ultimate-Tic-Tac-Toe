@@ -2,25 +2,42 @@ from Check_game import empty_cells_small_boards
 from Check_game import check_game, place_big_board
 from copy import deepcopy
 
+from math import inf as infinity
+
 def terminal_node(board, big_board, player):
 
     return len(empty_cells_small_boards(board)) == 0 or Check_Big_Board(big_board, 1) or Check_Big_Board(big_board, -1)
 
 def minimax(node, big_board, depth, player, MaximizingPlayer):
     if depth == 0 or terminal_node(board, big_board):
-        return evaluate(node),node
+        return evaluate(big_board),node
 
     if MaximizingPlayer:
+        value = -infinity
+        good_node = None
         for node in get_moves(board, player):
             evaluate = minimax(node, big_board, depth-1, -player, False)[0]
+            value = max(value, evaluate)
+            if value == evaluate:
+                good_node = node
+
+        return value, good_node
 
     else:
-        pass
+        value = +infinity
+        
 
 def evaluate(node):
 
     score = 0
-    
+    for row in node:
+        for value in row:
+            if value == -1:
+                score -= 5
+            elif value == 0:
+                score -= 1
+            else:
+                score += 5
 
     return score
 
