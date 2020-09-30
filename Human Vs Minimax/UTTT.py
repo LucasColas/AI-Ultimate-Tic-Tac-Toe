@@ -101,8 +101,8 @@ def main():
 
         if turn == AI and not game_over:
             depth = 5
-            alpha, beta = 
-            value, board = minimax(small_boards, main_board, )
+            alpha, beta = -infinity, infinity
+            value, board = minimax(small_boards, main_board, depth, player, True)
 
 
 main()
