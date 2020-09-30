@@ -1,14 +1,6 @@
 from Check_game import empty_cells_small_boards
 from Check_game import check_game, place_big_board
-
 from copy import deepcopy
-
-"""
-evalu :
-
-
-
-"""
 
 def terminal_node(board, big_board, player):
 
@@ -28,12 +20,7 @@ def minimax(node, big_board, depth, player, MaximizingPlayer):
 def evaluate(node):
 
     score = 0
-    for row in node:
-        for value in row:
-            if value == -1:
-                score -= 2
-            elif value == 1:
-                score += 1
+    
 
     return score
 
@@ -46,7 +33,5 @@ def get_moves(board, big_board,player):
         moves.append(new_board)
         new_big_board = deepcopy(big_board)
         check_game(new_board,new_big_board, player)
-
-
 
     return moves
