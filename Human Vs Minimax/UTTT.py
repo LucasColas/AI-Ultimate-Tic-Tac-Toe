@@ -103,7 +103,11 @@ def main():
             depth = 5
             alpha, beta = -infinity, infinity
             value, board = minimax(small_boards, main_board, depth, player, True)
-            
+            small_boards = board
+            check_game(small_boards, turn)
+            if Check_Big_Board(main_board, turn):
+                game_over = True
+            turn = HUMAN
 
 
 main()
