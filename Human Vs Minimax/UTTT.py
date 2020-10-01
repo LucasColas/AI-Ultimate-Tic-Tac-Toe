@@ -104,6 +104,7 @@ def main():
             depth = 1
             alpha, beta = -infinity, infinity
             value, board = minimax(small_boards, main_board, depth, turn, True)
+            print(board)
             small_boards = board
             check_game(small_boards,main_board, turn)
             if Check_Big_Board(main_board, turn):
