@@ -107,6 +107,7 @@ def main():
             print(board)
             small_boards = board
             check_game(small_boards,main_board, turn)
+            update_window(Win, Lines_color, Lines_color_2, Width, Square, Small_Square, margin, Cross_small, Circle_small, Cross, Circle, small_boards, main_board, turn)
             if Check_Big_Board(main_board, turn):
                 game_over = True
             turn = HUMAN
