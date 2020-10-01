@@ -101,11 +101,11 @@ def main():
                         turn = AI
 
         if turn == AI and not game_over:
-            depth = 5
+            depth = 1
             alpha, beta = -infinity, infinity
             value, board = minimax(small_boards, main_board, depth, turn, True)
             small_boards = board
-            check_game(small_boards, turn)
+            check_game(small_boards,main_board, turn)
             if Check_Big_Board(main_board, turn):
                 game_over = True
             turn = HUMAN
