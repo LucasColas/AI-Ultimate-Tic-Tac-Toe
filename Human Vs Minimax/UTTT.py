@@ -2,6 +2,7 @@ import pygame
 import os
 import sys
 import random
+from math import inf as infinity
 
 from Board import new_Board
 
@@ -102,7 +103,7 @@ def main():
         if turn == AI and not game_over:
             depth = 5
             alpha, beta = -infinity, infinity
-            value, board = minimax(small_boards, main_board, depth, player, True)
+            value, board = minimax(small_boards, main_board, depth, turn, True)
             small_boards = board
             check_game(small_boards, turn)
             if Check_Big_Board(main_board, turn):
