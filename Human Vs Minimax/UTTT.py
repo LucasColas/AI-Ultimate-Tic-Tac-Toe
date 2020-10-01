@@ -103,6 +103,7 @@ def main():
             depth = 5
             alpha, beta = -infinity, infinity
             value, board = minimax(small_boards, main_board, depth, player, True)
+            
 
 
 main()
