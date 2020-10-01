@@ -62,7 +62,7 @@ def main():
     turn = random.choice([-1,1])
     AI = 1
     HUMAN = -1
-    Game_Board.test()
+    
 
     FPS = 120
     green = (0,178,0,0)
@@ -74,7 +74,6 @@ def main():
 
     while run:
         clock.tick(FPS)
-
         fill(Circle_small,green)
         fill(Circle, green)
         update_window(Win, Lines_color, Lines_color_2, Width, Square, Small_Square, margin, Cross_small, Circle_small, Cross, Circle, small_boards, main_board, turn)
