@@ -9,7 +9,7 @@ def terminal_node(board, big_board, player):
 
 def minimax(node, big_board, depth, player, MaximizingPlayer):
     if depth == 0 or terminal_node(node, big_board, player):
-        return evaluate(big_board),node
+        return evaluate(node),node
 
     if MaximizingPlayer:
         value = -infinity
