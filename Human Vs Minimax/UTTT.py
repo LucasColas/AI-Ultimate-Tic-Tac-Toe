@@ -62,7 +62,7 @@ def main():
     turn = random.choice([-1,1])
     AI = 1
     HUMAN = -1
-    
+
 
     FPS = 120
     green = (0,178,0,0)
@@ -100,9 +100,9 @@ def main():
                         turn = AI
 
         if turn == AI and not game_over:
-            depth = 1
+            depth = 2
             alpha, beta = -infinity, infinity
-            value, board = minimax(small_boards, main_board, depth, turn, True)
+            value, board = minimax(small_boards, main_board, depth, AI, alpha, beta,True)
             print(board)
             small_boards = board
             check_game(small_boards,main_board, turn)
