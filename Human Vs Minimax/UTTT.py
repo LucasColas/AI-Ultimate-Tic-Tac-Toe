@@ -60,7 +60,10 @@ def ai_turn(board, small_boards, turn):
     small_boards = board
     turn == -1
 
-def main():
+main_board = Game_Board.create_board()
+small_boards = Game_Board.every_small_boards()
+
+def main(small_boards, main_board):
     run = True
     turn = random.choice([-1,1])
     AI = 1
@@ -71,9 +74,6 @@ def main():
     green = (0,178,0,0)
     game_over = False
     good = False
-
-    main_board = Game_Board.create_board()
-    small_boards = Game_Board.every_small_boards()
 
     while run:
         clock.tick(FPS)
@@ -116,4 +116,4 @@ def main():
         update_window(Win, Lines_color, Lines_color_2, Width, Square, Small_Square, margin, Cross_small, Circle_small, Cross, Circle, small_boards, main_board, turn)
 
 
-main()
+main(small_boards, main_board)
