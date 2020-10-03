@@ -98,12 +98,13 @@ def main():
                             game_over = True
 
                         turn = AI
+                        print("small_boards", small_boards)
 
         if turn == AI and not game_over:
-            depth = 2
+            depth = 1
             alpha, beta = -infinity, infinity
             value, board = minimax(small_boards, main_board, depth, AI, alpha, beta,True)
-            print(board)
+            print("minimax board :", board)
             small_boards = board
             check_game(small_boards,main_board, turn)
             update_window(Win, Lines_color, Lines_color_2, Width, Square, Small_Square, margin, Cross_small, Circle_small, Cross, Circle, small_boards, main_board, turn)
