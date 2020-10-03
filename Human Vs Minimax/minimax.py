@@ -9,18 +9,13 @@ def terminal_node(board, big_board, player):
 
 def minimax(node, big_board, depth, player, alpha, beta,MaximizingPlayer):
     if depth <= 0 or terminal_node(node, big_board, player):
-        print("terminal_node", terminal_node(node, big_board, player))
-        print(depth, "depth")
-        print("return")
         return evaluate(node),node
     depth -= 1
 
     if MaximizingPlayer:
-        print("Max")
         value = -infinity
         good_node = None
         for node in get_moves(node, big_board,player):
-            print(MaximizingPlayer)
             evaluation = minimax(node, big_board, depth, -1,alpha, beta, False)[0]
             value = max(value, evaluation)
             if value == evaluation:
@@ -32,7 +27,6 @@ def minimax(node, big_board, depth, player, alpha, beta,MaximizingPlayer):
         return value, good_node
 
     else:
-        print("Min")
         value = +infinity
         good_node = None
         for node in get_moves(node,big_board,player):
