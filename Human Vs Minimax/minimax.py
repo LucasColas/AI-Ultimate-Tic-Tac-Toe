@@ -64,7 +64,7 @@ def get_moves(board, big_board,player):
         new_board = deepcopy(board)
         x,y = empty_cells[0], empty_cells[1]
         if not [x//3,y//3] in empty_cells_big_board(main_board):
-        new_board[y][x] = player
-        moves.append(new_board)
+            new_board[y][x] = player
+            moves.append(new_board)
 
     return moves
