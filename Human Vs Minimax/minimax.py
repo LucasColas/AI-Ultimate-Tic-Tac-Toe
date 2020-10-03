@@ -16,6 +16,7 @@ def minimax(node, big_board, depth, player, alpha, beta,MaximizingPlayer):
         value = -infinity
         good_node = None
         for node in get_moves(node, big_board,player):
+            print("node", node)
             evaluation = minimax(node, big_board, depth, -1,alpha, beta, False)[0]
             value = max(value, evaluation)
             if value == evaluation:
@@ -31,6 +32,7 @@ def minimax(node, big_board, depth, player, alpha, beta,MaximizingPlayer):
         value = +infinity
         good_node = None
         for node in get_moves(node,big_board,player):
+            print("node", node)
             evaluation = minimax(node, big_board, depth, 1,alpha, beta, True)[0]
             value = min(value, evaluation)
             if value == evaluation:
