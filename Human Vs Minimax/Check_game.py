@@ -1,6 +1,4 @@
 def place_big_board(main_board,x, y, player):
-    #print("indx : ", indx)
-    #print("i : ", i)
     main_board[y][x] = player
 
 def empty_cells_small_boards(board):
@@ -44,8 +42,6 @@ def Check_vertically(board,main_board, player):
                     print(player, "succeeds (vertically)")
                     good_col = True
                     if good_col:
-                        #print("indx : ", indx)
-                        #print("i : ", i)
                         place_big_board(main_board,indx//3,i//3,player)
                         good_col = False
 
@@ -56,14 +52,14 @@ def Check_vertically(board,main_board, player):
 
 def Check_diagonals(board, main_board, player):
     for x in range(0,8, 3):
-        #print(x)
+
         stock_indx = []
         for y in range(0,8,3):
-            #print(x,y)
+
             stock_indx.append(board[y][x])
             for i in range(1,3):
                 stock_indx.append(board[y+i][x+i])
-                #print("x+i : ", x+i, "y+i :", y+i)
+
                 if len(stock_indx) >= 3:
                     if stock_indx.count(player) == len(stock_indx):
                         a,b = y+i, x+i
@@ -77,12 +73,12 @@ def Check_diagonals(board, main_board, player):
     for x in range(0,9,3):
         stock_nindx = []
         for y in range(2,9,3):
-            #print(x,y)
+
             for i in range(3):
                 stock_nindx.append(board[y-i][x+i])
 
                 if len(stock_nindx) >= 3:
-                    #print(stock_nindx)
+
                     if stock_nindx.count(player) == len(stock_nindx):
                         a,b = y-i, x+i
                         print(player, "succeeds with a negative diagonal")
