@@ -107,7 +107,7 @@ def main():
             print("minimax board :", board)
             small_boards = board
             check_game(small_boards,main_board, turn)
-            
+
             if Check_Big_Board(main_board, turn):
                 game_over = True
             turn = HUMAN
