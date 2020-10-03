@@ -95,7 +95,7 @@ def main(small_boards, main_board):
                     if turn == HUMAN and not game_over:
                         set_locations(small_boards, main_board, pos[0]//(Small_Square), pos[1]//(Small_Square), turn)
                         check_game(small_boards, main_board,turn)
-                        
+
                         if Check_Big_Board(main_board, turn):
                             game_over = True
 
@@ -108,6 +108,7 @@ def main(small_boards, main_board):
             value, board = minimax(small_boards, main_board, depth, AI, alpha, beta,True)
             print("minimax board :", board)
             small_boards = board
+            print("small_boards after board", small_boards)
             check_game(small_boards,main_board, turn)
             if Check_Big_Board(main_board, turn):
                 game_over = True
