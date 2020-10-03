@@ -22,6 +22,7 @@ def minimax(node, big_board, depth, player, alpha, beta,MaximizingPlayer):
                 good_node = node
             alpha = max(alpha, value)
             if alpha >= beta:
+                print("in alpha")
                 break
 
         return value, good_node

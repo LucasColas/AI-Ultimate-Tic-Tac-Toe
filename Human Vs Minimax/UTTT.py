@@ -90,7 +90,7 @@ def main():
                 if pygame.mouse.get_pressed()[0] and turn == HUMAN and not game_over:
                     pos = pygame.mouse.get_pos()
                     if turn == HUMAN and not game_over:
-                        
+
                         set_locations(small_boards, main_board, pos[0]//(Small_Square), pos[1]//(Small_Square), turn)
                         check_game(small_boards, main_board,turn)
 
@@ -107,7 +107,7 @@ def main():
             print("minimax board :", board)
             small_boards = board
             check_game(small_boards,main_board, turn)
-            update_window(Win, Lines_color, Lines_color_2, Width, Square, Small_Square, margin, Cross_small, Circle_small, Cross, Circle, small_boards, main_board, turn)
+            #update_window(Win, Lines_color, Lines_color_2, Width, Square, Small_Square, margin, Cross_small, Circle_small, Cross, Circle, small_boards, main_board, turn)
             if Check_Big_Board(main_board, turn):
                 game_over = True
             turn = HUMAN
