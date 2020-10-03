@@ -58,7 +58,7 @@ def update_window(Win, Lines_color, Lines_color_2, Width, Square, Small_Square, 
 
 def ai_turn(board, small_boards, turn):
     small_boards = board
-    turn == -1
+    turn = -1
 
 main_board = Game_Board.create_board()
 small_boards = Game_Board.every_small_boards()
@@ -108,10 +108,12 @@ def main(small_boards, main_board):
             alpha, beta = -infinity, +infinity
             value, board = minimax(small_boards, main_board, depth, AI, alpha, beta,True)
             print("minimax board :", board)
-            ai_turn(board, small_boards, turn)
+            small_boards = board
             check_game(small_boards,main_board, turn)
             if Check_Big_Board(main_board, turn):
                 game_over = True
+
+            turn = HUMAN
 
         update_window(Win, Lines_color, Lines_color_2, Width, Square, Small_Square, margin, Cross_small, Circle_small, Cross, Circle, small_boards, main_board, turn)
 
