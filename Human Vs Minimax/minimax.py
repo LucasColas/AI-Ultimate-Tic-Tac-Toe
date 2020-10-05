@@ -48,14 +48,7 @@ def minimax(node, big_board, depth, player, alpha, beta,MaximizingPlayer):
 def evaluate(node):
 
     score = 0
-    for row in node:
-        for value in row:
-            if value == -1:
-                score -= 5
-            elif value == 0:
-                score -= 1
-            else:
-                score += 5
+    
 
     return score
 
