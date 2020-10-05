@@ -16,16 +16,16 @@ def minimax(node, big_board, depth, player, alpha, beta,MaximizingPlayer):
         value = -infinity
         good_node = None
         for node in get_moves(node, big_board,player):
-            #print("node", node)
+            print("node", node)
             evaluation = minimax(node, big_board, depth, -1,alpha, beta, False)[0]
             value = max(value, evaluation)
             if value == evaluation:
                 good_node = node
             alpha = max(alpha, value)
             if alpha >= beta:
-                print("in alpha")
+
                 break
-        print("good_node", good_node)
+        #print("good_node", good_node)
         return value, good_node
 
     else:
@@ -40,7 +40,7 @@ def minimax(node, big_board, depth, player, alpha, beta,MaximizingPlayer):
             beta = min(beta, value)
             if alpha >= beta:
                 break
-        print("good_node",good_node)
+        #print("good_node",good_node)
         return value, good_node
 
 
@@ -63,6 +63,7 @@ def get_moves(board, big_board,player):
     moves = []
     big_boards = []
     for empty_cells in empty_cells_small_boards(board):
+
         new_board = deepcopy(board)
         x,y = empty_cells[0], empty_cells[1]
         if [x//3,y//3] in empty_cells_big_board(big_board):
