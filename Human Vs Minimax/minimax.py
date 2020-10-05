@@ -48,7 +48,7 @@ def minimax(node, big_board, depth, player, alpha, beta,MaximizingPlayer):
 def evaluate(node):
 
     score = 0
-    
+
 
     return score
 
@@ -58,9 +58,11 @@ def get_moves(board, big_board,player):
     for empty_cells in empty_cells_small_boards(board):
 
         new_board = deepcopy(board)
+        new_big_board = deepcopy(big_board)
         x,y = empty_cells[0], empty_cells[1]
         if [x//3,y//3] in empty_cells_big_board(big_board):
             new_board[y][x] = player
+            check_game(new_board, new_big_board, player) 
             moves.append(new_board)
 
     return moves
