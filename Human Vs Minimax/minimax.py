@@ -9,7 +9,7 @@ def terminal_node(board, big_board, player):
 
 def minimax(node, big_board, depth, player, alpha, beta,MaximizingPlayer):
     if depth <= 0 or terminal_node(node, big_board, player):
-        return evaluate(node),node
+        return evaluate(),node
     depth -= 1
 
     if MaximizingPlayer:
@@ -45,7 +45,7 @@ def minimax(node, big_board, depth, player, alpha, beta,MaximizingPlayer):
 
 
 
-def evaluate(node):
+def evaluate():
 
     score = 0
 
@@ -62,7 +62,8 @@ def get_moves(board, big_board,player):
         x,y = empty_cells[0], empty_cells[1]
         if [x//3,y//3] in empty_cells_big_board(big_board):
             new_board[y][x] = player
-            check_game(new_board, new_big_board, player) 
+            check_game(new_board, new_big_board, player)
+
             moves.append(new_board)
 
     return moves
