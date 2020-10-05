@@ -14,7 +14,11 @@ def evaluate(board):
     if len(empty_cells_small_boards(board)) == 0:
         total_score += 1
 
+    total_score += score_vertical(board)
+    total_score += score_horizontally(board)
+    total_score += score_diagonals(board)
 
+    return total_score
 
 def score_horizontally(board):
     score = 0
@@ -68,7 +72,6 @@ def score_diagonals(board):
     for x in range(0,9,3):
         stock_nindx = []
         for y in range(2,9,3):
-
             for i in range(3):
                 stock_nindx.append(board[y-i][x+i])
 
@@ -83,7 +86,7 @@ def score_diagonals(board):
                         stock_nindx.clear()
                     else:
                         stock_nindx.clear()
-                        
+
     return score
 
 def get_moves(board, big_board,player):
