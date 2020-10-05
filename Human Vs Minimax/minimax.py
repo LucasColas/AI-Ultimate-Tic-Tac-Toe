@@ -1,9 +1,9 @@
-from minimax_def import terminal_node
+from minimax_def import terminal_node, evaluate
 
 
 def minimax(node, big_board, depth, player, alpha, beta,MaximizingPlayer):
     if depth <= 0 or terminal_node(node, big_board, player):
-        return evaluate(),node
+        return evaluate(node),node
     depth -= 1
 
     if MaximizingPlayer:
