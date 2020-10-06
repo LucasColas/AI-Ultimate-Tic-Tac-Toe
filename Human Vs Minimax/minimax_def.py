@@ -56,7 +56,6 @@ def score_diagonals(board):
 
         stock_indx = []
         for y in range(0,8,3):
-
             stock_indx.append(board[y][x])
             for i in range(1,3):
                 stock_indx.append(board[y+i][x+i])
