@@ -1,4 +1,4 @@
-from minimax_def import terminal_node, evaluate
+from minimax_def import terminal_node, evaluate, get_moves
 from math import inf as infinity
 
 

@@ -41,12 +41,12 @@ def score_vertical(board):
             if len(check) >= 3:
                 if check.count(1) == len(check) and check[0] != 0:
                     score += 3
-                    check.clear()
+
                 if check.count(-1) == len(check) and check[0] != 0:
                     score -= 3
-                    check.clear()
-                else:
-                    check.clear()
+
+                check.clear()
+
     return score
 
 def score_diagonals(board):
