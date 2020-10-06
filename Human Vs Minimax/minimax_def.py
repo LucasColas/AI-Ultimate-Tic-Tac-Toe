@@ -2,7 +2,7 @@ from Check_game import empty_cells_small_boards, empty_cells_big_board
 from Check_game import check_game, place_big_board, Check_Big_Board
 
 from copy import deepcopy
-from math import inf as infinity
+#from math import inf as infinity
 
 
 def terminal_node(board, big_board, player):
