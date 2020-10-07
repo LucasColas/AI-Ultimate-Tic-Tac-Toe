@@ -4,7 +4,8 @@ import random
 
 def random_piece(board):
     choice = random.randrange(len(board))
-    new_board = board[choice]
+    new_board = board
+    new_board[choice] = 1
 
     return new_board
 
