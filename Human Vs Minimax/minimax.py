@@ -2,9 +2,10 @@ from minimax_def import terminal_node, evaluate, get_moves
 from math import inf as infinity
 import random
 
-def random_piece(board):
+def random_piece(board, big_board, player):
     choice = random.randrange(len(board))
-    new_board = board
+
+    new_board = get_moves(board, big_board, player)[choice]
     new_board[choice] = 1
 
     return new_board
