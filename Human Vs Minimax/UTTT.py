@@ -111,7 +111,7 @@ def main(small_boards, main_board):
             small_boards = board
             print("small_boards after board", small_boards)
             """
-            board = random_piece(small_boards, big_board, turn)
+            board = random_piece(small_boards, main_board, turn)
             print(board)
             small_boards = board
             print(small_boards)
