@@ -1,6 +1,12 @@
 from minimax_def import terminal_node, evaluate, get_moves
 from math import inf as infinity
+import random
 
+def random_piece(board):
+    choice = random.randrange(len(board))
+    new_board = board[choice]
+
+    return new_board
 
 def minimax(node, big_board, depth, player, alpha, beta,MaximizingPlayer):
     if depth <= 0 or terminal_node(node, big_board, player):
@@ -21,7 +27,8 @@ def minimax(node, big_board, depth, player, alpha, beta,MaximizingPlayer):
             if alpha >= beta:
 
                 break
-        print("good_node if", good_node)
+        print("good_node if
+        ", good_node)
         return value, good_node
 
     else:
