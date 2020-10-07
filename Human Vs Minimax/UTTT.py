@@ -111,6 +111,8 @@ def main(small_boards, main_board):
             small_boards = board
             print("small_boards after board", small_boards)
             """
+            board = random_piece(small_boards)
+            small_boards = board
 
             check_game(small_boards,main_board, turn)
             if Check_Big_Board(main_board, turn):
