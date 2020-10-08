@@ -7,6 +7,7 @@ def random_piece(board, big_board, player):
 
     new_board = get_moves(board, big_board, player)[choice]
     new_board[choice][choice] = 1
+    print("new board of random_piece", new_board)
 
     return new_board
 
