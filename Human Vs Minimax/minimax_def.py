@@ -1,7 +1,7 @@
 from Check_game import empty_cells_small_boards, empty_cells_big_board
 from Check_game import check_game, place_big_board, Check_Big_Board
 
-from copy import deepcopy
+import copy
 #from math import inf as infinity
 
 
@@ -93,15 +93,16 @@ def get_moves(board, big_board,player):
     big_boards = []
     for empty_cells in empty_cells_small_boards(board):
         print("empty_cells", empty_cells)
-        new_board = deepcopy(board)
-        new_big_board = deepcopy(big_board)
+        new_board = copy.copy(board)
+        new_big_board = copy.copy(big_board)
         x,y = empty_cells[0], empty_cells[1]
         #print(x//3,y//3)
         #if [x//3,y//3] in empty_cells_big_board(big_board):
         new_board[y][x] = player
-        print(new_board[y][x])
+
         check_game(new_board, new_big_board, player)
         print("new board", new_board)
+        print(new_board[y][x])
         moves.append(new_board)
 
     return moves
