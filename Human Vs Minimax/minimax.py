@@ -20,13 +20,13 @@ def minimax(node, big_board, depth, player, alpha, beta,MaximizingPlayer):
             #print("node", node)
             evaluation = minimax(node, big_board, depth-1, -1,alpha, beta, False)[0]
             value = max(value, evaluation)
-            print("value", value)
+            #print("value", value)
             if value == evaluation:
                 good_node = node
             alpha = max(alpha, value)
             if alpha >= beta:
                 break
-        print("good_node if", good_node)
+        #print("good_node if", good_node)
         return value, good_node
 
     else:
@@ -42,5 +42,5 @@ def minimax(node, big_board, depth, player, alpha, beta,MaximizingPlayer):
             if alpha >= beta:
                 break
         #print("good_node",good_node)
-        print("good_node else", good_node)
+        #print("good_node else", good_node)
         return value, good_node
