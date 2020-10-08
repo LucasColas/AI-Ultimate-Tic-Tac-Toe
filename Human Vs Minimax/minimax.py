@@ -3,12 +3,9 @@ from math import inf as infinity
 import random
 
 def random_piece(board, big_board, player):
-    choice = random.randrange(len(board))
+    choice = random.randrange(len(get_moves(board, big_board, player)))
 
     new_board = get_moves(board, big_board, player)[choice]
-    new_board[choice][choice] = 1
-    print("new board of random_piece", new_board)
-
     return new_board
 
 def minimax(node, big_board, depth, player, alpha, beta,MaximizingPlayer):
