@@ -43,9 +43,11 @@ def score_vertical(board):
             if len(check) >= 3:
                 if check.count(1) == len(check) and check[0] != 0:
                     score += 3
+                    print("score", score)
 
                 if check.count(-1) == len(check) and check[0] != 0:
                     score -= 3
+                    print("score", score)
 
                 check.clear()
 
