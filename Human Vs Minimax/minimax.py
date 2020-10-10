@@ -11,7 +11,7 @@ def random_piece(board, big_board, player):
 def minimax(node, big_board, depth, player, alpha, beta,MaximizingPlayer):
     if depth <= 0 or terminal_node(node, big_board, player):
         return evaluate(node),node
-        
+
     if MaximizingPlayer:
         value = -infinity
         good_node = None
@@ -25,7 +25,7 @@ def minimax(node, big_board, depth, player, alpha, beta,MaximizingPlayer):
             alpha = max(alpha, value)
             if alpha >= beta:
                 break
-        #print("good_node if", good_node)
+        print("good_node if", good_node)
         return value, good_node
 
     else:
@@ -40,6 +40,6 @@ def minimax(node, big_board, depth, player, alpha, beta,MaximizingPlayer):
             beta = min(beta, value)
             if alpha >= beta:
                 break
-        #print("good_node",good_node)
-        #print("good_node else", good_node)
+
+        print("good_node else", good_node)
         return value, good_node
