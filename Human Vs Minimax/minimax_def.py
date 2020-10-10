@@ -26,8 +26,10 @@ def score_horizontally(board):
         for indx, row in enumerate(board):
             if row[0+i] == row[1+i] == row[2+i] == 1:
                 score += 3
+                print("score", score)
             if row[0+i] == row[1+i] == row[2+i] == -1:
                 score -= 3
+                print("score", score)
 
     return score
 
