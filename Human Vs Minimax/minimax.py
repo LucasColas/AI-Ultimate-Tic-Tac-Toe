@@ -1,5 +1,5 @@
 from minimax_def import terminal_node, evaluate, get_moves
-from check_game import empty_cells_small_boards
+from Check_game import empty_cells_small_boards
 from math import inf as infinity
 import random
 
