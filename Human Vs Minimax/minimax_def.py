@@ -96,7 +96,7 @@ def get_moves(board, big_board,player):
     moves = []
     big_boards = []
     for empty_cells in empty_cells_small_boards(board):
-        print("empty_cells", empty_cells)
+        #print("empty_cells", empty_cells)
         new_board = copy.deepcopy(board)
         new_big_board = copy.deepcopy(big_board)
         x,y = empty_cells[0], empty_cells[1]
@@ -105,8 +105,8 @@ def get_moves(board, big_board,player):
         new_board[y][x] = player
 
         check_game(new_board, new_big_board, player)
-        print("new board", new_board)
-        print(new_board[y][x])
+        #print("new board", new_board)
+        #print(new_board[y][x])
         moves.append(new_board)
 
     return moves
