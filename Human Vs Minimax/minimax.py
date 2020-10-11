@@ -1,4 +1,5 @@
 from minimax_def import terminal_node, evaluate, get_moves
+from check_game import empty_cells_small_boards
 from math import inf as infinity
 import random
 
@@ -15,7 +16,7 @@ def minimax(node, big_board, depth, player, alpha, beta,MaximizingPlayer):
     if MaximizingPlayer:
         value = -infinity
         good_node = None
-        for node in get_moves(node, big_board,player):
+        for node in empty_cells_small_boards(node):
             #print("node", node)
             evaluation = minimax(node, big_board, depth-1, -1,alpha, beta, False)[0]
             value = max(value, evaluation)
@@ -31,7 +32,7 @@ def minimax(node, big_board, depth, player, alpha, beta,MaximizingPlayer):
     else:
         value = +infinity
         good_node = None
-        for node in get_moves(node,big_board,player):
+        for node in empty_cells_small_boards(node):
             #print("node", node)
             evaluation = minimax(node, big_board, depth-1, 1,alpha, beta, True)[0]
             value = min(value, evaluation)
