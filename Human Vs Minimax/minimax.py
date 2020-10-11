@@ -12,18 +12,21 @@ def random_piece(board, big_board, player):
 def minimax(node, big_board, depth, player, alpha, beta,MaximizingPlayer):
     if depth <= 0 or terminal_node(node, big_board, player):
         return evaluate(node),node
+    print("Yes")
 
     for each_place in empty_cells_small_boards(node):
+        good_node = [-1,-1]
         x,y = each_place[0], each_place[1]
         node[y][x] = player
         evaluation = minimax(node, big_board, depth-1,-player, alpha,beta,False)[0]
         node[y][x] = 0
         ("each place", each_place)
         if MaximizingPlayer:
+
             value = -infinity
             value = max(value, evaluation)
             if value == evaluation:
-                good_node = node
+                good_node = [x,y]
             alpha = max(alpha, value)
             if alpha >= beta:
                 break
@@ -32,7 +35,7 @@ def minimax(node, big_board, depth, player, alpha, beta,MaximizingPlayer):
             value = +infinity
             value = min(value, evaluation)
             if value == evaluation:
-                good_node = node
+                good_node = [x,y]
 
             beta = min(beta, value)
             if alpha >= beta:
