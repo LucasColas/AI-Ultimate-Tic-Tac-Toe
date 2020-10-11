@@ -18,7 +18,7 @@ def minimax(node, big_board, depth, player, alpha, beta,MaximizingPlayer):
         node[y][x] = player
         evaluation = minimax(node, big_board, depth-1,-player, alpha,beta,False)[0]
         node[y][x] = 0
-
+        ("each place", each_place)
         if MaximizingPlayer:
             value = -infinity
             value = max(value, evaluation)

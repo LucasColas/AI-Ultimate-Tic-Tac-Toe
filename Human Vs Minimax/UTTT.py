@@ -102,16 +102,16 @@ def main(small_boards, main_board):
                         turn = AI
 
         if turn == AI and not game_over:
-            depth = 5
+            depth = 1
             alpha, beta = -infinity, +infinity
-
+            """
             value, board = minimax(small_boards, main_board, depth, AI, alpha, beta,True)
             print("small_boards", small_boards)
             print("minimax board :", board)
             small_boards = board
             print("small_boards after board", small_boards)
-
-            #board = random_piece(small_boards, main_board, turn)
+            """
+            board = random_piece(small_boards, main_board, turn)
             print(board)
             small_boards = board
             print(small_boards)
