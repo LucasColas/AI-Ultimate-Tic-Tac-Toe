@@ -16,9 +16,11 @@ def minimax(node, big_board, depth, player, alpha, beta,MaximizingPlayer):
     if MaximizingPlayer:
         value = -infinity
         good_node = None
-        for node in empty_cells_small_boards(node):
-            #print("node", node)
+        for each_place in empty_cells_small_boards(node):
+            x,y = each_place[0], each_place[1]
+            node[y][x] = player
             evaluation = minimax(node, big_board, depth-1, -1,alpha, beta, False)[0]
+            node[y][x] = 0
             value = max(value, evaluation)
             #print("value", value)
             if value == evaluation:
@@ -32,9 +34,11 @@ def minimax(node, big_board, depth, player, alpha, beta,MaximizingPlayer):
     else:
         value = +infinity
         good_node = None
-        for node in empty_cells_small_boards(node):
-            #print("node", node)
-            evaluation = minimax(node, big_board, depth-1, 1,alpha, beta, True)[0]
+        for each_place in empty_cells_small_boards(node):
+            x,y = each_place[0], each_place[1]
+            node[y][x] = player
+            evaluation = minimax(node, big_board, depth-1, -1,alpha, beta, False)[0]
+            node[y][x] = 0
             value = min(value, evaluation)
             if value == evaluation:
                 good_node = node
