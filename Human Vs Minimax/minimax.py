@@ -13,10 +13,11 @@ def random_piece(board, big_board, player):
 
 def minimax(node, big_board, depth, player, alpha, beta,MaximizingPlayer):
     if depth <= 0 or terminal_node(node, big_board, player):
-        return evaluate(node),node
-    print("Yes")
+        return evaluate(node),None
+    #print("Yes")
 
     for each_place in empty_cells_small_boards(node):
+        print("enter")
         good_node = None
         x,y = each_place[0], each_place[1]
         node[y][x] = player
