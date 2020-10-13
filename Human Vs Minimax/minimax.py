@@ -49,8 +49,6 @@ def minimax_algo(node,depth, player, Go):
         return score, good_node
 
 
-
-
 def minimax(node, big_board, depth, player, alpha, beta,MaximizingPlayer):
     if depth <= 0 or terminal_node(node, big_board, player):
         return evaluate(node),None
