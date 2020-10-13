@@ -21,7 +21,9 @@ def minimax_algo(node,depth, player, Go):
         score = 0
         for place in empty_cells_small_boards(node):
             print("yes")
-            test_(node, depth-1, player, Go)
+            x,y = place[0], place[1]
+            node[y][x]
+            minimax_algo(node, depth-1, -player, Go)
             print("yes 2")
 
 
