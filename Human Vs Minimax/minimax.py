@@ -12,18 +12,23 @@ def random_piece(board, big_board, player):
     return new_board
 
 
-def test_(node,depth, player, Go):
+def minimax_algo(node,depth, player, Go):
     if depth <= 0:
-        return 5, node
+        return evaluate(node), node
+
     if Go:
-        stg = None
+        good_node = None
+        score = 0
         for place in empty_cells_small_boards(node):
             print("yes")
-            test(node, depth-1, player)
+            test_(node, depth-1, player, Go)
             print("yes 2")
-            stg = place
 
-        return stg
+
+        return score, good_node
+
+    else:
+        pass
 
 
 
