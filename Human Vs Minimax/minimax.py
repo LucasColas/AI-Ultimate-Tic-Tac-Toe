@@ -17,7 +17,7 @@ def minimax(node, big_board, depth, player, alpha, beta,MaximizingPlayer):
     print("Yes")
 
     for each_place in empty_cells_small_boards(node):
-        good_node = Node
+        good_node = None
         x,y = each_place[0], each_place[1]
         node[y][x] = player
         evaluation = minimax(node, big_board, depth-1,-player, alpha,beta,False)[0]
