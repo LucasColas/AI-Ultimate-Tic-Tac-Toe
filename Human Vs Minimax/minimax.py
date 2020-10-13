@@ -11,6 +11,12 @@ def random_piece(board, big_board, player):
     new_board = get_moves(board, big_board, player)[choice]
     return new_board
 
+
+def test(node, player):
+
+    for place in empty_cells_small_boards(node):
+
+
 def minimax(node, big_board, depth, player, alpha, beta,MaximizingPlayer):
     if depth <= 0 or terminal_node(node, big_board, player):
         return evaluate(node),None
