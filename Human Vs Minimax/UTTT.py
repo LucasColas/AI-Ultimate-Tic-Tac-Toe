@@ -11,6 +11,8 @@ from Frontend import Draw_pieces
 from Frontend import draw_board
 from Frontend import draw_big_pieces
 
+from minimax import test_
+
 from Check_game import Check_horizontally, Check_vertically, Check_diagonals, Check_Big_Board, empty_cells_big_board, Check_empty_cells, check_game
 
 from minimax import minimax, random_piece
@@ -112,6 +114,7 @@ def main(small_boards, main_board):
             small_boards = board
             print("small_boards after board", small_boards)
             """
+            test_(small_boards, 2, turn,True)
             board = random_piece(small_boards, main_board, turn)
             print(board)
             small_boards = board

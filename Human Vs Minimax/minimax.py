@@ -12,9 +12,20 @@ def random_piece(board, big_board, player):
     return new_board
 
 
-def test(node, player):
+def test_(node,depth, player, Go):
+    if depth <= 0:
+        return 5, node
+    if Go:
+        stg = None
+        for place in empty_cells_small_boards(node):
+            print("yes")
+            test(node, depth-1, player)
+            print("yes 2")
+            stg = place
 
-    for place in empty_cells_small_boards(node):
+        return stg
+
+
 
 
 def minimax(node, big_board, depth, player, alpha, beta,MaximizingPlayer):
