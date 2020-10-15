@@ -18,7 +18,6 @@ def minimax_algo(node,depth, player, Go):
 
     if Go:
         good_node = None
-
         value = -infinity
         for place in empty_cells_small_boards(node):
             print("yes")
