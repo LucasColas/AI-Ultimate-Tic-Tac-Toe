@@ -113,7 +113,7 @@ def main(small_boards, main_board):
             small_boards = board
             print("small_boards after board", small_boards)
             """
-            value, board = minimax_algo(small_boards, big_board, 2, turn,True)
+            value, board = minimax_algo(small_boards, main_board, 2, turn,True)
             #board = random_piece(small_boards, main_board, turn)
             print(board)
             small_boards = copy.deepcopy(board)
