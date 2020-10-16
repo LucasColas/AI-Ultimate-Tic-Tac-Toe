@@ -12,7 +12,7 @@ def random_piece(board, big_board, player):
     return new_board
 
 
-def minimax_algo(node,depth, player, Go):
+def minimax_algo(node,big_board, depth, player, Go):
     if depth <= 0 or terminal_node(node, big_board, player):
         return evaluate(node), node
 
