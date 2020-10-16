@@ -20,13 +20,16 @@ def minimax_algo(node,big_board, depth, player, Go):
         good_node = None
         value = -infinity
         for place in empty_cells_small_boards(node):
+            print("place", place)
             print("yes")
             x,y = place[0], place[1]
             node[y][x] = player
+            print("node", node)
             evaluation = minimax_algo(node, big_board, depth-1, -player, False)[0]
             value = max(value, evaluation)
             if value == evaluation:
                 good_node = copy.deepcopy(node)
+                print("good value", good_node)
             node[y][x] = 0
             #print("yes 2")
         return value, good_node
@@ -35,6 +38,7 @@ def minimax_algo(node,big_board, depth, player, Go):
         good_node = None
         value = +infinity
         for place in empty_cells_small_boards(node):
+            print("place", place)
             print("yes")
             x,y = place[0], place[1]
             node[y][x] = player

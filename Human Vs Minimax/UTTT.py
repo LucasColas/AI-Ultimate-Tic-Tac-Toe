@@ -104,7 +104,7 @@ def main(small_boards, main_board):
                         turn = AI
 
         if turn == AI and not game_over:
-            depth = 3
+            depth = 1
             alpha, beta = -infinity, +infinity
 
             """
