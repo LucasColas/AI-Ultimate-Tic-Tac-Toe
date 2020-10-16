@@ -13,7 +13,7 @@ def random_piece(board, big_board, player):
 
 
 def minimax_algo(node,depth, player, Go):
-    if depth <= 0:
+    if depth <= 0 or terminal_node(node, big_board, player):
         return evaluate(node), node
 
     if Go:
@@ -29,7 +29,7 @@ def minimax_algo(node,depth, player, Go):
                 good_node = copy.deepcopy(node)
             node[y][x] = 0
             #print("yes 2")
-        return score, good_node
+        return value, good_node
 
     else:
         good_node = None
@@ -44,7 +44,7 @@ def minimax_algo(node,depth, player, Go):
                 good_node = copy.deepcopy(node)
             node[y][x] = 0
             #print("yes 2")
-        return score, good_node
+        return value, good_node
 
 
 def minimax(node, big_board, depth, player, alpha, beta,MaximizingPlayer):
