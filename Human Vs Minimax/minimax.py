@@ -29,7 +29,7 @@ def minimax_algo(node,big_board, depth, player, Go):
         value = -infinity
         for place in empty_cells_small_boards(node):
             #print("place", place)
-            print("if")
+            #print("if")
             #print("yes")
             x,y = place[0], place[1]
             #print("pos",x,y)
@@ -48,7 +48,7 @@ def minimax_algo(node,big_board, depth, player, Go):
         good_node = None
         value = +infinity
         for place in empty_cells_small_boards(node):
-            print("else")
+            #print("else")
             #print("place", place)
             #print("yes")
             x,y = place[0], place[1]

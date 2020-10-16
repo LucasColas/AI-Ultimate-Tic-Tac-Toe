@@ -119,6 +119,7 @@ def main(small_boards, main_board):
             print(board)
             small_boards = copy.deepcopy(board)
             print(small_boards)
+            test(small_boards, 2, True)
 
 
             check_game(small_boards,main_board, turn)
