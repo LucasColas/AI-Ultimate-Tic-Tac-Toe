@@ -12,11 +12,15 @@ def random_piece(board, big_board, player):
     return new_board
 
 def test(node,depth, to):
+    if depth <= 0:
+        return
     if to:
         for place in empty_cells_small_boards(node):
+            print("if")
             test(node,depth-1, False)
     else:
         for place in empty_cells_small_boards(node):
+            print("else")
             test(node, depth-1, True)
 
 
@@ -39,7 +43,7 @@ def minimax_algo(node,big_board, depth, player, Go):
             value = max(value, evaluation)
             if value == evaluation:
                 good_node = copy.deepcopy(node)
-                print("good value", good_node)
+                #print("good value", good_node)
             node[y][x] = 0
             #print("yes 2")
         return value, good_node
