@@ -23,7 +23,7 @@ def minimax_algo(node,big_board, depth, player, Go):
             print("yes")
             x,y = place[0], place[1]
             node[y][x] = player
-            evaluation = minimax_algo(node, depth-1, -player, False)[0]
+            evaluation = minimax_algo(node, big_board, depth-1, -player, False)[0]
             value = max(value, evaluation)
             if value == evaluation:
                 good_node = copy.deepcopy(node)
@@ -38,7 +38,7 @@ def minimax_algo(node,big_board, depth, player, Go):
             print("yes")
             x,y = place[0], place[1]
             node[y][x] = player
-            evaluation = minimax_algo(node, depth-1, -player, True)[0]
+            evaluation = minimax_algo(node,big_board, depth-1, -player, True)[0]
             value = max(value, evaluation)
             if value == evaluation:
                 good_node = copy.deepcopy(node)
