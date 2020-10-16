@@ -11,10 +11,11 @@ from Frontend import Draw_pieces
 from Frontend import draw_board
 from Frontend import draw_big_pieces
 
-
 from Check_game import Check_horizontally, Check_vertically, Check_diagonals, Check_Big_Board, empty_cells_big_board, Check_empty_cells, check_game
 
 from minimax import minimax, random_piece, minimax_algo
+
+import copy
 
 pygame.font.init()
 Width, Height = 810,810
