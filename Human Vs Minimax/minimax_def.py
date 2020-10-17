@@ -11,8 +11,9 @@ def terminal_node(board, big_board, player):
 def evaluate(board):
 
     total_score = 0
+
     if len(empty_cells_small_boards(board)) == 0:
-        total_score += 1
+        total_score += 0
 
     total_score += score_vertical(board)
     total_score += score_horizontally(board)

@@ -26,7 +26,7 @@ def test(node,depth, to):
 
 def minimax_algo(node,big_board, depth, player, Go):
     if depth <= 0 or terminal_node(node, big_board, player):
-        return evaluate(node), None, None
+        return evaluate(node, big_board), None, None
 
     if Go:
         good_x = None
