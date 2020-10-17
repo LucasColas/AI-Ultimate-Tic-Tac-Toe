@@ -41,6 +41,7 @@ def minimax_algo(node,big_board, depth, player, Go):
             node[y][x] = player
             #print("node", node)
             evaluation = minimax_algo(node, big_board, depth-1, -player, False)[0]
+            print("evaluation : ", evaluation)
             value = max(value, evaluation)
             if value == evaluation:
                 good_x, good_y = x,y

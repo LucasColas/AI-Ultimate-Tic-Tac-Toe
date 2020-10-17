@@ -18,6 +18,7 @@ def evaluate(board):
     total_score += score_vertical(board)
     total_score += score_horizontally(board)
     total_score += score_diagonals(board)
+    print("total_score :", total_score)
 
     return total_score
 
