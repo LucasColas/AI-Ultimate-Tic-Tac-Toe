@@ -106,22 +106,10 @@ def main(small_boards, main_board):
         if turn == AI and not game_over:
             depth = 1
             alpha, beta = -infinity, +infinity
-
-            """
-            value, board = minimax(small_boards, main_board, depth, AI, alpha, beta,True)
-            print("small_boards", small_boards)
-            print("minimax board :", board)
-            small_boards = board
-            print("small_boards after board", small_boards)
-            """
-            value, board = minimax_algo(small_boards, main_board, 2, turn,True)
+            value, x,y = minimax_algo(small_boards, main_board, 2, turn,True)
             #board = random_piece(small_boards, main_board, turn)
             print(board)
-            small_boards = copy.deepcopy(board)
-            print(small_boards)
-            test(small_boards, 2, True)
-
-
+            set_locations(small_boards, main_board, x,y, turn)
             check_game(small_boards,main_board, turn)
             if Check_Big_Board(main_board, turn):
                 game_over = True
