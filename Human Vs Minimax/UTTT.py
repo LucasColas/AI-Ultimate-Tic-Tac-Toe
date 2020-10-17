@@ -108,7 +108,6 @@ def main(small_boards, main_board):
             alpha, beta = -infinity, +infinity
             value, x,y = minimax_algo(small_boards, main_board, 2, turn,True)
             #board = random_piece(small_boards, main_board, turn)
-            print(board)
             set_locations(small_boards, main_board, x,y, turn)
             check_game(small_boards,main_board, turn)
             if Check_Big_Board(main_board, turn):
