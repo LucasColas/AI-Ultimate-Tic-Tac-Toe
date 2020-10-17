@@ -4,7 +4,7 @@ import sys
 import random
 from math import inf as infinity
 
-from Board import new_Board
+from Board import new_Board, set_locations, valid_locations
 
 from Frontend import fill
 from Frontend import Draw_pieces
@@ -38,17 +38,6 @@ Lines_color_2 = (250, 0, 0)
 
 Game_Board = new_Board()
 
-def valid_locations(board,main_board,x,y):
-    if board[y][x] == 0 and main_board[y//3][x//3] == 0:
-
-        return True
-
-def set_locations(board,main_board, x,y, player):
-    if valid_locations(board,main_board,x,y):
-        board[y][x] = player
-        return True
-    else:
-        return False
 
 
 def update_window(Win, Lines_color, Lines_color_2, Width, Square, Small_Square, margin, Small_Cross, Small_Circle, Cross, Circle,board,big_board, player):

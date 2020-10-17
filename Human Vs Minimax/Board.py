@@ -22,3 +22,16 @@ class new_Board():
             for x,row in enumerate(main_board):
                 for y in range(len(row)):
                     main_board[y][x] = 0
+
+
+def valid_locations(board,main_board,x,y):
+    if board[y][x] == 0 and main_board[y//3][x//3] == 0:
+
+        return True
+
+def set_locations(board,main_board, x,y, player):
+    if valid_locations(board,main_board,x,y):
+        board[y][x] = player
+        return True
+    else:
+        return False
