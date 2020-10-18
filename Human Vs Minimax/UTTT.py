@@ -95,6 +95,7 @@ def main(small_boards, main_board):
             depth = 1
             alpha, beta = -infinity, +infinity
             value, x,y = minimax_algo(small_boards, main_board, 2, turn,True)
+            print("x,y", x,y)
             #board = random_piece(small_boards, main_board, turn)
             set_locations(small_boards, main_board, x,y, turn)
             check_game(small_boards,main_board, turn)
