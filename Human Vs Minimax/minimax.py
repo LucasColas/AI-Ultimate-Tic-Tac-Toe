@@ -14,9 +14,9 @@ def random_piece(board, big_board, player):
 
 def minimax_algo(node,big_board, depth, player, Go):
     if depth <= 0 or terminal_node(node, big_board, player):
-        return evaluate(node), None, None
+        return evaluate(node, big_board, player), None, None
 
-    if player == AI:
+    if player == 1: #AI
         best = [-infinity, None, None]
 
     else:
@@ -29,7 +29,7 @@ def minimax_algo(node,big_board, depth, player, Go):
         node[y][x] = 0
         info[1], info[2] == x,y
 
-        if player == AI:
+        if player == 1: #AI
             if info[0] > best[0]:
                 best = info
 
