@@ -8,19 +8,20 @@ import copy
 def terminal_node(board, big_board, player):
     return len(empty_cells_small_boards(board)) == 0 or Check_Big_Board(big_board, 1) or Check_Big_Board(big_board, -1)
 
-def evaluate(board):
+def evaluate(board, main_board, 1):
 
-    total_score = 0
+    score = 0
 
-    if len(empty_cells_small_boards(board)) == 0:
-        total_score += 0
+    if check_game(board, main_board, 1):
+        score += 5
 
-    total_score += score_vertical(board)
-    total_score += score_horizontally(board)
-    total_score += score_diagonals(board)
-    #print("total_score :", total_score)
+    elif check_game(board, main_board, -1):
+        score -= 5
 
-    return total_score
+    elif Check_empty_cells(board):
+        score += 1
+
+    return score 
 
 def score_horizontally(board):
     score = 0
