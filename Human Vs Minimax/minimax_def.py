@@ -21,8 +21,9 @@ def evaluate(board, main_board, 1):
     elif Check_empty_cells(board):
         score += 1
 
-    return score 
+    return score
 
+"""
 def score_horizontally(board):
     score = 0
     for i in range(0,7,3):
@@ -113,3 +114,5 @@ def get_moves(board, big_board,player):
         moves.append(new_board)
 
     return moves
+
+"""
