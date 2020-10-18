@@ -20,7 +20,7 @@ def minimax_algo(node,big_board, depth, player, Go):
         best = [-infinity, None, None]
 
     else:
-        best = [infinity, None, None]
+        best = [+infinity, None, None]
 
     for place in empty_cells_small_boards(node):
         x,y = place[0], place[1]
@@ -31,10 +31,10 @@ def minimax_algo(node,big_board, depth, player, Go):
 
         if player == AI:
             if info[0] > best[0]:
-                info = best
+                best = info
 
         else:
-            if best[2] > info[2]:
+            if best[0] > info[0]:
                 best = info
 
     return best

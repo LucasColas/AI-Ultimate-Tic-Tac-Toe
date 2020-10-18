@@ -60,7 +60,6 @@ def main(small_boards, main_board):
     AI = 1
     HUMAN = -1
 
-
     FPS = 120
     green = (0,178,0,0)
     game_over = False
