@@ -16,38 +16,17 @@ def minimax_algo(node,big_board, depth, player, Go):
     if depth <= 0 or terminal_node(node, big_board, player):
         return evaluate(node), None, None
 
+    if player == AI:
+        info = [+infinity, None, None]
 
     for place in empty_cells_small_boards(node):
         x,y = place[0], place[1]
         node[y][x] = player
         evaluation = minimax_algo(node, big_board, depth-1, -player, False)[0]
-        value = max(value, evaluation)
-            if value == evaluation:
-                good_x, good_y = x,y
-                print("x : ", x, "y : ", y)
-                #print("good value", good_node)
-            node[y][x] = 0
-            #print("yes 2")
-        return value, good_x, good_y
+        node[y][x] = 0
+        info[1], info[2] == x,y
 
-    else:
-        good_x = None
-        good_y = None
-        value = +infinity
-        for place in empty_cells_small_boards(node):
-            #print("else")
-            #print("place", place)
-            #print("yes")
-            x,y = place[0], place[1]
-            #print("pos",x,y)
-            node[y][x] = player
-            evaluation = minimax_algo(node,big_board, depth-1, -player, True)[0]
-            value = max(value, evaluation)
-            if value == evaluation:
-                good_x, good_y = x,y
-            node[y][x] = 0
-            #print("yes 2")
-        return value, good_x, good_y
+        
 
 
 def minimax(node, big_board, depth, player, alpha, beta,MaximizingPlayer):
