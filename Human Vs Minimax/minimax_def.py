@@ -8,7 +8,7 @@ import copy
 def terminal_node(board, big_board, player):
     return len(empty_cells_small_boards(board)) == 0 or Check_Big_Board(big_board, 1) or Check_Big_Board(big_board, -1)
 
-def evaluate(board, main_board, 1):
+def evaluate(board, main_board, player):
 
     score = 0
 
