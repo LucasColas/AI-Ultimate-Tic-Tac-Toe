@@ -14,13 +14,13 @@ def random_piece(board, big_board, player):
 
 def minimax_algo(node,big_board, depth, player, Go):
     if depth <= 0 or terminal_node(node, big_board, player):
-        return evaluate(node, big_board, player), None, None
+        return evaluate(node, big_board, player), -1, -1
 
     if player == 1: #AI
-        best = [-infinity, 1, 1]
+        best = [-infinity, -1, -1]
 
     else:
-        best = [+infinity, 1, 1]
+        best = [+infinity, -1, -1]
 
     for place in empty_cells_small_boards(node):
         x,y = place[0], place[1]
