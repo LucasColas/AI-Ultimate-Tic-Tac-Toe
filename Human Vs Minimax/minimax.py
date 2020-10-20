@@ -16,14 +16,15 @@ def minimax_algo(node,big_board, depth, player, Go):
     if depth <= 0 or terminal_node(node, big_board, player):
         return [evaluate(node, big_board, player), -1, -1]
 
+    empty = empty_cells_small_boards(node)
     if player == 1: #AI
         best = [-infinity, -1, -1]
 
     else:
         best = [+infinity, -1, -1]
-    print("empty_cells_small_boards", empty_cells_small_boards)
+    print("empty,", empty )
     for place in empty_cells_small_boards(node):
-
+        x,y = place[0], place[1]
         print("x : ", x, "y : ", y)
         node[y][x] = player
         info = minimax_algo(node, big_board, depth-1, -player, False)
