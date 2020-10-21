@@ -6,9 +6,9 @@ import random
 import copy
 
 def random_piece(board, big_board, player):
-    choice = random.randrange(len(get_moves(board, big_board, player)))
-
-    new_board = get_moves(board, big_board, player)[choice]
+    choice_1 = random.randrange(len(Check_empty_cells(board)))
+    choice_2 = random.randrange(len(Check_empty_cells(board)))
+    x,y = None, None
     return new_board
 
 
