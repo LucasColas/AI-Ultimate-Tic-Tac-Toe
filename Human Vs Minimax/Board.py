@@ -25,8 +25,9 @@ class new_Board():
 
 
 def valid_locations(board,main_board,x,y):
-    if board[y][x] == 0 and main_board[y//3][x//3] == 0:
-
+    if board[y][x] == 0:
+        
+    #if board[y][x] == 0 and main_board[y//3][x//3] == 0:
         return True
 
 def set_locations(board,main_board, x,y, player):

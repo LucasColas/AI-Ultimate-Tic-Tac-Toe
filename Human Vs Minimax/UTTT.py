@@ -93,13 +93,12 @@ def main(small_boards, main_board):
                         turn = AI
 
         if turn == AI and not game_over:
-            print("small_boards", empty_cells_small_boards(small_boards))
-            depth = 1
             alpha, beta = -infinity, +infinity
 
             value, x,y = minimax_algo(small_boards, main_board, 2, turn,True)
             print("x,y", x,y)
-            print("small_boards", Check_empty_cells(small_boards))
+            print("empty cells : ", empty_cells_small_boards(small_boards))
+            print("small_boards : ", small_boards)
             #board = random_piece(small_boards, main_board, turn)
             set_locations(small_boards, main_board, x,y, turn)
             check_game(small_boards,main_board, turn)
