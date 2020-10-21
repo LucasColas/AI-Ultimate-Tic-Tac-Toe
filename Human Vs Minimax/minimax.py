@@ -7,8 +7,8 @@ import copy
 
 def random_piece(board, big_board, player):
     choice_1 = random.randrange(len(Check_empty_cells(board)))
-    choice_2 = random.randrange(len(Check_empty_cells(board)))
-    x,y = None, None
+    pos = empty_cells_small_boards(board)[choice_1]
+    x,y = pos[0], pos[1]
     return new_board
 
 
