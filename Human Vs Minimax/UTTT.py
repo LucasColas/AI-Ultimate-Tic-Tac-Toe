@@ -11,7 +11,7 @@ from Frontend import Draw_pieces
 from Frontend import draw_board
 from Frontend import draw_big_pieces
 
-from Check_game import Check_horizontally, Check_vertically, Check_diagonals, Check_Big_Board, empty_cells_big_board, Check_empty_cells, check_game
+from Check_game import Check_Big_Board, empty_cells_big_board, Check_empty_cells, check_game, empty_cells_small_boards
 from Check_game import Check_empty_cells
 
 from minimax import random_piece, minimax_algo
@@ -93,7 +93,7 @@ def main(small_boards, main_board):
                         turn = AI
 
         if turn == AI and not game_over:
-            print("small_boards", Check_empty_cells(small_boards))
+            print("small_boards", empty_cells_small_boards(small_boards))
             depth = 1
             alpha, beta = -infinity, +infinity
 

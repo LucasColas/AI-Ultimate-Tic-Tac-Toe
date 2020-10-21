@@ -30,7 +30,6 @@ def minimax_algo(node,big_board, depth, player, Go):
         info = minimax_algo(node, big_board, depth-1, -player, False)
         node[y][x] = 0
         info[1], info[2] = x,y
-
         print("info,", info)
 
         if player == 1: #AI
