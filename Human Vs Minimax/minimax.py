@@ -1,15 +1,14 @@
 from minimax_def import terminal_node, evaluate
-from Check_game import empty_cells_small_boards, Check_empty_cells
-
+from Check_game import empty_cells_small_boards
 from math import inf as infinity
 import random
 import copy
 
 def random_piece(board, big_board, player):
-    choice_1 = random.randrange(len(Check_empty_cells(board)))
+    choice_1 = random.randrange(len(empty_cells_small_boards(board)))
     pos = empty_cells_small_boards(board)[choice_1]
     x,y = pos[0], pos[1]
-    return new_board
+    return x,y
 
 
 def minimax_algo(node,big_board, depth, player, Go):

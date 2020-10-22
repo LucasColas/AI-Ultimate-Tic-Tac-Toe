@@ -103,6 +103,8 @@ def main(small_boards, main_board):
             x,y = random_piece(small_boards, main_board, turn)
             set_locations(small_boards, main_board, x,y, turn)
             check_game(small_boards,main_board, turn)
+            print("empty cells : ", empty_cells_small_boards(small_boards))
+            print("small_boards : ", small_boards)
             if Check_Big_Board(main_board, turn):
                 game_over = True
 
