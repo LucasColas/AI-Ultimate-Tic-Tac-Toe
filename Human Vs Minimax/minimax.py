@@ -11,6 +11,9 @@ def random_piece(board, big_board, player):
     x,y = pos[0], pos[1]
     return x,y
 
+def test(board):
+    for place in empty_cells_small_boards(board):
+        print("place", place)
 
 def minimax_algo(node,big_board, depth, player):
     if depth <= 0 or terminal_node(node, big_board, player):
@@ -48,7 +51,7 @@ def ai_choose(board, big_board, depth, player):
     info = minimax_algo(board, big_board, depth, player)
     x,y = info[2], info[1]
     set_locations(board, big_board,x,y, player)
-    
+
 def ai_turn(node, big_board, depth, player):
     if terminal_node(node, big_board, player):
         return

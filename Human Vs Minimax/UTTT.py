@@ -14,7 +14,7 @@ from Frontend import draw_big_pieces
 from Check_game import Check_Big_Board, empty_cells_big_board, Check_empty_cells, check_game, empty_cells_small_boards
 from Check_game import Check_empty_cells
 
-from minimax import random_piece, ai_turn, ai_choose
+from minimax import random_piece, ai_turn, ai_choose, test
 
 import copy
 
@@ -97,6 +97,7 @@ def main(small_boards, main_board):
             alpha, beta = -infinity, +infinity
             depth = 2
             ai_choose(small_boards, main_board, depth, turn)
+            test(small_boards)
             #x,y = random_piece(small_boards, main_board, turn)
 
             check_game(small_boards,main_board, turn)
