@@ -95,9 +95,10 @@ def main(small_boards, main_board):
 
         if turn == AI and not game_over:
             alpha, beta = -infinity, +infinity
-            ai_turn()
+            depth = 1
+            ai_turn(small_boards, main_board, depth, turn)
             #x,y = random_piece(small_boards, main_board, turn)
-            set_locations(small_boards, main_board, x,y, turn)
+
             check_game(small_boards,main_board, turn)
             print("len empty cells : ", len(empty_cells_small_boards(small_boards)))
             print("small_boards : ", small_boards)
