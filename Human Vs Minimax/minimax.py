@@ -15,9 +15,9 @@ def test(board):
     for place in empty_cells_small_boards(board):
         print("place", place)
 
-def minimax_algo(node,big_board, depth, player):
-    if depth <= 0 or terminal_node(node, big_board, player):
-        return [evaluate(node, big_board, player), -1, -1]
+def minimax_algo(board,big_board, depth, player):
+    if depth <= 0 or terminal_node(board, big_board, player):
+        return [evaluate(board, big_board, player), -1, -1]
 
     if player == 1: #AI
         best = [-infinity, -1, -1]
@@ -25,13 +25,13 @@ def minimax_algo(node,big_board, depth, player):
     else:
         best = [+infinity, -1, -1]
 
-    for place in empty_cells_small_boards(node):
-        #print("empty_cells", empty_cells_small_boards(node))
+    for place in empty_cells_small_boards(board):
+        #print("empty_cells", empty_cells_small_boards(board))
         x,y = place[0], place[1]
         #print("x : ", x, "y : ", y)
-        node[y][x] = player
-        info = minimax_algo(node, big_board, depth-1, -player)
-        node[y][x] = 0
+        valid_locations(board, big_board,x,y, player)
+        info = minimax_algo(board, big_board, depth-1, -player)
+        board[y][x] = 0
         info[1], info[2] = x,y
         #print("info,", info)
 
@@ -51,17 +51,3 @@ def ai_choose(board, big_board, depth, player):
     info = minimax_algo(board, big_board, depth, player)
     x,y = info[2], info[1]
     set_locations(board, big_board,x,y, player)
-
-def ai_turn(node, big_board, depth, player):
-    if terminal_node(node, big_board, player):
-        return
-
-    if len(empty_cells_small_boards(node)) == 81:
-        choice_1 = random.randrange(len(empty_cells_small_boards(board)))
-        pos = empty_cells_small_boards(board)[choice_1]
-        x,y = pos[0], pos[1]
-    else:
-        info = minimax_algo(node,big_board, depth, player)
-        x,y = info[2], info[1]
-
-    set_locations(board, big_board, x,y, player)
