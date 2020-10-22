@@ -44,6 +44,11 @@ def minimax_algo(node,big_board, depth, player):
 
     return best
 
+def ai_choose(board, big_board, depth, player):
+    info = minimax_algo(board, big_board, depth, player)
+    x,y = info[2], info[1]
+    set_locations(board, big_board,x,y, player)
+    
 def ai_turn(node, big_board, depth, player):
     if terminal_node(node, big_board, player):
         return
@@ -55,4 +60,5 @@ def ai_turn(node, big_board, depth, player):
     else:
         info = minimax_algo(node,big_board, depth, player)
         x,y = info[2], info[1]
-    set_locations(board, main_board, x,y, player)
+
+    set_locations(board, big_board, x,y, player)
