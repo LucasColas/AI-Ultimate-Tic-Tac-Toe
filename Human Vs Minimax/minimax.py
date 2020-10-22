@@ -44,7 +44,7 @@ def minimax_algo(node,big_board, depth, player):
 
     return best
 
-def ai_turn(node):
+def ai_turn(node, big_board, depth, player):
     if terminal_node(node, big_board, player):
         return
 

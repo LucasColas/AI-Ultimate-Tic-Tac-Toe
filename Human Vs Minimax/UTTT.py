@@ -95,7 +95,7 @@ def main(small_boards, main_board):
 
         if turn == AI and not game_over:
             alpha, beta = -infinity, +infinity
-            depth = 1
+            depth = 2
             ai_turn(small_boards, main_board, depth, turn)
             #x,y = random_piece(small_boards, main_board, turn)
 
