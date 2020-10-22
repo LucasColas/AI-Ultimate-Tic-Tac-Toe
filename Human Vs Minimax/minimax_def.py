@@ -10,16 +10,15 @@ def terminal_node(board, big_board, player):
 
 def evaluate(board, main_board, player):
 
-    score = 0
 
     if check_game(board, main_board, 1):
-        score += 5
+        score = 5
 
     elif check_game(board, main_board, -1):
-        score -= 5
+        score = -5
 
     elif Check_empty_cells(board):
-        score += 1
+        score = 0
 
     return score
 
