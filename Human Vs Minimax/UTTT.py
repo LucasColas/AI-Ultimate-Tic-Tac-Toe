@@ -96,7 +96,7 @@ def main(small_boards, main_board):
             alpha, beta = -infinity, +infinity
             value, x,y = minimax_algo(small_boards, main_board, 2, turn,True)
             print("x,y", x,y)
-            x,y = random_piece(small_boards, main_board, turn)
+            #x,y = random_piece(small_boards, main_board, turn)
             set_locations(small_boards, main_board, x,y, turn)
             check_game(small_boards,main_board, turn)
             print("empty cells : ", empty_cells_small_boards(small_boards))
