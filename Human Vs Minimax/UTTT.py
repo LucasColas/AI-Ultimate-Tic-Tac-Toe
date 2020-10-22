@@ -99,7 +99,7 @@ def main(small_boards, main_board):
             ai_turn(small_boards, main_board, depth, turn)
             #x,y = random_piece(small_boards, main_board, turn)
 
-            check_game(small_boards,main_board, turn)
+            check_game(small_boards,main_board, 1, 1)
             print("len empty cells : ", len(empty_cells_small_boards(small_boards)))
             print("small_boards : ", small_boards)
             if Check_Big_Board(main_board, turn):
