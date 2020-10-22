@@ -53,6 +53,6 @@ def ai_turn(node, big_board,depth, player):
         pos = empty_cells_small_boards(board)[choice_1]
         x,y = pos[0], pos[1]
     else:
-        value,y,x = minimax_algo(node,big_board, depth, player)
-
+        info = minimax_algo(node,big_board, depth, player)
+        x,y = info[2], info[1]
     set_locations(board, main_board, x,y, player)
