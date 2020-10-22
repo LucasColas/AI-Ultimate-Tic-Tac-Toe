@@ -22,6 +22,7 @@ def minimax_algo(node,big_board, depth, player, Go):
         best = [+infinity, -1, -1]
 
     for place in empty_cells_small_boards(node):
+        print("empty_cells", empty_cells_small_boards)
         x,y = place[0], place[1]
         #print("x : ", x, "y : ", y)
         node[y][x] = player
