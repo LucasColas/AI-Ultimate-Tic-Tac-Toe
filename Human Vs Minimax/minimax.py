@@ -25,7 +25,8 @@ def minimax_algo(board,big_board, depth, player):
         best = [+infinity, -1, -1]
 
     for place in empty_cells_small_boards(board):
-        #print("empty_cells", empty_cells_small_boards(board ))
+        print("empty_cells", empty_cells_small_boards(board ))
+        break
         x,y = place[0], place[1]
         print("x : ", x, "y : ", y)
         set_locations(board, big_board,x,y, player)
