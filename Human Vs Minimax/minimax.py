@@ -1,4 +1,4 @@
-from minimax_def import terminal_node, evaluate
+from minimax_def import terminal_node, evaluate, Possibles_moves
 from Check_game import empty_cells_small_boards, set_locations, valid_locations
 from math import inf as infinity
 import random
@@ -10,13 +10,15 @@ def random_piece(board, big_board, player):
     x,y = pos[0], pos[1]
     return x,y
 
-def test(board):
-    for place in empty_cells_small_boards(board):
-        print("place", place)
 
-def minimax_algo(board,big_board, depth, player):
+def minimax_algo(board,big_board, depth, player, Maximizing):
     if depth <= 0 or terminal_node(board, big_board, player):
         return [evaluate(board, big_board, player), -1, -1]
+
+
+    if Maximizing:
+        for move in Possibles_moves(board, main_board, player):
+            
 
 
     """
