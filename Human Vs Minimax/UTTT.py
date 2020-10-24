@@ -4,7 +4,7 @@ import sys
 import random
 from math import inf as infinity
 
-from Board import new_Board, set_locations, valid_locations
+from Board import new_Board
 
 from Frontend import fill
 from Frontend import Draw_pieces
@@ -12,7 +12,7 @@ from Frontend import draw_board
 from Frontend import draw_big_pieces
 
 from Check_game import Check_Big_Board, empty_cells_big_board, Check_empty_cells, check_game, empty_cells_small_boards
-from Check_game import Check_empty_cells
+from Check_game import Check_empty_cells, set_locations, valid_locations
 
 from minimax import random_piece, ai_choose
 

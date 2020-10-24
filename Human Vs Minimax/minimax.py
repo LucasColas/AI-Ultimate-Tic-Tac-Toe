@@ -1,5 +1,5 @@
 from minimax_def import terminal_node, evaluate
-from Check_game import empty_cells_small_boards
+from Check_game import empty_cells_small_boards, set_locations, valid_locations
 from Board import set_locations
 from math import inf as infinity
 import random
