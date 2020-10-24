@@ -148,8 +148,8 @@ def check_game(board,main_board, player):
 
 def valid_locations(board,main_board,x,y):
     #if [x,y] in empty_cells_small_boards(board):
-    if board[y][x] == 0 and main_board[y//3][x//3] == 0:
-        return True
+    return board[y][x] == 0 and main_board[y//3][x//3] == 0:
+
 
 def set_locations(board,main_board, x,y, player):
     if valid_locations(board,main_board,x,y):
