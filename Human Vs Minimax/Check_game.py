@@ -147,7 +147,7 @@ def check_game(board,main_board, player):
     Check_empty_cells(board)
 
 def valid_locations(board,main_board,x,y):
-    if board[y][x] == 0:
+    if [x,y] in empty_cells_small_boards(board):
 
     #if board[y][x] == 0 and main_board[y//3][x//3] == 0:
         return True
