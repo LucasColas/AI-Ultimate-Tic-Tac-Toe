@@ -5,7 +5,7 @@ def empty_cells_small_boards(board):
     empty_cells = []
     for x,row in enumerate(board):
         for y,case in enumerate(row):
-            if case == 0:
+            if case == 0 and case != 1 and case != -1:
                 empty_cells.append([x,y])
 
     return empty_cells
