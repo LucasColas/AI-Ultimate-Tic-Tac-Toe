@@ -18,6 +18,8 @@ def minimax_algo(board,big_board, depth, player):
     if depth <= 0 or terminal_node(board, big_board, player):
         return [evaluate(board, big_board, player), -1, -1]
 
+
+    """
     if player == 1: #AI
         best = [-infinity, -1, -1]
 
@@ -44,6 +46,8 @@ def minimax_algo(board,big_board, depth, player):
             if best[0] > info[0]:
                 best = info
 
+    """
+
     return best
 
 def ai_choose(board, big_board, depth, player):
@@ -51,4 +55,3 @@ def ai_choose(board, big_board, depth, player):
     x,y = info[2], info[1]
     print("x,y", x,y)
     set_locations(board, big_board,x,y, player)
-    
