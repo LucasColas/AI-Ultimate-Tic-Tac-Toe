@@ -51,3 +51,4 @@ def ai_choose(board, big_board, depth, player):
     x,y = info[2], info[1]
     print("x,y", x,y)
     set_locations(board, big_board,x,y, player)
+    

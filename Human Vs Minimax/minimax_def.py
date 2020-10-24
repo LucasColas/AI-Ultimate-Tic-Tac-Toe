@@ -11,7 +11,9 @@ def Possibles_moves(board, main_board,player):
         temp_board = copy.deepcopy(board)
         temp_big_board = copy.deepcopy(main_board)
         set_locations(temp_board, temp_big_board, location[0], location[1], player)
-        
+        small_boards.append(temp_board)
+        big_boards.append(temp_big_board)
+    return small_boards, big_boards
 
 def terminal_node(board, big_board, player):
     return len(empty_cells_small_boards(board)) == 0 or Check_Big_Board(big_board, 1) or Check_Big_Board(big_board, -1)
