@@ -1,6 +1,5 @@
 from minimax_def import terminal_node, evaluate
 from Check_game import empty_cells_small_boards, set_locations, valid_locations
-from Board import set_locations
 from math import inf as infinity
 import random
 import copy
@@ -50,4 +49,5 @@ def minimax_algo(board,big_board, depth, player):
 def ai_choose(board, big_board, depth, player):
     info = minimax_algo(board, big_board, depth, player)
     x,y = info[2], info[1]
+    print("x,y", x,y)
     set_locations(board, big_board,x,y, player)
