@@ -37,10 +37,3 @@ def minimax_algo(board,big_board, depth, player, Maximizing):
                 best = move
 
         return minEvaluation, best
-
-
-def ai_choose(board, big_board, depth, player):
-    value, new_board = minimax_algo(board, big_board, depth, player)
-    x,y = info[2], info[1]
-    print("x,y", x,y)
-    set_locations(new_board, big_board,x,y, player)

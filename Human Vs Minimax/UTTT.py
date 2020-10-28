@@ -14,7 +14,7 @@ from Frontend import draw_big_pieces
 from Check_game import Check_Big_Board, empty_cells_big_board, Check_empty_cells, check_game, empty_cells_small_boards
 from Check_game import Check_empty_cells, set_locations, valid_locations
 
-from minimax import random_piece, minimax_algo, ai_choose
+from minimax import random_piece, minimax_algo
 
 import copy
 
@@ -96,7 +96,8 @@ def main(small_boards, main_board):
         if turn == AI and not game_over:
             alpha, beta = -infinity, +infinity
             depth = 2
-            ai_choose(small_boards, main_board, depth, turn)
+            value, new_board = minimax(small_boards,main_board, depth, 1, True)
+            small_boards = new_board
             #test(small_boards)
             #x,y = random_piece(small_boards, main_board, turn)
             #set_locations(small_boards, main_board, x,y, turn)
