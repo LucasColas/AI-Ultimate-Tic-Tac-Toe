@@ -6,14 +6,18 @@ import copy
 #from math import inf as infinity
 Board = new_Board()
 Boards = Board.every_small_boards()
+print(Boards)
 def all_moves(Board, player):
     all_moves = []
     for y, row in enumerate(Board):
-        for x, cell in enumerate(Board):
+        #print(row)
+        for x, cell in enumerate(row):
+            #print(cell)
             if cell == 0:
                 new_Board = copy.deepcopy(Board)
                 new_Board[y][x] = player
+                print(new_Board)
 
     return all_moves
 
-all_moves(Boards, 1)
+print(all_moves(Boards, 1))
