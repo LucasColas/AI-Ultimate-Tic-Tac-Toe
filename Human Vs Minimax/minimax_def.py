@@ -24,5 +24,5 @@ def all_moves(Board, player):
 
 #print(all_moves(Boards, 1))
 
-def evaluate(Board, player):
-    pass 
+def evaluate_end(Board): #When game over
+    if check_game(Board, 1)
