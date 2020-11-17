@@ -3,12 +3,10 @@ from Check_game import check_game, place_big_board, Check_Big_Board, Check_empty
 from Check_game import set_locations
 from Board import new_Board
 import copy
-#from math import inf as infinity
+
 Board = new_Board()
 Boards = Board.every_small_boards()
 print(Boards)
-#Boards[4][4] = 2
-#print(Boards)
 def all_moves(Board, player):
     all_moves = []
     for y, row in enumerate(Board):
@@ -25,4 +23,5 @@ def all_moves(Board, player):
 #print(all_moves(Boards, 1))
 
 def evaluate_end(Board): #When game over
-    if check_game(Board, 1)
+    if check_game(Board, 1):
+        pass
