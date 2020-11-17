@@ -7,8 +7,8 @@ import copy
 Board = new_Board()
 Boards = Board.every_small_boards()
 print(Boards)
-Boards[4][4] = 2
-print(Boards)
+#Boards[4][4] = 2
+#print(Boards)
 def all_moves(Board, player):
     all_moves = []
     for y, row in enumerate(Board):
@@ -22,4 +22,4 @@ def all_moves(Board, player):
 
     return all_moves
 
-print(all_moves(Boards, 1))
+#print(all_moves(Boards, 1))
