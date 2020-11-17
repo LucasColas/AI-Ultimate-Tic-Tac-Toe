@@ -23,7 +23,11 @@ def all_moves(Board, player):
 #print(all_moves(Boards, 1))
 
 def evaluate_end(Board): #When game over
-    pass
+    score = 0
+    if len(empty_cells_small_boards(Board)) == 0:
+        score = 0
+        return score
+
 
 def evaluate(Board):
     pass

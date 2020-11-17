@@ -21,6 +21,7 @@ def empty_cells_big_board(main_board):
 
 def Check_horizontally(board, main_board, player):
     good = False
+    
     for i in range(0,7,3):
         for indx, row in enumerate(board):
             if row[0+i] == row[1+i] == row[2+i] == player:
