@@ -24,6 +24,8 @@ def all_moves(Board, player):
 
 def evaluate_end(Board): #When game over
     score = 0
+    if stg:
+        pass
     if len(empty_cells_small_boards(Board)) == 0:
         score = 0
         return score
