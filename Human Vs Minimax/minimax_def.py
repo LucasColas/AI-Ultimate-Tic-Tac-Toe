@@ -23,3 +23,6 @@ def all_moves(Board, player):
     return all_moves
 
 #print(all_moves(Boards, 1))
+
+def evaluate(Board, player):
+    pass 
