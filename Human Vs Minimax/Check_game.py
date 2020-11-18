@@ -106,7 +106,7 @@ def Check_diagonals(board, main_board, player):
 
                     else:
                         stock_nindx.clear()
-                        
+
     return score
 
 def Check_empty_cells(board):

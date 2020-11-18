@@ -26,7 +26,7 @@ def all_moves(Board, player):
 
 #print(all_moves(Boards, 1))
 
-def evaluate_end(Board): #When game over
+def evaluate(Board):
     score = 0
     if stg:
         score += 1
@@ -40,7 +40,3 @@ def evaluate_end(Board): #When game over
         return score
 
     return score
-
-
-def evaluate(Board):
-    pass
