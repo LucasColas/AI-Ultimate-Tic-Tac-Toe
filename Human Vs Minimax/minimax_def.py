@@ -29,7 +29,7 @@ def evaluate_end(Board): #When game over
         return score
     if stg:
         score -= 1
-        return score 
+        return score
 
     if len(empty_cells_small_boards(Board)) == 0:
         score = 0
