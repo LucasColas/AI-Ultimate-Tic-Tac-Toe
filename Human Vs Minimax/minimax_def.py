@@ -1,6 +1,7 @@
 from Check_game import empty_cells_small_boards, empty_cells_big_board
 from Check_game import check_game, place_big_board, Check_Big_Board, Check_empty_cells
 from Check_game import set_locations
+from Ckeck_game import Check_horizontally, Check_vertically, Check_diagonals
 from Board import new_Board
 import copy
 
@@ -28,12 +29,7 @@ def all_moves(Board, player):
 
 def evaluate(Board):
     score = 0
-    if stg:
-        score += 1
-        return score
-    if stg:
-        score -= 1
-        return score
+    
 
     if len(empty_cells_small_boards(Board)) == 0:
         score = 0

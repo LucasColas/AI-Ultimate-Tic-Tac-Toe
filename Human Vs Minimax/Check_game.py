@@ -154,7 +154,7 @@ def Check_Big_Board(main_board, player):
 
 
 def check_game(board,main_board, player):
-
+    
     #Check horizontally
     Check_horizontally(board, main_board, player)
 
