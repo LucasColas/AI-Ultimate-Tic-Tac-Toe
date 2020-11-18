@@ -154,7 +154,7 @@ def Check_Big_Board(main_board, player):
 
 
 def check_game(board,main_board, player):
-    
+
     #Check horizontally
     Check_horizontally(board, main_board, player)
 
@@ -166,6 +166,9 @@ def check_game(board,main_board, player):
 
     #Check empty cells
     Check_empty_cells(board)
+    return score
+
+
 
 def valid_locations(board,main_board,x,y):
     #if [x,y] in empty_cells_small_boards(board):
