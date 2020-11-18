@@ -6,3 +6,6 @@ import copy
 
 def Minimax(board, depth, player, MaximizingPlayer):
     if depth == 0 or terminal_state():
+        return evaluate(board, big_board, player)
+
+    

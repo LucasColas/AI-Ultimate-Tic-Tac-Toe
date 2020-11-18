@@ -8,7 +8,7 @@ import copy
 Board = new_Board()
 Boards = Board.every_small_boards()
 print(Boards)
-def all_moves(Board, player):
+def all_moves(Board, big_board, player):
     all_moves = []
     all_big_board = []
     for y, row in enumerate(Board):
@@ -20,6 +20,7 @@ def all_moves(Board, player):
                 new_Board[y][x] = player
                 all_moves.append(new_Board)
                 new_big_board = copy.deepcopy(big_board)
+                check_game(board, new_big_board, player)
                 all_big_board.append(new_big_board)
                 #print(new_Board)
 
