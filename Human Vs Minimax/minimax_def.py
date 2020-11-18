@@ -25,10 +25,17 @@ def all_moves(Board, player):
 def evaluate_end(Board): #When game over
     score = 0
     if stg:
-        pass
+        score += 1
+        return score
+    if stg:
+        score -= 1
+        return score 
+
     if len(empty_cells_small_boards(Board)) == 0:
         score = 0
         return score
+
+    return score
 
 
 def evaluate(Board):
