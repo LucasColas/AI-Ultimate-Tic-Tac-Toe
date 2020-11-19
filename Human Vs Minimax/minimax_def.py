@@ -29,19 +29,28 @@ def all_moves(Board, player):
 def terminal_state(board, big_board):
     return end_game(board, big_board, player)
 
-def end_game(board, big_board,player):
-    pass
+def end_game(board,player):
+    total_score = evaluate(Board, player)
+    if total_score == 3:
+        return True
 
-def evaluate(Board):
+    if len(empty_cells_small_boards(Board)) == 0:
+        return True
+
+
+def evaluate(Board, player):
     score = 0
+    score += See_horizontally(Board, player)
+    score += See_vertically(Board, player)
+    score += See_horizontally(Board, player)
 
     if len(empty_cells_small_boards(Board)) == 0:
         score += 0
         return score
 
     return score
-    
-def Check_horizontally(board, main_board, player):
+
+def See_horizontally(board, main_board, player):
     good = False
     score = 0
     for i in range(0,7,3):
@@ -57,7 +66,7 @@ def Check_horizontally(board, main_board, player):
 
 
 
-def Check_vertically(board, player):
+def See_vertically(board, player):
     good_col = False
     score = 0
     for indx in range(len(board)):
@@ -82,7 +91,7 @@ def Check_vertically(board, player):
 
     return score
 
-def Check_diagonals(board, main_board, player):
+def See_diagonals(board, main_board, player):
     score = 0
     for x in range(0,8, 3):
 
