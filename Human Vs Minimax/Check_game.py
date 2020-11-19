@@ -29,11 +29,9 @@ def Check_horizontally(board, main_board, player):
                 good = True
                 if good:
                     place_big_board(main_board,i//3,indx//3,player)
-                    if player == 1:
-                        score += 1
+                    
                     good = False
 
-    return score
 
 
 def Check_vertically(board,main_board, player):
@@ -50,8 +48,7 @@ def Check_vertically(board,main_board, player):
                     good_col = True
                     if good_col:
                         place_big_board(main_board,indx//3,i//3,player)
-                        if player == 1:
-                            score += 1
+
                         good_col = False
 
 
@@ -59,7 +56,7 @@ def Check_vertically(board,main_board, player):
                         check.clear()
                 else:
                     check.clear()
-    return score
+
 
 
 def Check_diagonals(board, main_board, player):
@@ -79,8 +76,7 @@ def Check_diagonals(board, main_board, player):
                         print(player, "succeeds with a negative diagonal")
                         place_big_board(main_board, b//3, a//3, player)
                         stock_indx.clear()
-                        if player == 1:
-                            score += 1
+
 
 
                     else:
@@ -101,13 +97,11 @@ def Check_diagonals(board, main_board, player):
                         print(player, "succeeds with a negative diagonal")
                         place_big_board(main_board, b//3, a//3, player)
                         stock_nindx.clear()
-                        if player == 1:
-                            score += 1
+
 
                     else:
                         stock_nindx.clear()
 
-    return score
 
 def Check_empty_cells(board):
     if len(empty_cells_small_boards(board)) == 0:
