@@ -1,13 +1,12 @@
 from Check_game import empty_cells_small_boards, empty_cells_big_board
-from Check_game import check_game, place_big_board, Check_Big_Board, Check_empty_cells
-from Check_game import set_locations
-from Ckeck_game import Check_horizontally, Check_vertically, Check_diagonals
-from Board import new_Board
+from Check_game import Check_Big_Board
+
+#from Board import new_Board
 import copy
 
-Board = new_Board()
-Boards = Board.every_small_boards()
-print(Boards)
+#Board = new_Board()
+#Boards = Board.every_small_boards()
+#print(Boards)
 def all_moves(Board, player):
     all_moves = []
     all_big_board = []
@@ -28,7 +27,7 @@ def all_moves(Board, player):
 
 #print(all_moves(Boards, 1))
 def terminal_state(board, big_board):
-    return len(empty_cells_small_boards) == 0 or Check_Big_Board(big_board, 1) or Check_game(big_board, -1)
+    return len(empty_cells_small_boards(board)) == 0 or Check_Big_Board(big_board, 1) or Check_game(big_board, -1)
 
 def evaluate(Board):
     score = 0
