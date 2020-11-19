@@ -29,7 +29,8 @@ def all_moves(Board, player):
 def terminal_state(board, big_board):
     return end_game(board, big_board, player)
 
-def end_game(board, big_board,player)
+def end_game(board, big_board,player):
+    pass
 
 def evaluate(Board):
     score = 0
@@ -38,4 +39,90 @@ def evaluate(Board):
         score += 0
         return score
 
+    return score
+    
+def Check_horizontally(board, main_board, player):
+    good = False
+    score = 0
+    for i in range(0,7,3):
+        for indx, row in enumerate(board):
+            if row[0+i] == row[1+i] == row[2+i] == player:
+                print(player, "horizontal")
+                good = True
+                if good:
+                    #place_big_board(main_board,i//3,indx//3,player)
+                    score +=1
+                    good = False
+    return score
+
+
+
+def Check_vertically(board, player):
+    good_col = False
+    score = 0
+    for indx in range(len(board)):
+        check = []
+        for i,row in enumerate(board):
+            check.append(row[indx])
+            #print(check)
+            if len(check) >= 3:
+                if check.count(player) == len(check) and check[0] != 0:
+
+                    good_col = True
+                    if good_col:
+                        score += 1
+
+                        good_col = False
+
+
+                    else:
+                        check.clear()
+                else:
+                    check.clear()
+
+    return score
+
+def Check_diagonals(board, main_board, player):
+    score = 0
+    for x in range(0,8, 3):
+
+        stock_indx = []
+        for y in range(0,8,3):
+
+            stock_indx.append(board[y][x])
+            for i in range(1,3):
+                stock_indx.append(board[y+i][x+i])
+
+                if len(stock_indx) >= 3:
+                    if stock_indx.count(player) == len(stock_indx):
+                        #a,b = y+i, x+i
+                        #print(player, "succeeds with a negative diagonal")
+
+                        stock_indx.clear()
+                        score += 1
+
+
+
+                    else:
+
+                        stock_indx.clear()
+
+    for x in range(0,9,3):
+        stock_nindx = []
+        for y in range(2,9,3):
+
+            for i in range(3):
+                stock_nindx.append(board[y-i][x+i])
+
+                if len(stock_nindx) >= 3:
+
+                    if stock_nindx.count(player) == len(stock_nindx):
+                        #a,b = y-i, x+i
+                        #print(player, "succeeds with a negative diagonal")
+                        score +=1
+                        stock_nindx.clear()
+
+
+                    else:
+                        stock_nindx.clear()
     return score
