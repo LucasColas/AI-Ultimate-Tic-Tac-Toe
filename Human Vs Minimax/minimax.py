@@ -12,14 +12,20 @@ def Minimax(Board, depth, player, MaximizingPlayer):
 
     if MaximizingPlayer:
         score = -infinity
+        Good_B = None
         for Board_ in all_moves(Board, player):
             value = evaluate(Board_, depth-1, -player, False)[0]
             score = max(value, score)
-        return score
+            if value == score:
+                Good_B = Board_
+        return score, Good_B
 
     else:
         score = infinity
+        Good_B = None
         for Board_ in all_moves(Board, player):
             value = evaluate(Board_, depth-1, -player, False)[0]
             score = min(value, score)
+            if value == score:
+                Good_B = Board_
         return score
