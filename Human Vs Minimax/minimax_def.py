@@ -33,7 +33,7 @@ def terminal_state(board, big_board):
 def evaluate(Board):
     score = 0
 
-
+    
 
     if len(empty_cells_small_boards(Board)) == 0:
         score += 0
