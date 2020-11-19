@@ -27,7 +27,9 @@ def all_moves(Board, player):
 
 #print(all_moves(Boards, 1))
 def terminal_state(board, big_board):
-    return len(empty_cells_small_boards(board)) == 0 or Check_Big_Board(big_board, 1) or Check_game(big_board, -1)
+    return end_game(board, big_board, player)
+
+def end_game(board, big_board,player)
 
 def evaluate(Board):
     score = 0
