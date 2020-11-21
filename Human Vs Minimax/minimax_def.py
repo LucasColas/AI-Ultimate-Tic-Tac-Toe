@@ -50,12 +50,13 @@ def get_score(Board, player):
 def evaluate(Board, player):
     total_score_AI, total_score_Human = get_score(Board, player)
     total_score = total_score_AI + total_score_Human
-    
-    elif total_score_AI == 3:
+
+    if total_score_AI == 3:
         score = 1
         return score
-    else:
-        score = 0
+
+    if total_score_Human:
+        score = -1
         return score
 
     if len(empty_cells_small_boards(Board)) == 0:
