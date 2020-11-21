@@ -26,10 +26,10 @@ def all_moves(Board, player):
     return all_moves
 
 #print(all_moves(Boards, 1))
-def terminal_state(board, player):
-    return end_game(board, player)
+def terminal_state(Board, player):
+    return end_game(Board, player)
 
-def end_game(board,player):
+def end_game(Board,player):
     total_score_AI, total_score_Human = evaluate(Board, player)
     if total_score_AI == 3 or total_score_Human == 3 :
         return True
@@ -50,7 +50,7 @@ def evaluate(Board, player):
 
     return total_score_AI, total_score_Human
 
-def See_horizontally(board, main_board, player):
+def See_horizontally(board, player):
     good = False
     score_AI = 0
     score_Human = 0
@@ -99,7 +99,7 @@ def See_vertically(board, player):
 
     return score_AI, score_Human
 
-def See_diagonals(board, main_board, player):
+def See_diagonals(board, player):
     score_AI = 0
     score_Human = 0
     for x in range(0,8, 3):
