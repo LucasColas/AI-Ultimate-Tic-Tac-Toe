@@ -60,7 +60,7 @@ def See_horizontally(board, main_board, player):
                 print(player, "horizontal")
                 good = True
                 if good:
-                    #place_big_board(main_board,i//3,indx//3,player)
+
                     if player == 1:
                         score_AI += 1
                     else:
@@ -113,8 +113,7 @@ def See_diagonals(board, main_board, player):
 
                 if len(stock_indx) >= 3:
                     if stock_indx.count(player) == len(stock_indx):
-                        #a,b = y+i, x+i
-                        #print(player, "succeeds with a negative diagonal")
+
                         if player == 1:
                             score_AI += 1
                         else:
@@ -138,8 +137,7 @@ def See_diagonals(board, main_board, player):
                 if len(stock_nindx) >= 3:
 
                     if stock_nindx.count(player) == len(stock_nindx):
-                        #a,b = y-i, x+i
-                        #print(player, "succeeds with a negative diagonal")
+                        
                         if player == 1:
                             score_AI += 1
                         else:
