@@ -30,8 +30,8 @@ def terminal_state(board, player):
     return end_game(board, player)
 
 def end_game(board,player):
-    total_score = evaluate(Board, player)
-    if total_score == 3: #To Modify
+    total_score_AI, total_score_Human = evaluate(Board, player)
+    if total_score_AI == 3 or total_score_Human == 3 :
         return True
 
     if len(empty_cells_small_boards(Board)) == 0:
