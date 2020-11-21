@@ -31,12 +31,11 @@ def terminal_state(board, player):
 
 def end_game(board,player):
     total_score = evaluate(Board, player)
-    if total_score == 3: #ToModify
+    if total_score == 3: #To Modify
         return True
 
     if len(empty_cells_small_boards(Board)) == 0:
         return True
-
 
 def evaluate(Board, player):
     score = 0
