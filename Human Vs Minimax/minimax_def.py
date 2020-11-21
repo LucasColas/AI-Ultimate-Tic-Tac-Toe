@@ -48,7 +48,6 @@ def get_score(Board, player):
 
 def evaluate(Board, player):
 
-
     if len(empty_cells_small_boards(Board)) == 0:
 
         return total_score_AI, total_score_Human
