@@ -26,8 +26,8 @@ def all_moves(Board, player):
     return all_moves
 
 #print(all_moves(Boards, 1))
-def terminal_state(board, big_board):
-    return end_game(board, big_board, player)
+def terminal_state(board, player):
+    return end_game(board, player)
 
 def end_game(board,player):
     total_score = evaluate(Board, player)
