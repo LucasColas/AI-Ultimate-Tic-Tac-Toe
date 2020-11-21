@@ -31,7 +31,7 @@ def terminal_state(board, player):
 
 def end_game(board,player):
     total_score = evaluate(Board, player)
-    if total_score == 3:
+    if total_score == 3: #ToModify
         return True
 
     if len(empty_cells_small_boards(Board)) == 0:
