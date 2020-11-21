@@ -45,8 +45,8 @@ def evaluate(Board, player):
     total_score_AI, total_score_Human += See_horizontally(Board, player)
 
     if len(empty_cells_small_boards(Board)) == 0:
-        score += 0
-        return score
+
+        return total_score_AI, total_score_Human
 
     return total_score_AI, total_score_Human
 
@@ -137,7 +137,7 @@ def See_diagonals(board, main_board, player):
                 if len(stock_nindx) >= 3:
 
                     if stock_nindx.count(player) == len(stock_nindx):
-                        
+
                         if player == 1:
                             score_AI += 1
                         else:
