@@ -8,7 +8,7 @@ from math import inf as infinity
 
 def Minimax(Board, depth, player, MaximizingPlayer):
     if depth == 0 or terminal_state(Board, player):
-        return evaluate(Board, player), Board
+        return evaluate(Board, player), Board #return a score and a board
 
     if MaximizingPlayer:
         score = -infinity

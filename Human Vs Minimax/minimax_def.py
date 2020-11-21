@@ -49,7 +49,7 @@ def get_score(Board, player):
 
 def evaluate(Board, player):
     total_score_AI, total_score_Human = get_score(Board, player)
-    total_score = total_score_AI + total_score_Human
+    #total_score = total_score_AI + total_score_Human
 
     if total_score_AI == 3:
         score = 1
