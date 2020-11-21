@@ -18,7 +18,7 @@ def Minimax(Board, depth, player, MaximizingPlayer):
             score = max(value, score)
             if value == score:
                 Good_B = Board_
-        return score, Good_B
+        return score, Good_B #same type of return
 
     else:
         score = infinity
