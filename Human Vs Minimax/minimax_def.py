@@ -51,7 +51,8 @@ def evaluate(Board, player):
 
 def See_horizontally(board, main_board, player):
     good = False
-    score = 0
+    score_AI = 0
+    score_Human = 0
     for i in range(0,7,3):
         for indx, row in enumerate(board):
             if row[0+i] == row[1+i] == row[2+i] == player:
@@ -59,15 +60,19 @@ def See_horizontally(board, main_board, player):
                 good = True
                 if good:
                     #place_big_board(main_board,i//3,indx//3,player)
-                    score +=1
+                    if player == 1:
+                        score_AI += 1
+                    else:
+                        score_Human += 1
                     good = False
-    return score
+    return score_AI, score_Human
 
 
 
 def See_vertically(board, player):
     good_col = False
-    score = 0
+    score_AI = 0
+    score_Human = 0
     for indx in range(len(board)):
         check = []
         for i,row in enumerate(board):
@@ -78,7 +83,10 @@ def See_vertically(board, player):
 
                     good_col = True
                     if good_col:
-                        score += 1
+                        if player == 1:
+                            score_AI += 1
+                        else:
+                            score_Human += 1
 
                         good_col = False
 
