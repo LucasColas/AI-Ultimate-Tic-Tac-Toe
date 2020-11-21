@@ -14,7 +14,7 @@ from Frontend import draw_big_pieces
 from Check_game import Check_Big_Board, empty_cells_big_board, Check_empty_cells, check_game, empty_cells_small_boards
 from Check_game import Check_empty_cells, set_locations, valid_locations
 
-from minimax import random_piece, minimax_algo
+from minimax import Minimax
 
 import copy
 
