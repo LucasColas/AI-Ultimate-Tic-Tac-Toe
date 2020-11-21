@@ -55,7 +55,7 @@ def evaluate(Board, player):
         score = 1
         return score
 
-    if total_score_Human:
+    if total_score_Human == 3:
         score = -1
         return score
 
@@ -63,7 +63,7 @@ def evaluate(Board, player):
         score = 0
         return score
 
-    return total_score
+
 
 def See_horizontally(board, player):
     good = False
