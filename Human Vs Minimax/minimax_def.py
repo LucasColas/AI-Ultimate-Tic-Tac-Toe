@@ -37,12 +37,17 @@ def end_game(Board,player):
     if len(empty_cells_small_boards(Board)) == 0:
         return True
 
-def evaluate(Board, player):
+def get_score(Board, player):
     total_score_AI = 0
     total_score_Human = 0
     total_score_AI, total_score_Human += See_horizontally(Board, player)
     total_score_AI, total_score_Human += See_vertically(Board, player)
     total_score_AI, total_score_Human += See_horizontally(Board, player)
+
+    return total_score_AI, total_score_Human
+
+def evaluate(Board, player):
+
 
     if len(empty_cells_small_boards(Board)) == 0:
 
