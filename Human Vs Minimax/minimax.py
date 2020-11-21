@@ -28,4 +28,4 @@ def Minimax(Board, depth, player, MaximizingPlayer):
             score = min(value, score)
             if value == score:
                 Good_B = Board_
-        return score
+        return score, Good_B
