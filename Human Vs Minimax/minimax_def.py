@@ -96,10 +96,11 @@ def See_vertically(board, player):
                 else:
                     check.clear()
 
-    return score
+    return score_AI, score_Human
 
 def See_diagonals(board, main_board, player):
-    score = 0
+    score_AI = 0
+    score_Human = 0
     for x in range(0,8, 3):
 
         stock_indx = []
@@ -113,7 +114,10 @@ def See_diagonals(board, main_board, player):
                     if stock_indx.count(player) == len(stock_indx):
                         #a,b = y+i, x+i
                         #print(player, "succeeds with a negative diagonal")
-
+                        if player == 1:
+                            score_AI += 1
+                        else:
+                            score_Human += 1
                         stock_indx.clear()
                         score += 1
 
@@ -135,10 +139,13 @@ def See_diagonals(board, main_board, player):
                     if stock_nindx.count(player) == len(stock_nindx):
                         #a,b = y-i, x+i
                         #print(player, "succeeds with a negative diagonal")
-                        score +=1
+                        if player == 1:
+                            score_AI += 1
+                        else:
+                            score_Human += 1
                         stock_nindx.clear()
 
 
                     else:
                         stock_nindx.clear()
-    return score
+    return score_AI, score_Human
