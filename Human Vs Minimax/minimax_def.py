@@ -38,6 +38,7 @@ def end_game(Board,player):
         return True
 
 def get_score(Board, player):
+    
     total_score_AI = 0
     total_score_Human = 0
     total_score_AI, total_score_Human += See_horizontally(Board, player)
