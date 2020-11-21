@@ -29,7 +29,7 @@ def Check_horizontally(board, main_board, player):
                 good = True
                 if good:
                     place_big_board(main_board,i//3,indx//3,player)
-                    
+
                     good = False
 
 
@@ -160,7 +160,6 @@ def check_game(board,main_board, player):
 
     #Check empty cells
     Check_empty_cells(board)
-    return score
 
 
 
