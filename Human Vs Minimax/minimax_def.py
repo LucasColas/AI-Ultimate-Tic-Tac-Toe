@@ -38,16 +38,17 @@ def end_game(board,player):
         return True
 
 def evaluate(Board, player):
-    score = 0
-    score += See_horizontally(Board, player)
-    score += See_vertically(Board, player)
-    score += See_horizontally(Board, player)
+    total_score_AI = 0
+    total_score_Human = 0
+    total_score_AI, total_score_Human += See_horizontally(Board, player)
+    total_score_AI, total_score_Human += See_vertically(Board, player)
+    total_score_AI, total_score_Human += See_horizontally(Board, player)
 
     if len(empty_cells_small_boards(Board)) == 0:
         score += 0
         return score
 
-    return score
+    return total_score_AI, total_score_Human
 
 def See_horizontally(board, main_board, player):
     good = False
@@ -148,4 +149,5 @@ def See_diagonals(board, main_board, player):
 
                     else:
                         stock_nindx.clear()
+
     return score_AI, score_Human
