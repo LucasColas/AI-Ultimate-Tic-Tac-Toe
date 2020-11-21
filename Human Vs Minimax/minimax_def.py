@@ -30,7 +30,7 @@ def terminal_state(Board, player):
     return end_game(Board, player)
 
 def end_game(Board,player):
-    total_score_AI, total_score_Human = evaluate(Board, player)
+    total_score_AI, total_score_Human = get_score(Board, player)
     if total_score_AI == 3 or total_score_Human == 3 :
         return True
 
@@ -38,7 +38,7 @@ def end_game(Board,player):
         return True
 
 def get_score(Board, player):
-    
+
     total_score_AI = 0
     total_score_Human = 0
     total_score_AI, total_score_Human += See_horizontally(Board, player)
@@ -48,12 +48,21 @@ def get_score(Board, player):
     return total_score_AI, total_score_Human
 
 def evaluate(Board, player):
+    total_score_AI, total_score_Human = get_score(Board, player)
+    total_score = total_score_AI + total_score_Human
+    
+    elif total_score_AI == 3:
+        score = 1
+        return score
+    else:
+        score = 0
+        return score
 
     if len(empty_cells_small_boards(Board)) == 0:
+        score = 0
+        return score
 
-        return total_score_AI, total_score_Human
-
-    return total_score_AI, total_score_Human
+    return total_score
 
 def See_horizontally(board, player):
     good = False
