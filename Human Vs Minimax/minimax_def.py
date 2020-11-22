@@ -22,7 +22,7 @@ def all_moves(Board, player):
 
     return all_moves
 
-#print(all_moves(Boards, 1))
+
 def terminal_state(Board, player):
     return end_game(Board, player)
 
