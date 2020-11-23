@@ -1,8 +1,11 @@
 from Check_game import empty_cells_small_boards, empty_cells_big_board
 from Check_game import Check_Big_Board
 from minimax_assets import See_diagonals, See_vertically, See_horizontally
+from Board import new_Board
 import copy
 
+Board = new_Board()
+boards = Board.every_small_boards()
 
 def all_moves(Board, player):
     all_moves = []
