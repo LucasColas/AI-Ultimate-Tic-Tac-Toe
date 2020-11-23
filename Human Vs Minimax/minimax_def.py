@@ -20,7 +20,7 @@ def all_moves(Board, player):
                 new_Board[y][x] = player
                 all_moves.append(new_Board)
                 print(all_moves)
-                print()
+                
 
     return all_moves
 
