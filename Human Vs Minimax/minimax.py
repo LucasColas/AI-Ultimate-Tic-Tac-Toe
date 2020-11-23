@@ -6,11 +6,13 @@ def Minimax(Board, depth, player, MaximizingPlayer):
     if depth == 0 or terminal_state(Board, player):
         return evaluate(Board, player), Board #return a score and a board
 
+    print("all all_moves : ", all_moves(Board, player))
+    
     if MaximizingPlayer:
         score = -infinity
         Good_B = None
         for Board_ in all_moves(Board, player):
-            print("Board : ", Board)
+            print("Board : ", Board_)
             value = evaluate(Board_, depth-1, -player, False)[0]
             score = max(value, score)
             if value == score:

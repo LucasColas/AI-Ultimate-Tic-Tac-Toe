@@ -6,7 +6,6 @@ import copy
 
 def all_moves(Board, player):
     all_moves = []
-    all_big_board = []
     for y, row in enumerate(Board):
         #print(row)
         for x, cell in enumerate(row):
