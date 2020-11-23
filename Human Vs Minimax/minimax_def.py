@@ -38,9 +38,18 @@ def get_score(Board, player):
 
     total_score_AI = 0
     total_score_Human = 0
-    total_score_AI, total_score_Human = See_horizontally(Board, player)
-    total_score_AI, total_score_Human += See_vertically(Board, player)
-    total_score_AI, total_score_Human += See_diagonals(Board, player)
+
+    sh_AI, sh_H = See_horizontally(Board, player)
+    total_score_AI += sh_AI
+    total_score_Human += sh_H
+
+    sv_AI, sv_H = See_vertically(Board, player)
+    total_score_AI += sv_AI
+    total_score_Human += sv_H
+
+    sd_AI, sd_H = See_diagonals(Board, player)
+    total_score_AI += sd_AI
+    total_score_Human += sd_H
 
     return total_score_AI, total_score_Human
 
