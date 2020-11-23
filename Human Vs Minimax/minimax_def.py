@@ -6,19 +6,18 @@ import copy
 
 def all_moves(Board, player):
     all_moves = []
+    print(Board)
     for y, row in enumerate(Board):
-        #print(row)
+        print(row)
         for x, cell in enumerate(row):
-            #print(cell)
+
             if cell == 0:
+                print(cell)
                 new_Board = copy.deepcopy(Board)
                 new_Board[y][x] = player
-                #all_moves.append(new_Board)
-                #new_big_board = copy.deepcopy(big_board)
-                #check_game(board, new_big_board, player)
-                #all_big_board.append(new_big_board)
-                #print(new_Board)
+                all_moves.append(new_Board)
 
+    print(all_moves)
     return all_moves
 
 
