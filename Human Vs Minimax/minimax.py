@@ -10,6 +10,7 @@ def Minimax(Board, depth, player, MaximizingPlayer):
         score = -infinity
         Good_B = None
         for Board_ in all_moves(Board, player):
+            print("Board : ", Board)
             value = evaluate(Board_, depth-1, -player, False)[0]
             score = max(value, score)
             if value == score:

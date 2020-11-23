@@ -97,6 +97,7 @@ def main(small_boards, main_board):
             alpha, beta = -infinity, +infinity
             depth = 2
             value, new_board = Minimax(small_boards, depth, 1, True)
+            print("new b : ", new_board)
             small_boards = new_board
             #test(small_boards)
             #x,y = random_piece(small_boards, main_board, turn)
