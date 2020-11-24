@@ -18,6 +18,7 @@ def all_moves(Board, main_board, player):
                 new_main_board = copy.deepcopy(main_board)
                 if set_locations(new_Board, main_board, x,y, player):
                     all_moves.append(new_Board)
+                    
 
     return all_moves
 
