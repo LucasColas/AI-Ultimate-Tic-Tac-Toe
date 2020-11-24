@@ -24,6 +24,8 @@ def Minimax(Board, depth, player, MaximizingPlayer):
         Good_B = None
         for Board_ in all_moves(Board, player):
             value = Minimax(Board_, depth-1, -player, True)[0]
+            print("value", value)
+            print("score", score)
             score = min(value, score)
             if value == score:
                 Good_B = Board_
