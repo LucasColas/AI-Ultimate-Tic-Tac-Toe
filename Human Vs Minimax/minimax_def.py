@@ -23,9 +23,30 @@ def all_moves(Board, main_board, player):
 
 
 #all_moves(boards,1)
+def evaluate_game(pieces, player):
+    opp_piece = -1
+    if player == -1:
+        opp_piece = 1
+
+    
+
+
+
+
+
 
 def terminal_state(Board, player):
     return end_game(Board, player)
+
+
+
+
+
+
+
+
+
+
 
 def end_game(Board,player):
     total_score_AI, total_score_Human = get_score(Board, player)
