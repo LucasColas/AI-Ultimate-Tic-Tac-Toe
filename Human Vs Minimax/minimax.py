@@ -9,7 +9,7 @@ def Minimax(Board, depth, player, MaximizingPlayer):
     print("all all_moves : ", all_moves(Board, player))
 
     if MaximizingPlayer:
-        score = -infinity
+        score = float('-inf')
         Good_B = None
         for Board_ in all_moves(Board, player):
             print("Board : ", Board_)
@@ -20,7 +20,7 @@ def Minimax(Board, depth, player, MaximizingPlayer):
         return score, Good_B #same type of return
 
     else:
-        score = infinity
+        score = float('inf')
         Good_B = None
         for Board_ in all_moves(Board, player):
             value = Minimax(Board_, depth-1, -player, True)[0]
