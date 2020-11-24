@@ -13,8 +13,10 @@ def all_moves(Board, main_board, player):
     for y, row in enumerate(Board):
         print(row)
         for x, cell in enumerate(row):
-            if cell == 0 and set_locations(Board, main_board, x,y, player):
-                
+            if cell == 0:
+                new_Board = copy.deepcopy(Board)
+                if set_locations(new_Board, main_board, x,y, player):
+
 
     return all_moves
 
