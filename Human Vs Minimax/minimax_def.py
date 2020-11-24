@@ -4,8 +4,8 @@ from minimax_assets import See_diagonals, See_vertically, See_horizontally
 from Board import new_Board
 import copy
 
-Board = new_Board()
-boards = Board.every_small_boards()
+#Board = new_Board()
+#boards = Board.every_small_boards()
 
 def all_moves(Board, player):
     all_moves = []
@@ -20,12 +20,12 @@ def all_moves(Board, player):
                 new_Board[y][x] = player
                 all_moves.append(new_Board)
                 print(all_moves)
-                
+
 
     return all_moves
 
 
-all_moves(boards,1)
+#all_moves(boards,1)
 
 def terminal_state(Board, player):
     return end_game(Board, player)
