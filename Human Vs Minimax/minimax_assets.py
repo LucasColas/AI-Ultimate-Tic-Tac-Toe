@@ -1,10 +1,8 @@
 
 
-def score_position(Board):
-    for inx, row in enumerate(board):
-        for i in range(0,7,3):
-            pieces = row[i:i+3]
-            
+
+
+
 
 
 def See_horizontally(board, player):

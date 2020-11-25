@@ -46,20 +46,19 @@ def evaluate_game(pieces, player):
     return score
 
 
+def score_horizontally(Board,player):
+    score = 0
+    for inx, row in enumerate(board):
+        for i in range(0,7,3):
+            pieces = row[i:i+3]
+            score += evaluate_game(pieces, player)
 
+    return score
 
 
 
 def terminal_state(Board, player):
     return end_game(Board, player)
-
-
-
-
-
-
-
-
 
 
 
@@ -70,40 +69,3 @@ def end_game(Board,player):
 
     if len(empty_cells_small_boards(Board)) == 0:
         return True
-
-def get_score(Board, player):
-
-    total_score_AI = 0
-    total_score_Human = 0
-
-    sh_AI, sh_H = See_horizontally(Board, player)
-    total_score_AI += sh_AI
-    total_score_Human += sh_H
-
-    sv_AI, sv_H = See_vertically(Board, player)
-    total_score_AI += sv_AI
-    total_score_Human += sv_H
-
-    sd_AI, sd_H = See_diagonals(Board, player)
-    total_score_AI += sd_AI
-    total_score_Human += sd_H
-
-    return total_score_AI, total_score_Human
-
-def evaluate(Board, player):
-    total_score_AI, total_score_Human = get_score(Board, player)
-
-    score = 0
-    if total_score_AI == 3:
-        score = 1
-        return score
-
-    if total_score_Human == 3:
-        score = -1
-        return score
-
-    if len(empty_cells_small_boards(Board)) == 0:
-        score = 0
-        return score
-
-    return score
