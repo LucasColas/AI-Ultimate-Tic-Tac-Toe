@@ -55,7 +55,8 @@ def score_horizontally(Board,player):
 
     return score
 
-
+def score_vertically(Board, player):
+    
 
 def terminal_state(Board, player):
     return end_game(Board, player)
