@@ -5,7 +5,7 @@ from math import inf as infinity
 def Minimax(Board, main_board, depth, player, MaximizingPlayer):
     if depth == 0 or terminal_state(Board, player):
         if terminal_state(Board, player):
-            if 
+            pass 
 
     #print("all all_moves : ", all_moves(Board, player))
 
