@@ -114,26 +114,22 @@ def terminal_state(Board, player):
 
 
 def end_game(Board,player):
-    total_score_AI, total_score_Human = get_score(Board, player)
-    if total_score_AI == 3 or total_score_Human == 3 :
+    total_score = get_score(Board, player)
+    if total_score== 3:
         return True
 
     if len(empty_cells_small_boards(Board)) == 0:
         return True
 
 def get_score(Board, player):
-    score_AI, score_Human = 0,0
+    score = 0
 
-    sc_h_AI, sc_h_H = See_horizontally(Board, player)
-    score_AI += sc_h_AI
-    score_Human += sc_h_H
+    score += See_horizontally(Board, player)
 
-    sc_v_AI, sc_v_H = See_vertically(Board, player)
-    score_AI += sc_v_AI
-    score_Human += sc_v_H
 
-    sc_d_AI, sc_d_H = See_diagonals(Board, player)
-    score_AI += sc_d_AI
-    score_Human += sc_d_H
+    score += See_vertically(Board, player)
 
-    return score_AI, score_Human
+    score += See_diagonals(Board, player)
+
+
+    return score
