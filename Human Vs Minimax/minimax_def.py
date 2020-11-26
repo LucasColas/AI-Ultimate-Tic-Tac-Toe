@@ -56,7 +56,19 @@ def score_horizontally(Board,player):
     return score
 
 def score_vertically(Board, player):
-    
+    good_col = False
+    score = 0
+    for indx in range(len(board)):
+        check = []
+
+        for i,row in enumerate(board):
+            check.append(row[indx])
+
+            if len(check) >= 3:
+                score += evaluate_game(check, player)
+                check.clear()
+
+    return score
 
 def terminal_state(Board, player):
     return end_game(Board, player)
