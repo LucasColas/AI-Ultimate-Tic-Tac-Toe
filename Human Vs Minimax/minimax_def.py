@@ -120,3 +120,20 @@ def end_game(Board,player):
 
     if len(empty_cells_small_boards(Board)) == 0:
         return True
+
+def get_score(Board, player):
+    score_AI, score_Human = 0,0
+
+    sc_h_AI, sc_h_H = See_horizontally(Board, player)
+    score_AI += sc_h_AI
+    score_Human += sc_h_H
+
+    sc_v_AI, sc_v_H = See_vertically(Board, player)
+    score_AI += sc_v_AI
+    score_Human += sc_v_H
+
+    sc_d_AI, sc_d_H = See_diagonals(Board, player)
+    score_AI += sc_d_AI
+    score_Human += sc_d_H
+
+    return score_AI, score_Human
