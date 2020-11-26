@@ -1,10 +1,5 @@
 
 
-
-
-
-
-
 def See_horizontally(board, player):
     good = False
     score_AI = 0

@@ -109,10 +109,8 @@ def score_diagonals(Board, player):
 
     return score
 
-
 def terminal_state(Board, player):
     return end_game(Board, player)
-
 
 
 def end_game(Board,player):
