@@ -56,7 +56,7 @@ def score_horizontally(Board,player):
     return score
 
 def score_vertically(Board, player):
-    good_col = False
+    
     score = 0
     for indx in range(len(board)):
         check = []
