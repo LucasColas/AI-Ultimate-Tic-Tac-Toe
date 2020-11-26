@@ -26,7 +26,7 @@ def all_moves(Board, main_board, player):
 
 def evaluate(Board, player):
     score = 0
-    
+
     score += score_horizontally(Board, player)
     score += score_vertically(Board, player)
     score += score_diagonals(Board, player)

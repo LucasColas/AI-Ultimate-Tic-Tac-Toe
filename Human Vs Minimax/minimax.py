@@ -4,7 +4,8 @@ from math import inf as infinity
 
 def Minimax(Board, main_board, depth, player, MaximizingPlayer):
     if depth == 0 or terminal_state(Board, player):
-        return evaluate(Board, player), Board #return a score and a board
+        if terminal_state(Board, player):
+            if 
 
     #print("all all_moves : ", all_moves(Board, player))
 
