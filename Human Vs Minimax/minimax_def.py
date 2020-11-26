@@ -23,6 +23,16 @@ def all_moves(Board, main_board, player):
 
 
 #all_moves(boards,1)
+
+def evaluate(Board, player):
+    score = 0
+    
+    score += score_horizontally(Board, player)
+    score += score_vertically(Board, player)
+    score += score_diagonals(Board, player)
+
+    return score
+
 def evaluate_game(pieces, player):
     opp_piece = -1
     if player == -1:
