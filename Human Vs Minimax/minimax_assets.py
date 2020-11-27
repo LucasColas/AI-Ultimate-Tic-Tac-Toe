@@ -36,11 +36,10 @@ def See_vertically(board, player):
                 else:
                     check.clear()
 
-    return score_AI, score_Human
+    return score
 
 def See_diagonals(board, player):
-    score_AI = 0
-    score_Human = 0
+    score = 0
     for x in range(0,8, 3):
 
         stock_indx = []
@@ -53,15 +52,8 @@ def See_diagonals(board, player):
                 if len(stock_indx) >= 3:
                     if stock_indx.count(player) == len(stock_indx):
 
-                        if player == 1:
-                            score_AI += 1
-                        else:
-                            score_Human += 1
-                        stock_indx.clear()
                         score += 1
-
-
-
+                        stock_indx.clear()
                     else:
 
                         stock_indx.clear()
@@ -77,14 +69,11 @@ def See_diagonals(board, player):
 
                     if stock_nindx.count(player) == len(stock_nindx):
 
-                        if player == 1:
-                            score_AI += 1
-                        else:
-                            score_Human += 1
+                        score += 1
                         stock_nindx.clear()
 
 
                     else:
                         stock_nindx.clear()
 
-    return score_AI, score_Human
+    return score
