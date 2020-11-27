@@ -16,8 +16,7 @@ def See_horizontally(board, player):
 
 def See_vertically(board, player):
     good_col = False
-    score_AI = 0
-    score_Human = 0
+    score = 0
     for indx in range(len(board)):
         check = []
         for i,row in enumerate(board):
@@ -28,11 +27,7 @@ def See_vertically(board, player):
 
                     good_col = True
                     if good_col:
-                        if player == 1:
-                            score_AI += 1
-                        else:
-                            score_Human += 1
-
+                        score += 1
                         good_col = False
 
 
