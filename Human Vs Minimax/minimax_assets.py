@@ -1,4 +1,26 @@
 
+def evaluate_game(pieces, player):
+    opp_piece = -1
+    if player == -1:
+        opp_piece = 1
+
+    score = 0
+
+    if pieces.count(player) == 3:
+        score += 50
+
+    if pieces.count(player) == 2 and pieces.count(0) == 1:
+        score += 20
+
+    if pieces.count(player) == 1 and pieces.count(0) == 2:
+        score += 5
+
+    if pieces.count(opp_piece) == 2 and pieces.count(0) == 1:
+        score -= 8
+
+
+    return score
+
 def score_horizontally(Board,player):
     score = 0
     for inx, row in enumerate(board):
