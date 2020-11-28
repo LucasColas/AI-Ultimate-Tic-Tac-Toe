@@ -4,10 +4,13 @@ from math import inf as infinity
 
 def Minimax(Board, main_board, depth, player, MaximizingPlayer):
     if depth == 0 or terminal_state(Board, player):
-        if terminal_state(Board, 1):
-             return (Board, 1000000)
-        if terminal_state(Board,-1):
-            return (Board, -1000000)
+        if terminal_state(Board, player):
+            if terminal_state(Board, 1):
+                 return (Board, 1000000)
+            if terminal_state(Board,-1):
+                return (Board, -1000000)
+            else:
+                return (Board, 0)
         else:
             return (Board, evaluate(Board, player))
 
