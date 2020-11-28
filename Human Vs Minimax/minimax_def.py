@@ -1,6 +1,7 @@
 from Check_game import empty_cells_small_boards, empty_cells_big_board
 from Check_game import Check_Big_Board, set_locations
 from minimax_assets import See_diagonals, See_vertically, See_horizontally
+from minimax_assets import score_diagonals, score_vertically, score_horizontally
 from Board import new_Board
 import copy
 
@@ -56,58 +57,7 @@ def evaluate_game(pieces, player):
     return score
 
 
-def score_horizontally(Board,player):
-    score = 0
-    for inx, row in enumerate(board):
-        for i in range(0,7,3):
-            pieces = row[i:i+3]
-            score += evaluate_game(pieces, player)
 
-    return score
-
-def score_vertically(Board, player):
-
-    score = 0
-    for indx in range(len(board)):
-        check = []
-
-        for i,row in enumerate(board):
-            check.append(row[indx])
-
-            if len(check) >= 3:
-                score += evaluate_game(check, player)
-                check.clear()
-
-    return score
-
-
-def score_diagonals(Board, player):
-    score = 0
-    for x in range(0,8, 3):
-
-        stock_indx = []
-        for y in range(0,8,3):
-
-            stock_indx.append(board[y][x])
-            for i in range(1,3):
-                stock_indx.append(board[y+i][x+i])
-
-                if len(stock_indx) >= 3:
-                    score += evaluate_game(stock_indx, player)
-                    stock_indx.clear()
-
-    for x in range(0,9,3):
-        stock_nindx = []
-        for y in range(2,9,3):
-
-            for i in range(3):
-                stock_nindx.append(board[y-i][x+i])
-
-                if len(stock_nindx) >= 3:
-                    score += evaluate_game(stock_nindx, player)
-                    stock_nindx.clear()
-
-    return score
 
 def terminal_state(Board, player):
     return end_game(Board, player)
