@@ -115,7 +115,7 @@ def terminal_state(Board, player):
 
 def end_game(Board,player):
     total_score = get_score(Board, player)
-    if total_score== 3:
+    if total_score == 3:
         return True
 
     if len(empty_cells_small_boards(Board)) == 0:
