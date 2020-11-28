@@ -51,7 +51,6 @@ def get_score(Board, player):
 
     score += See_horizontally(Board, player)
 
-
     score += See_vertically(Board, player)
 
     score += See_diagonals(Board, player)
