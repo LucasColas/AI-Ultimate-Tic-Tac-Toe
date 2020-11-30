@@ -6,13 +6,13 @@ def Minimax(Board, main_board, depth, player, MaximizingPlayer):
     if depth == 0 or terminal_state(Board, player):
         if terminal_state(Board, player):
             if terminal_state(Board, 1):
-                 return (Board, 1000000)
+                 return (1000000,Board)
             if terminal_state(Board,-1):
-                return (Board, -1000000)
+                return (-1000000,Board)
             else:
-                return (Board, 0)
+                return (0, Board)
         else:
-            return (Board, evaluate(Board, player>))
+            return (evaluate(Board, player), Board)
 
     #print("all all_moves : ", all_moves(Board, player))
 
