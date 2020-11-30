@@ -17,5 +17,7 @@ If you want to play against my AI. My AI is Minimax.
 Download the folder **```Human Vs Minimax```** And run **```UTTT.py```** 
 
 
+
+
 #### Don't forget
 Don't forget to keep all files and assets in the same folder.
