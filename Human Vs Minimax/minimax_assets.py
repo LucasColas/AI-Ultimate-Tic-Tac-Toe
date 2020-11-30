@@ -23,7 +23,7 @@ def evaluate_game(pieces, player):
 
 def score_horizontally(Board,player):
     score = 0
-    for inx, row in enumerate(board):
+    for inx, row in enumerate(Board):
         for i in range(0,7,3):
             pieces = row[i:i+3]
             score += evaluate_game(pieces, player)
@@ -33,10 +33,10 @@ def score_horizontally(Board,player):
 def score_vertically(Board, player):
 
     score = 0
-    for indx in range(len(board)):
+    for indx in range(len(Board)):
         check = []
 
-        for i,row in enumerate(board):
+        for i,row in enumerate(Board):
             check.append(row[indx])
 
             if len(check) >= 3:
@@ -53,9 +53,9 @@ def score_diagonals(Board, player):
         stock_indx = []
         for y in range(0,8,3):
 
-            stock_indx.append(board[y][x])
+            stock_indx.append(Board[y][x])
             for i in range(1,3):
-                stock_indx.append(board[y+i][x+i])
+                stock_indx.append(Board[y+i][x+i])
 
                 if len(stock_indx) >= 3:
                     score += evaluate_game(stock_indx, player)
@@ -66,7 +66,7 @@ def score_diagonals(Board, player):
         for y in range(2,9,3):
 
             for i in range(3):
-                stock_nindx.append(board[y-i][x+i])
+                stock_nindx.append(Board[y-i][x+i])
 
                 if len(stock_nindx) >= 3:
                     score += evaluate_game(stock_nindx, player)
@@ -74,11 +74,11 @@ def score_diagonals(Board, player):
 
     return score
 
-def See_horizontally(board, player):
+def See_horizontally(Board, player):
     good = False
     score = 0
     for i in range(0,7,3):
-        for indx, row in enumerate(board):
+        for indx, row in enumerate(Board):
             if row[0+i] == row[1+i] == row[2+i] == player:
                 print(player, "horizontal")
                 good = True
@@ -88,12 +88,12 @@ def See_horizontally(board, player):
                     good = False
     return score
 
-def See_vertically(board, player):
+def See_vertically(Board, player):
     good_col = False
     score = 0
-    for indx in range(len(board)):
+    for indx in range(len(Board)):
         check = []
-        for i,row in enumerate(board):
+        for i,row in enumerate(Board):
             check.append(row[indx])
             #print(check)
             if len(check) >= 3:
@@ -112,16 +112,16 @@ def See_vertically(board, player):
 
     return score
 
-def See_diagonals(board, player):
+def See_diagonals(Board, player):
     score = 0
     for x in range(0,8, 3):
 
         stock_indx = []
         for y in range(0,8,3):
 
-            stock_indx.append(board[y][x])
+            stock_indx.append(Board[y][x])
             for i in range(1,3):
-                stock_indx.append(board[y+i][x+i])
+                stock_indx.append(Board[y+i][x+i])
 
                 if len(stock_indx) >= 3:
                     if stock_indx.count(player) == len(stock_indx):
@@ -137,7 +137,7 @@ def See_diagonals(board, player):
         for y in range(2,9,3):
 
             for i in range(3):
-                stock_nindx.append(board[y-i][x+i])
+                stock_nindx.append(Board[y-i][x+i])
 
                 if len(stock_nindx) >= 3:
 
