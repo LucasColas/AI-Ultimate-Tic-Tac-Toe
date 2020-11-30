@@ -12,7 +12,6 @@ def all_moves(Board, main_board, player):
     all_moves = []
 
     for y, row in enumerate(Board):
-
         for x, cell in enumerate(row):
             if cell == 0:
                 new_Board = copy.deepcopy(Board)
