@@ -2,7 +2,7 @@ from minimax_def import all_moves,  evaluate, terminal_state
 import copy
 from math import inf as infinity
 
-def Minimax(Board, main_board, depth, player, MaximizingPlayer):
+def Minimax(Board, main_board, depth, player, alpha, beta, MaximizingPlayer):
     if depth == 0 or terminal_state(Board, player):
         if terminal_state(Board, player):
             if terminal_state(Board, 1):
@@ -25,6 +25,9 @@ def Minimax(Board, main_board, depth, player, MaximizingPlayer):
             score = max(value, score)
             if value == score:
                 Good_B = Board_
+            alpha = max(alpha, value)
+            if alpha >= beta:
+                break
         return score, Good_B #same type of return
 
     else:
@@ -37,4 +40,8 @@ def Minimax(Board, main_board, depth, player, MaximizingPlayer):
             score = min(value, score)
             if value == score:
                 Good_B = Board_
+
+            beta = min(beta, value)
+            if alpha >= beta:
+                break
         return score, Good_B
