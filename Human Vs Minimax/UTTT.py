@@ -94,8 +94,8 @@ def main(small_boards, main_board):
                     #update_window(Win, Lines_color, Lines_color_2, Width, Square, Small_Square, margin, Cross_small, Circle_small, Cross, Circle, small_boards, main_board, turn)
 
         if turn == AI and not game_over:
-            alpha, beta = -infinity, +infinity
-            depth = 2
+
+            depth = 3
             value, new_board = Minimax(small_boards, main_board, depth, 1, True)
             print("new b : ", new_board)
             small_boards = new_board
