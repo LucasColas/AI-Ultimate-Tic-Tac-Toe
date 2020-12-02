@@ -6,6 +6,10 @@ Of course I will add other features but the code is working.
 
 ## How does it work ?
 
+### Prerequisites
+You need Python 3.7.x. Python 3.8 can be good too. But perhaps there will be bugs with Pygame. 
+So you also need Pygame. 
+
 ### Play versus another human
 
 If you want to play against another human :
