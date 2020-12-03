@@ -95,7 +95,7 @@ def main(small_boards, main_board):
 
         if turn == AI and not game_over:
 
-            depth = 3
+            depth = 2
             value, new_board = Minimax(small_boards, main_board, depth, 1, True)
             print("new b : ", new_board)
             small_boards = new_board
