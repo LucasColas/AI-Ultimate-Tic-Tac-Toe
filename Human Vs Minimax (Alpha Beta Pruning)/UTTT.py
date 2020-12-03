@@ -99,11 +99,9 @@ def main(small_boards, main_board):
             value, new_board = Minimax(small_boards, main_board, depth, 1, alpha, beta, True)
             print("new b : ", new_board)
             small_boards = new_board
-            #test(small_boards)
-            #x,y = random_piece(small_boards, main_board, turn)
-            #set_locations(small_boards, main_board, x,y, turn)
+
             check_game(small_boards,main_board, turn)
-            #print("len empty cells : ", len(empty_cells_small_boards(small_boards)))
+            
             print("small_boards : ", small_boards)
             if Check_Big_Board(main_board, turn):
                 game_over = True
