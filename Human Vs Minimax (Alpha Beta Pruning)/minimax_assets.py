@@ -16,7 +16,7 @@ def evaluate_game(pieces, player):
         score += 5
 
     if pieces.count(opp_piece) == 2 and pieces.count(0) == 1:
-        score -= 8
+        score += 8
 
 
     return score
