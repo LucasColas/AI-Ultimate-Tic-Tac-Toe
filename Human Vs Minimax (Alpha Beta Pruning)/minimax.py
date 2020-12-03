@@ -20,7 +20,7 @@ def Minimax(Board, main_board, depth, player, alpha, beta, MaximizingPlayer):
         score = float('-inf')
         Good_B = None
         for Board_ in all_moves(Board, main_board, player):
-            print("Board : ", Board_)
+            #print("Board : ", Board_)
             value = Minimax(Board_, main_board, depth-1, -player, alpha, beta, False)[0]
             score = max(value, score)
             if value == score:
