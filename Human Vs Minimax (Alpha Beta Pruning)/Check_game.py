@@ -91,7 +91,7 @@ def Check_diagonals(board, main_board, player):
                 stock_nindx.append(board[y-i][x+i])
 
                 if len(stock_nindx) >= 3:
-
+                    print(stock_nindx)
                     if stock_nindx.count(player) == len(stock_nindx):
                         a,b = y-i, x+i
                         print(player, "succeeds with a negative diagonal")
