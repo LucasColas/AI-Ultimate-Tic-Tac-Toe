@@ -79,7 +79,7 @@ def See_horizontally(Board, player):
     for i in range(0,7,3):
         for indx, row in enumerate(Board):
             if row[0+i] == row[1+i] == row[2+i] == player:
-                print(player, "horizontal")
+                #print(player, "horizontal")
                 good = True
 
                 if good:
@@ -104,10 +104,7 @@ def See_vertically(Board, player):
                         good_col = False
 
 
-                    else:
-                        check.clear()
-                else:
-                    check.clear()
+                check.clear()
 
     return score
 
