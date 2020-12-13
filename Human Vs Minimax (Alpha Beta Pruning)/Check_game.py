@@ -50,11 +50,7 @@ def Check_vertically(board,main_board, player):
                     if good_col:
                         place_big_board(main_board,indx//3,i//3,player)
                         good_col = False
-                        check.clear()
-
-
-                    else:
-                        check.clear()
+                    check.clear()
 
                 check.clear()
 
