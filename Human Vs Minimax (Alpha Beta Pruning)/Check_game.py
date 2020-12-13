@@ -41,9 +41,8 @@ def Check_vertically(board,main_board, player):
         check = []
         for i,row in enumerate(board):
             check.append(row[indx])
-            #print(check)
             if len(check) >= 3:
-                print(check)
+                #print(check)
                 if check.count(player) == len(check) and check[0] != 0:
                     print(player, "succeeds (vertically)")
                     good_col = True
