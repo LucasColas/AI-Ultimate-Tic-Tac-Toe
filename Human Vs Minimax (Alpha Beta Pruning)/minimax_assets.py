@@ -20,9 +20,6 @@ def evaluate_game(pieces, player):
 
     return score
 
-
-    return score
-
 def score_horizontally(Board,player):
     score = 0
     for inx, row in enumerate(Board):
