@@ -43,19 +43,16 @@ def Check_vertically(board,main_board, player):
             check.append(row[indx])
             #print(check)
             if len(check) >= 3:
+                print(check)
                 if check.count(player) == len(check) and check[0] != 0:
                     print(player, "succeeds (vertically)")
                     good_col = True
                     if good_col:
                         place_big_board(main_board,indx//3,i//3,player)
-
                         good_col = False
+                    #check.clear()
 
-
-                    else:
-                        check.clear()
-                else:
-                    check.clear()
+                check.clear()
 
 
 
