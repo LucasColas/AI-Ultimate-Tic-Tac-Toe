@@ -43,6 +43,7 @@ def Check_vertically(board,main_board, player):
             check.append(row[indx])
             #print(check)
             if len(check) >= 3:
+                print(check)
                 if check.count(player) == len(check) and check[0] != 0:
                     print(player, "succeeds (vertically)")
                     good_col = True
@@ -73,7 +74,7 @@ def Check_diagonals(board, main_board, player):
                 if len(stock_indx) >= 3:
                     if stock_indx.count(player) == len(stock_indx):
                         a,b = y+i, x+i
-                        print(player, "succeeds with a negative diagonal")
+                        print(player, "succeeds with a diagonal")
                         place_big_board(main_board, b//3, a//3, player)
                         stock_indx.clear()
 
