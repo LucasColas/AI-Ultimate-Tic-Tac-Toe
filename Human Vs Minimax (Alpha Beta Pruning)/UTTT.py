@@ -95,13 +95,13 @@ def main(small_boards, main_board):
 
         if turn == AI and not game_over:
             alpha, beta = -infinity, +infinity
-            depth = 2
+            depth = 3
             value, new_board = Minimax(small_boards, main_board, depth, 1, alpha, beta, True)
             print("new b : ", new_board)
             small_boards = new_board
 
             check_game(small_boards,main_board, turn)
-            
+
             print("small_boards : ", small_boards)
             if Check_Big_Board(main_board, turn):
                 game_over = True
