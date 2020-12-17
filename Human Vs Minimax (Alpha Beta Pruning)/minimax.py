@@ -30,6 +30,7 @@ def Minimax(Board, main_board, depth, player, alpha, beta, MaximizingPlayer):
             alpha = max(alpha, value)
             if alpha >= beta:
                 break
+            print("score", score)
         return score, Good_B #same type of return
 
     else:
@@ -37,7 +38,7 @@ def Minimax(Board, main_board, depth, player, alpha, beta, MaximizingPlayer):
         Good_B = None
         for Board_ in all_moves(Board, main_board, player):
             value = Minimax(Board_, main_board, depth-1, -player, alpha, beta, True)[0]
-            print("value", value)
+            #print("value", value)
             #print("score", score)
             score = min(value, score)
             if value == score:
