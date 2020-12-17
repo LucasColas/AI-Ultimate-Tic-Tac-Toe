@@ -4,12 +4,15 @@ from math import inf as infinity
 
 def Minimax(Board, main_board, depth, player, alpha, beta, MaximizingPlayer):
     if depth == 0 or terminal_state(Board, player):
-            if terminal_state(Board, 1):
-                 return (1000,Board)
-            if terminal_state(Board,-1):
-                return (-1000,Board)
+            if terminal_state(Board, player):
+                if terminal_state(Board, 1):
+                     return (1000,Board)
+                if terminal_state(Board,-1):
+                    return (-1000,Board)
+                else:
+                    return (0, Board)
             else:
-                return (0, Board)
+                return evaluate()
 
 
     #print("all all_moves : ", all_moves(Board, player))
@@ -34,7 +37,7 @@ def Minimax(Board, main_board, depth, player, alpha, beta, MaximizingPlayer):
         Good_B = None
         for Board_ in all_moves(Board, main_board, player):
             value = Minimax(Board_, main_board, depth-1, -player, alpha, beta, True)[0]
-            #print("value", value)
+            print("value", value)
             #print("score", score)
             score = min(value, score)
             if value == score:
