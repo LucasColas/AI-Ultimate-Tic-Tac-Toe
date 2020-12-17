@@ -98,6 +98,7 @@ def main(small_boards, main_board):
             depth = 2
             value, new_board = Minimax(small_boards, main_board, depth, 1, alpha, beta, True)
             print("new b : ", new_board)
+            print("final score : ", value)
             small_boards = new_board
 
             check_game(small_boards,main_board, turn)

@@ -12,7 +12,7 @@ def Minimax(Board, main_board, depth, player, alpha, beta, MaximizingPlayer):
                 else:
                     return (0, Board)
             else:
-                return evaluate(Board, player)
+                return (evaluate(Board, player),Board)
 
 
     #print("all all_moves : ", all_moves(Board, player))

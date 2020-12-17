@@ -31,9 +31,9 @@ def evaluate(Board, player):
     score += score_vertically(Board, player)
     score += score_diagonals(Board, player)
 
-    Score += See_diagonals(Board, player)
-    Score += See_vertically(Board, player)
-    Score += See_horizontally(Board, player)
+    score += See_diagonals(Board, player)
+    score += See_vertically(Board, player)
+    score += See_horizontally(Board, player)
 
     return score
 
