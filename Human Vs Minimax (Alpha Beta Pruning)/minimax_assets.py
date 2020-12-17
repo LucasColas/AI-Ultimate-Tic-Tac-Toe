@@ -43,7 +43,7 @@ def score_vertically(Board, player):
             check.append(row[indx])
 
             if len(check) >= 3:
-                get_score = evaluate_game(pieces, player)
+                get_score = evaluate_game(check, player)
                 if score < get_score:
                     score = get_score
                 check.clear()
@@ -63,7 +63,7 @@ def score_diagonals(Board, player):
                 stock_indx.append(Board[y+i][x+i])
 
                 if len(stock_indx) >= 3:
-                    get_score = evaluate_game(pieces, player)
+                    get_score = evaluate_game(stock_indx, player)
                     if score < get_score:
                         score = get_score
                     stock_indx.clear()
@@ -76,7 +76,7 @@ def score_diagonals(Board, player):
                 stock_nindx.append(Board[y-i][x+i])
 
                 if len(stock_nindx) >= 3:
-                    get_score = evaluate_game(pieces, player)
+                    get_score = evaluate_game(stock_nindx, player)
                     if score < get_score:
                         score = get_score
                     stock_nindx.clear()
