@@ -19,7 +19,7 @@ from minimax import Minimax
 import copy
 
 pygame.font.init()
-Width, Height = 810,810
+Width, Height = 792,792
 Square = Width//3
 Small_Square = Square//3
 margin = Width//30

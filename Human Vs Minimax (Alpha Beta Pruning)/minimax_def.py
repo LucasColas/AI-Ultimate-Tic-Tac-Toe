@@ -31,6 +31,10 @@ def evaluate(Board, player):
     score += score_vertically(Board, player)
     score += score_diagonals(Board, player)
 
+    Score += See_diagonals(Board, player)
+    Score += See_vertically(Board, player)
+    Score += See_horizontally(Board, player)
+
     return score
 
 def terminal_state(Board, player):
