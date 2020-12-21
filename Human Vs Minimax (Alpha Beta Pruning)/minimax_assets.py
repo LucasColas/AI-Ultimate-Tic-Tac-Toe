@@ -16,7 +16,28 @@ def evaluate_game(pieces, player):
     player_list = []
     opponent_list = []
     for el in pieces:
-        
+        if el == player:
+            player_list.append(el)
+        else:
+            opponent_list.append(el)
+
+    if player_list.count(player) == three:
+        score += 100
+
+    elif player_list.count(player) == two:
+        score += 50
+
+    elif player_list.count(player) == one:
+        score += 5
+
+    elif opponent_list.count(opponent(player)) == three:
+        score -= 100
+
+    elif opponent_list.count(opponent(player)) == two:
+        score -= 50
+
+    elif opponent_list.count(opponent(player)) == one:
+        score -= 5
 
 
     return score
