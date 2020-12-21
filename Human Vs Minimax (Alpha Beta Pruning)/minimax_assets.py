@@ -13,8 +13,10 @@ def evaluate_game(pieces, player):
     two_opp = 2*opponent(player)
     one_opp = opponent(player)
 
+    player_list = []
+    opponent_list = []
     for el in pieces:
-        pass 
+        
 
 
     return score
