@@ -5,13 +5,13 @@ def evaluate_game(pieces, player):
 
     score = 0
 
-    three = 3*player
-    two = 2*player
-    one = 1*player
+    three = 3
+    two = 2
+    one = 1
 
-    three_opp = 3*opponent(player)
-    two_opp = 2*opponent(player)
-    one_opp = opponent(player)
+    #three_opp = 3*opponent(player)
+    #two_opp = 2*opponent(player)
+    #one_opp = opponent(player)
 
     player_list = []
     opponent_list = []
