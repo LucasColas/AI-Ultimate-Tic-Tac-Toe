@@ -5,7 +5,16 @@ def evaluate_game(pieces, player):
 
     score = 0
 
-    
+    three = 3*player
+    two = 2*player
+    one = 1*player
+
+    three_opp = 3*opponent(player)
+    two_opp = 2*opponent(player)
+    one_opp = opponent(player)
+
+    for el in pieces:
+        pass 
 
 
     return score
