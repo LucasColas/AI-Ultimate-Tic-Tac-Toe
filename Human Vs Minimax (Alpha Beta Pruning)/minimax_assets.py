@@ -13,10 +13,10 @@ def evaluate_game(pieces, player):
         score += 10
 
     elif pieces.count(player) == 1 and pieces.count(-1) == 1:
-        score += 5
+        score += 15
 
     elif pieces.count(player) == 2 and pieces.count(0) == 1:
-        score += 10
+        score += 7
 
     if pieces.count(opp_player) == 2 and pieces.count(-1) == 1:
         score -= 8
