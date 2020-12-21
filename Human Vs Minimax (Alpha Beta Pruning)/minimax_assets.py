@@ -1,25 +1,12 @@
+def opponent(player):
+    return -1 if player == 1 else 1
 
 def evaluate_game(pieces, player):
-    opp_player = -1
-    if player == -1:
-        opp_player = 1
 
     score = 0
 
-    if pieces.count(player) == 3:
-        score += 50
+    
 
-    elif pieces.count(player) == 2 and pieces.count(-1) == 1:
-        score += 10
-
-    elif pieces.count(player) == 1 and pieces.count(-1) == 1:
-        score += 20
-
-    elif pieces.count(player) == 2 and pieces.count(0) == 1:
-        score += 7
-
-    if pieces.count(opp_player) == 2 and pieces.count(-1) == 1:
-        score -= 8
 
     return score
 
