@@ -1,6 +1,6 @@
 def opponent(player):
     return -1 if player == 1 else 1
-
+def possible
 def evaluate_game(pieces, player):
 
     score = 0
