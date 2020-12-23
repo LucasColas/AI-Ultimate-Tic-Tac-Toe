@@ -24,7 +24,9 @@ def Minimax(Board, main_board, depth, player, alpha, beta, MaximizingPlayer):
             #print("Board : ", Board_)
             value = Minimax(Board_, main_board, depth-1, -player, alpha, beta, False)[0]
             print("value", value)
-            score = max(value, score)
+            if value > score:
+                score = value
+
             if value == score:
                 Good_B = Board_
             alpha = max(alpha, value)
@@ -40,7 +42,9 @@ def Minimax(Board, main_board, depth, player, alpha, beta, MaximizingPlayer):
             value = Minimax(Board_, main_board, depth-1, -player, alpha, beta, True)[0]
             #print("value", value)
             #print("score", score)
-            score = min(value, score)
+            if value > score:
+                score = value
+
             if value == score:
                 Good_B = Board_
 
