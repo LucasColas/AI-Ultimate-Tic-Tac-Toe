@@ -2,6 +2,8 @@ from minimax_def import all_moves,  evaluate, terminal_state
 import copy
 from math import inf as infinity
 
+#Evaluate each box
+
 def Minimax(Board, main_board, depth, player, alpha, beta, MaximizingPlayer):
     if depth == 0 or terminal_state(Board, player):
             if terminal_state(Board, player):
