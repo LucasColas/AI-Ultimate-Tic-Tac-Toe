@@ -6,9 +6,10 @@ def get_small_box(Board, player):
                 for k in range(3):
                     small_box.append(Board[h+i][j+k])
             #print(small_box)
+            evaluate_small_box(small_box, player):
             small_box.clear()
 
 
 
-def evaluate_small_box(Board, player):
+def evaluate_small_box(small_box, player):
     pass
