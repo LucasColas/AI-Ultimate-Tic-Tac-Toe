@@ -1,3 +1,5 @@
+
+
 def get_small_box(Board, player):
     for i in range(0,9,3):
         small_box = []
