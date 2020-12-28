@@ -12,4 +12,5 @@ def get_small_box(Board, player):
 
 
 def evaluate_small_box(small_box, player):
+
     pass
