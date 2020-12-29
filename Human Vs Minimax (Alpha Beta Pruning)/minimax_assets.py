@@ -1,4 +1,4 @@
-
+from Check_game import empty_cells_small_boards
 
 def get_small_box(Board, player):
     for i in range(0,9,3):
@@ -50,21 +50,23 @@ def evaluate_small_box(small_box, player):
     for col in range(len(small_box)):
         check = []
         for row in small_box:
-            check.append(row[col])
+            check.append(small_box[col])
 
-        score += count(col, player)
+        score += count(small_box, player)
 
     diags = []
-    for indx in range(len(board)):
-        diags.append(board[indx][indx])
+    for indx in range(len(small_box)):
+        diags.append(small_box[indx][indx])
 
     score += count(diags, player)
 
     diags_2 = []
-    for indx, rev_indx in enumerate(reversed(range(len(board)))):
-        diags_2.append(board[indx][rev_indx])
-    score += count(diags_2)
+    for indx, rev_indx in enumerate(reversed(range(len(small_box)))):
+        diags_2.append(small_box[indx][rev_indx])
+    score += count(diags_2, player)
 
-    if len(empty_cells(board)) == 0:
-        print("No winner")
-        return True
+    if len(empty_cells_small_boards(small_box)) == 0:
+        score += 5
+
+
+    return score 
