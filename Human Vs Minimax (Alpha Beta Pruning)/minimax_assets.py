@@ -8,7 +8,7 @@ def get_small_box(Board, player):
                 for k in range(3):
                     small_box.append(Board[h+i][j+k])
             #print(small_box)
-            evaluate_small_box(small_box, player):
+            score = evaluate_small_box(small_box, player)
             small_box.clear()
 
 def count(array, player):
@@ -147,4 +147,3 @@ def See_diagonals(Board, player):
                         stock_nindx.clear()
 
     return score
- 
