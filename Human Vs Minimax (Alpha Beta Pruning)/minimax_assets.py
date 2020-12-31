@@ -6,9 +6,11 @@ def eval_small_boxes(Board, player):
         small_box = []
         for j in range(0,9,3):
             for h in range(3):
+                temp_list = []
                 for k in range(3):
-                    small_box.append(Board[h+i][j+k])
-            #print(small_box)
+                    temp_list.append(Board[h+i][j+k])
+                small_box.append(temp_list)
+
             score += evaluate_small_box(small_box, player)
             small_box.clear()
 
