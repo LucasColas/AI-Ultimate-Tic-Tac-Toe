@@ -44,7 +44,6 @@ def count(array, player):
 
 def evaluate_small_box(small_box, player):
 
-
     score = 0
     print("small_box", small_box)
 
