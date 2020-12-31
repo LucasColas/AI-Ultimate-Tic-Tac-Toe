@@ -1,6 +1,7 @@
 from Check_game import empty_cells_small_boards
 
 def get_small_box(Board, player):
+    best_score = 0
     for i in range(0,9,3):
         small_box = []
         for j in range(0,9,3):
@@ -9,7 +10,11 @@ def get_small_box(Board, player):
                     small_box.append(Board[h+i][j+k])
             #print(small_box)
             score = evaluate_small_box(small_box, player)
+            if score > best_score:
+                best_score = score
             small_box.clear()
+
+    return best_score
 
 def count(array, player):
     score = 0
