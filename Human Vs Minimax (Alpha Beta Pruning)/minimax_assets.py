@@ -46,8 +46,10 @@ def evaluate_small_box(small_box, player):
 
 
     score = 0
+    print("small_box", small_box)
 
     for row in small_box:
+        print("row", row)
         score += count(row,player)
 
     for col in range(len(small_box)):
