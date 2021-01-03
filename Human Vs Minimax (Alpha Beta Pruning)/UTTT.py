@@ -63,6 +63,7 @@ main_board = Game_Board.create_board()
 small_boards = Game_Board.every_small_boards()
 
 def main(small_boards, main_board):
+    print("Welcome ! ")
     run = True
     turn = random.choice([-1,1])
     AI = 1
@@ -102,7 +103,7 @@ def main(small_boards, main_board):
 
         if turn == AI and not game_over:
 
-            new_board =ai_turn(small_boards, main_board)
+            new_board = ai_turn(small_boards, main_board)
             small_boards = new_board
             check_game(small_boards,main_board, turn)
 

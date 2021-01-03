@@ -39,6 +39,9 @@ def count(array, player):
         score -= 10
 
     if array.count(player) == 1 and array.count(opp_player) == 2 :
+        score += 15
+
+    if array.count(player) == 2 and array.count(opp_player) == 1:
         score += 20
 
 

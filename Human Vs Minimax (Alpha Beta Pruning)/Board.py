@@ -15,6 +15,7 @@ class new_Board():
 
     def reset(self, board, main_board, game_over):
         if game_over:
+            print("reset")
             for x,row in enumerate(board):
                 for y in range(len(row)):
                     board[y][x] = 0
