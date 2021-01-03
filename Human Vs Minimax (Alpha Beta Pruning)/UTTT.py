@@ -39,6 +39,15 @@ Lines_color_2 = (250, 0, 0)
 
 Game_Board = new_Board()
 
+def ai_turn(small_boards, main_board):
+    if small_boards[4][4] == 0:
+        small_boards[4][4] = 1
+    alpha, beta = -infinity, +infinity
+    depth = 2
+    value, new_board = Minimax(small_boards, main_board, depth, 1, alpha, beta, True)
+    print("new b : ", new_board)
+    print("final score : ", value)
+    return new_board
 
 
 def update_window(Win, Lines_color, Lines_color_2, Width, Square, Small_Square, margin, Small_Cross, Small_Circle, Cross, Circle,board,big_board, player):
@@ -48,9 +57,7 @@ def update_window(Win, Lines_color, Lines_color_2, Width, Square, Small_Square, 
     draw_big_pieces(Win, big_board, Square, Circle, Cross)
     pygame.display.update()
 
-def ai_turn(board, small_boards, turn):
-    small_boards = board
-    turn = -1
+
 
 main_board = Game_Board.create_board()
 small_boards = Game_Board.every_small_boards()
@@ -94,13 +101,9 @@ def main(small_boards, main_board):
                     #update_window(Win, Lines_color, Lines_color_2, Width, Square, Small_Square, margin, Cross_small, Circle_small, Cross, Circle, small_boards, main_board, turn)
 
         if turn == AI and not game_over:
-            alpha, beta = -infinity, +infinity
-            depth = 2
-            value, new_board = Minimax(small_boards, main_board, depth, 1, alpha, beta, True)
-            print("new b : ", new_board)
-            print("final score : ", value)
-            small_boards = new_board
 
+            new_board =ai_turn(small_boards, main_board)
+            small_boards = new_board
             check_game(small_boards,main_board, turn)
 
             print("small_boards : ", small_boards)
