@@ -106,7 +106,7 @@ def main(small_boards, main_board):
 
         if turn == AI and not game_over:
 
-            new_board = ai_turn(small_boards, main_board)
+            new_board = ai_turn(small_boards, main_board, turn)
             small_boards = new_board
             check_game(small_boards,main_board, turn)
 
