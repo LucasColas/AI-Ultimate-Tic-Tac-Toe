@@ -44,12 +44,13 @@ def ai_turn(small_boards, main_board, turn):
         new_board = copy.deepcopy(small_boards)
         new_board[4][4] = 1
         return new_board
-    alpha, beta = -infinity, +infinity
-    depth = 2
-    value, new_board = Minimax(small_boards, main_board, depth, 1, alpha, beta, True)
-    print("new b : ", new_board)
-    print("final score : ", value)
-    return new_board
+    else:
+        alpha, beta = -infinity, +infinity
+        depth = 2
+        value, new_board = Minimax(small_boards, main_board, depth, 1, alpha, beta, True)
+        print("new b : ", new_board)
+        print("final score : ", value)
+        return new_board
 
 
 def update_window(Win, Lines_color, Lines_color_2, Width, Square, Small_Square, margin, Small_Cross, Small_Circle, Cross, Circle,board,big_board, player):
