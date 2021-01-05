@@ -24,10 +24,10 @@ def count(array, player):
         score += 100
 
     if array.count(player) == 2:
-        score += 50
+        score += 30
 
     if array.count(player) == 1:
-        score += 10
+        score += 1
 
     if array.count(opp_player) == 3:
         score -= 100
@@ -36,13 +36,13 @@ def count(array, player):
         score -= 30
 
     if array.count(opp_player) == 1:
-        score -= 10
+        score -= 1
 
     if array.count(player) == 1 and array.count(opp_player) == 2 :
-        score += 40
+        score += 5
 
     if array.count(player) == 2 and array.count(opp_player) == 1:
-        score += 60
+        score += 15
 
 
     return score
