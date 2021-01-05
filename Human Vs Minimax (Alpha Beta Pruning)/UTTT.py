@@ -97,11 +97,12 @@ def main(small_boards, main_board):
                     if turn == HUMAN and not game_over:
                         if set_locations(small_boards, main_board, pos[0]//(Small_Square), pos[1]//(Small_Square), turn):
                             check_game(small_boards, main_board,turn)
+                            turn = AI
 
-                        if Check_Big_Board(main_board, turn):
+                        if Check_Big_Board(main_board, HUMAN):
                             game_over = True
 
-                        turn = AI
+
                     #update_window(Win, Lines_color, Lines_color_2, Width, Square, Small_Square, margin, Cross_small, Circle_small, Cross, Circle, small_boards, main_board, turn)
 
         if turn == AI and not game_over:
