@@ -24,7 +24,7 @@ def Minimax(Board, main_board, depth, player, alpha, beta, MaximizingPlayer):
         for Board_ in all_moves(Board, main_board, player):
             #print("Board : ", Board_)
             value = Minimax(Board_, main_board, depth-1, -player, alpha, beta, False)[0]
-            print("value", value)
+            #print("value", value)
             if value > score:
                 score = value
 
@@ -33,7 +33,7 @@ def Minimax(Board, main_board, depth, player, alpha, beta, MaximizingPlayer):
             alpha = max(alpha, value)
             if alpha >= beta:
                 break
-            print("score", score)
+            #print("score", score)
         return score, Good_B #same type of return
 
     else:
