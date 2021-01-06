@@ -44,7 +44,6 @@ def count(array, player):
     if array.count(player) == 2 and array.count(opp_player) == 1:
         score += 15
 
-
     return score
 
 def evaluate_small_box(small_box, player):
