@@ -1,3 +1,9 @@
+def get_next_box(x,y):
+    for i in range(0,7,3):
+        for j in range(0,7,3):
+            if (x,y) == (i,j):
+                return 
+
 def place_big_board(main_board,x, y, player):
     #print("indx : ", indx)
     #print("i : ", i)

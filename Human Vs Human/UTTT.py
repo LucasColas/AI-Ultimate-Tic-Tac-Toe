@@ -105,6 +105,7 @@ def main():
 
                     if set_locations(small_boards, main_board, pos[0]//(Small_Square), pos[1]//(Small_Square), turn):
                         check_game(small_boards, main_board,turn)
+                        
                         if Check_Big_Board(main_board, turn):
                             game_over = True
 
