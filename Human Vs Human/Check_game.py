@@ -6,6 +6,7 @@ def get_next_box(x,y):
                 for k in range(3):
                     for h in range(3):
                         possible_moves.append([k,h])
+                        return possible_moves
 
 def place_big_board(main_board,x, y, player):
     #print("indx : ", indx)
