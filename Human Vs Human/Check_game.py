@@ -2,7 +2,10 @@ def get_next_box(x,y):
     for i in range(0,7,3):
         for j in range(0,7,3):
             if (x,y) == (i,j):
-                return 
+                possible_moves = []
+                for k in range(3):
+                    for h in range(3):
+                        possible_moves.append([k,h])
 
 def place_big_board(main_board,x, y, player):
     #print("indx : ", indx)
