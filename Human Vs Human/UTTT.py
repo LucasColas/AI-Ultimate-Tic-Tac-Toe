@@ -34,8 +34,19 @@ Lines_color_2 = (250, 0, 0)
 
 Game_Board = new_Board()
 
+def is_full(x,y,Board):
+    moves = get_possible_moves(x,y)
+    empty = []
+    for indx, values in enumerate(moves):
+        if Board[values[0]][values[1]] == 0:
+            empty.append(values)
+    if len(empty) == 0:
+        return True
+
 def valid_locations(board,main_board,x,y):
-    if board[y][x] == 0 and main_board[y//3][x//3] == 0:
+    if board[y][x] == 0 and main_board[y//3][x//3] == 0 and [x,y] in get_possible_moves(x,y):
+        return True
+    elif board[y][x] == 0 and main_board[y//3][x//3] == 0 and is_full(x,y,Board):
         return True
 
 def set_locations(board,main_board, x,y, player):
@@ -81,7 +92,7 @@ def main():
     game_over = False
     good = False
 
-    first time = 1
+    first_time = 1
 
     main_board = Game_Board.create_board()
     small_boards = Game_Board.every_small_boards()
@@ -106,7 +117,8 @@ def main():
                     pos = pygame.mouse.get_pos()
 
 
-                    if set_locations(small_boards, main_board, pos[0]//(Small_Square), pos[1]//(Small_Square), turn):
+                    if set_locations(small_boards, main_board, pos[0]//(Small_Square), pos[1]//(Small_Square), turn, first_time):
+
                         check_game(small_boards, main_board,turn)
 
                         if Check_Big_Board(main_board, turn):
@@ -116,6 +128,7 @@ def main():
                                 turn = Player_2
                             else:
                                 turn = Player_1
+                        first_time = 0
 
 
 main()
