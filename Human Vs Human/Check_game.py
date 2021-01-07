@@ -6,7 +6,7 @@ def get_next_box(x,y):
                 for k in range(3):
                     for h in range(3):
                         possible_moves.append([k,h])
-                        return possible_moves
+                return possible_moves
 
     for i in range(0,7,3):
         for j in range(1,8,3):
@@ -15,7 +15,7 @@ def get_next_box(x,y):
                 for k in range(3):
                     for h in range(3,6):
                         possible_moves.append([k,h])
-                        return possible_moves
+                return possible_moves
 
     for i in range(0,7,3):
         for j in range(2,9,3):
@@ -23,7 +23,9 @@ def get_next_box(x,y):
                 possible_moves = []
                 for k in range(3):
                     for h in range(6,9):
-                        print(i,j)
+                        possible_moves.append([k,h])
+                return possible_moves
+
 
 
 
