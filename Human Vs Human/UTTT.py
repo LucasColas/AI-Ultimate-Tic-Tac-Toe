@@ -81,6 +81,8 @@ def main():
     game_over = False
     good = False
 
+    first time = 1
+
     main_board = Game_Board.create_board()
     small_boards = Game_Board.every_small_boards()
 
@@ -103,9 +105,10 @@ def main():
                 if pygame.mouse.get_pressed()[0]:
                     pos = pygame.mouse.get_pos()
 
+
                     if set_locations(small_boards, main_board, pos[0]//(Small_Square), pos[1]//(Small_Square), turn):
                         check_game(small_boards, main_board,turn)
-                        
+
                         if Check_Big_Board(main_board, turn):
                             game_over = True
 
