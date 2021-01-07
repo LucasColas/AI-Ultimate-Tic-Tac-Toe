@@ -83,17 +83,6 @@ def get_next_box(x,y):
                 return possible_moves
 
 
-
-
-
-
-
-
-
-
-
-
-
 def place_big_board(main_board,x, y, player):
     #print("indx : ", indx)
     #print("i : ", i)
