@@ -45,6 +45,15 @@ def get_next_box(x,y):
                         possible_moves.append([k,h])
                 return possible_moves
 
+    for i in range(1,8,3):
+        for j in range(2,9,3):
+            if (x,y) == (i,j):
+                possible_moves = []
+                for k in range(3,6):
+                    for h in range(6,9):
+                possible_moves.append([k,h])
+
+
 
 
 
