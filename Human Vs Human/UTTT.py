@@ -126,7 +126,7 @@ def main():
                     if set_locations(small_boards, main_board, pos[0]//(Small_Square), pos[1]//(Small_Square), turn, first_time):
 
                         check_game(small_boards, main_board,turn)
-                        get_possible_moves
+                        box = get_possible_moves(pos[0]//(Small_Square), pos[1]//(Small_Square))
                         if Check_Big_Board(main_board, turn):
                             game_over = True
 
