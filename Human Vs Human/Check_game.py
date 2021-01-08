@@ -87,6 +87,10 @@ def get_possible_moves(x,y):
 
     return box
 
+def check_box():
+    if stg:
+        pass 
+
 def place_big_board(main_board,x, y, player):
     #print("indx : ", indx)
     #print("i : ", i)

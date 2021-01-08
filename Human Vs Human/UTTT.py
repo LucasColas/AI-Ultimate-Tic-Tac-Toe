@@ -46,8 +46,7 @@ def is_full(x,y,Board):
 def valid_locations(board,main_board,x,y):
     if board[y][x] == 0 and main_board[y//3][x//3] == 0 and [x,y] in get_possible_moves(x,y):
         return True
-    elif board[y][x] == 0 and main_board[y//3][x//3] == 0 and is_full(x,y,Board):
-        return True
+    
 
 def set_locations(board,main_board, x,y, player):
     if valid_locations(board,main_board,x,y):
