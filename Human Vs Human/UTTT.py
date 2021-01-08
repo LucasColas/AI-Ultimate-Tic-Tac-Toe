@@ -43,11 +43,15 @@ def is_full(x,y,Board):
     if len(empty) == 0:
         return True
 
-def valid_locations(board,main_board,x,y, box):
+def box_to_place():
+    pass
+
+def valid_locations(board,main_board,x,y):
     if board[y][x] == 0 and main_board[y//3][x//3] == 0 and [x,y] in get_possible_moves(x,y):
         return True
 
-    if board[y][x] == 0 and main_board[y//3][x//3] == 0 and
+    if board[y][x] == 0 and main_board[y//3][x//3] == 0 and stg:
+        pass
 
 
 def set_locations(board,main_board, x,y, player):
@@ -86,7 +90,7 @@ def main():
     turn = random.choice([-1,1])
     Player_1 = 1
     Player_2 = -1
-    Game_Board.test()
+    #Game_Board.test()
 
     FPS = 120
     green = (0,178,0,0)
@@ -94,6 +98,7 @@ def main():
     good = False
 
     first_time = 1
+    box = None
 
     main_board = Game_Board.create_board()
     small_boards = Game_Board.every_small_boards()
@@ -121,7 +126,7 @@ def main():
                     if set_locations(small_boards, main_board, pos[0]//(Small_Square), pos[1]//(Small_Square), turn, first_time):
 
                         check_game(small_boards, main_board,turn)
-
+                        get_possible_moves
                         if Check_Big_Board(main_board, turn):
                             game_over = True
 
