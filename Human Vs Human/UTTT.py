@@ -53,8 +53,8 @@ def valid_locations(board,main_board,x,y, box):
         return True
 
 
-def set_locations(board,main_board, x,y, player):
-    if valid_locations(board,main_board,x,y):
+def set_locations(board,main_board, x,y, player, box):
+    if valid_locations(board,main_board,x,y, box):
         board[y][x] = player
         return True
     else:
@@ -122,7 +122,7 @@ def main():
                     pos = pygame.mouse.get_pos()
 
 
-                    if set_locations(small_boards, main_board, pos[0]//(Small_Square), pos[1]//(Small_Square), turn, first_time):
+                    if set_locations(small_boards, main_board, pos[0]//(Small_Square), pos[1]//(Small_Square), turn, box):
 
                         check_game(small_boards, main_board,turn)
                         box = get_possible_moves(pos[0]//(Small_Square), pos[1]//(Small_Square))
@@ -133,7 +133,7 @@ def main():
                                 turn = Player_2
                             else:
                                 turn = Player_1
-                        
+
 
 
 main()
