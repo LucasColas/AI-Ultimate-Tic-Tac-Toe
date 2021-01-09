@@ -87,10 +87,15 @@ def get_possible_moves(x,y):
 
     return box
 
-def check_box():
-    if stg:
-        pass 
+def is_empty_box(Board,box):
+    empty_cells = []
+    for index, values in enumerate(box):
+        if Board[values[0]][values[1]] == 0:
+            empty_cell.append(values)
 
+    if len(empty_cells) == 0:
+        return False
+        
 def place_big_board(main_board,x, y, player):
     #print("indx : ", indx)
     #print("i : ", i)
