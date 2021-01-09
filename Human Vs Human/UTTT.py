@@ -50,7 +50,7 @@ def valid_locations(board,main_board,x,y, box):
             return True
 
     if board[y][x] == 0 and main_board[y//3][x//3] == 0 and not is_empty_box(board, box):
-        pass
+        return True
 
 
 def set_locations(board,main_board, x,y, player):
