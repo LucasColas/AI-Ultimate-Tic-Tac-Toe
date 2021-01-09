@@ -48,8 +48,10 @@ def valid_locations(board,main_board,x,y, box):
     if box == None or [x,y] in box:
         if board[y][x] == 0 and main_board[y//3][x//3] == 0:
             return True
+        else:
+            return False
 
-    if board[y][x] == 0 and main_board[y//3][x//3] == 0 and not is_empty_box(board, box):
+    if board[y][x] == 0 and main_board[y//3][x//3] == 0 and is_empty_box(board, box):
         return True
 
 
@@ -123,9 +125,10 @@ def main():
 
 
                     if set_locations(small_boards, main_board, pos[0]//(Small_Square), pos[1]//(Small_Square), turn, box):
-                        print("in")
+                        print("box after set_locations", box)
                         check_game(small_boards, main_board,turn)
                         box = get_possible_moves(pos[0]//(Small_Square), pos[1]//(Small_Square))
+                        print("box after get_possible_moves", box)
                         if Check_Big_Board(main_board, turn):
                             game_over = True
 

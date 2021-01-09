@@ -94,6 +94,9 @@ def is_empty_box(Board,box):
             empty_cells.append(values)
 
     if len(empty_cells) == 0:
+        return True
+
+    else:
         return False
 
 def place_big_board(main_board,x, y, player):
