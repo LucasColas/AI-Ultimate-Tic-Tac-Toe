@@ -43,14 +43,13 @@ def is_full(x,y,Board):
     if len(empty) == 0:
         return True
 
-def box_to_place():
-    pass
 
-def valid_locations(board,main_board,x,y):
-    if board[y][x] == 0 and main_board[y//3][x//3] == 0 and [x,y] in get_possible_moves(x,y):
-        return True
+def valid_locations(board,main_board,x,y, box):
+    if box == None or [x,y] in box:
+        if board[y][x] == 0 and main_board[y//3][x//3] == 0:
+            return True
 
-    if board[y][x] == 0 and main_board[y//3][x//3] == 0 and is_empty_box(board, box):
+    if board[y][x] == 0 and main_board[y//3][x//3] == 0 and not is_empty_box(board, box):
         pass
 
 
