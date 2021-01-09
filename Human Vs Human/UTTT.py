@@ -96,15 +96,15 @@ def main():
     game_over = False
     good = False
 
-    first_time = 1
+
     box = None
 
     main_board = Game_Board.create_board()
     small_boards = Game_Board.every_small_boards()
 
     while run:
-        clock.tick(FPS)
 
+        clock.tick(FPS)
         fill(Circle_small,green)
         fill(Circle, green)
         update_window(Win, Lines_color, Lines_color_2, Width, Square, Small_Square, margin, Cross_small, Circle_small, Cross, Circle, small_boards, main_board, turn)
@@ -133,7 +133,7 @@ def main():
                                 turn = Player_2
                             else:
                                 turn = Player_1
-                        first_time = 0
+                        
 
 
 main()
