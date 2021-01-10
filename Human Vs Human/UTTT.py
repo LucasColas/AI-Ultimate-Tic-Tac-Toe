@@ -49,9 +49,6 @@ def valid_locations(board,main_board,x,y, box):
         if board[y][x] == 0 and main_board[y//3][x//3] == 0:
             return True
 
-        else:
-            return False
-
     if board[y][x] == 0 and main_board[y//3][x//3] == 0 and is_empty_box(board, box):
         return True
 
