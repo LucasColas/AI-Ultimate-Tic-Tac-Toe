@@ -27,7 +27,7 @@ def draw_big_pieces(Win, big_board, Square, Circle, Cross):
                 Win.blit(Circle, (x2*Square, y2*Square))
 
             if big_board[y2][x2] == 1:
-                Win.blit(Cross, (x1*Square, y1*Square))
+                Win.blit(Cross, (x2*Square, y2*Square))
 
 
 
