@@ -89,6 +89,8 @@ def is_empty_box(Board,box):
         if Board[values[1]][values[0]] == 0:
             empty_cells.append(values)
 
+    print("empty_cells" ,len(empty_cells))
+
     if len(empty_cells) == 0:
         return False
 
