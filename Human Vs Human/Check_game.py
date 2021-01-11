@@ -85,7 +85,7 @@ def get_next_box(x,y):
 def is_empty_box(Board,box):
     empty_cells = []
     for index, values in enumerate(box):
-        if Board[values[0]][values[1]] == 0:
+        if Board[values[1]][values[0]] == 0:
             empty_cells.append(values)
 
     if len(empty_cells) == 0:
