@@ -82,10 +82,12 @@ def get_next_box(x,y):
                         possible_moves.append([k,h])
                 return possible_moves
 
-def get_possible_moves(x,y):
+def get_possible_moves(Board, x,y):
     box = get_next_box(x,y)
-
-    return box
+    if is_empty_box(Board, Box):
+        return box
+    else:
+        return empty_cells_small_boards(Board)
 
 def is_empty_box(Board,box):
     empty_cells = []
