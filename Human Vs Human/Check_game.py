@@ -82,13 +82,6 @@ def get_next_box(x,y):
                         possible_moves.append([k,h])
                 return possible_moves
 
-def get_possible_moves(Board, x,y):
-    box = get_next_box(x,y)
-    if is_empty_box(Board, Box):
-        return box
-    else:
-        return empty_cells_small_boards(Board)
-
 def is_empty_box(Board,box):
     empty_cells = []
     for index, values in enumerate(box):
@@ -100,6 +93,16 @@ def is_empty_box(Board,box):
 
     else:
         return True
+
+def get_possible_moves(Board, x,y):
+    Box = get_next_box(x,y)
+    if is_empty_box(Board, Box):
+        print("return ")
+        return Box
+    else:
+        return empty_cells_small_boards(Board)
+
+
 
 def place_big_board(main_board,x, y, player):
     #print("indx : ", indx)
