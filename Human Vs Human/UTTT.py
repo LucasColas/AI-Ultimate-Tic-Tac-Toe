@@ -12,6 +12,7 @@ from Frontend import draw_big_pieces
 
 from Check_game import Check_horizontally, Check_vertically, Check_diagonals, Check_Big_Board, empty_cells_big_board, Check_empty_cells
 from Check_game import get_possible_moves, is_empty_box
+from Check_game import Validate_box
 
 pygame.font.init()
 Width, Height = 810,810

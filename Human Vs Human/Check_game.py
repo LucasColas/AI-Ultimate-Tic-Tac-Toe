@@ -84,6 +84,7 @@ def get_next_box(x,y):
 
 def is_empty_box(Board,box):
     empty_cells = []
+    print("Box", box)
     for index, values in enumerate(box):
         if Board[values[1]][values[0]] == 0:
             empty_cells.append(values)
@@ -96,9 +97,12 @@ def is_empty_box(Board,box):
 
 def get_possible_moves(Board, x,y):
     Box = get_next_box(x,y)
+    return Box
+
+def Validate_box(Board, Box):
     if is_empty_box(Board, Box):
-        print("return ")
         return Box
+
     else:
         return empty_cells_small_boards(Board)
 
