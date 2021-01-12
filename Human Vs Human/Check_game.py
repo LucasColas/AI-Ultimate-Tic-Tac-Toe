@@ -104,7 +104,7 @@ def get_possible_moves(Board, x,y):
     return Box
 
 def Validate_box(Board, main_board,Box,x,y):
-    if is_empty_box(Board, main_board, Box,x,y):
+    if is_empty_box(Board, main_board, Box,x,y) and main_board[y//3][x//3] == 0:
         return Box
 
     else:
