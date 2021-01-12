@@ -93,7 +93,7 @@ def is_empty_box(Board,main_board,box,x,y,):
 
 
 
-    if len(empty_cells) == [x//3,y//3] in empty_cells_big_board(main_board):
+    if len(empty_cells) == 0:
         return False
 
     else:
@@ -104,12 +104,11 @@ def get_possible_moves(Board, x,y):
     return Box
 
 def Validate_box(Board, main_board,Box,x,y):
-    if is_empty_box(Board, main_board, Box,x,y) and main_board[y//3][x//3] == 0:
+    if is_empty_box(Board, main_board, Box,x,y) and main_board[Box[0][1]//3][Box[0][0]//3] == 0:
         return Box
 
     else:
         return empty_cells_small_boards(Board)
-
 
 
 def place_big_board(main_board,x, y, player):
