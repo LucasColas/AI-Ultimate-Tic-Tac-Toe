@@ -124,8 +124,8 @@ def place_big_board(main_board,x, y, player):
 
 def empty_cells_small_boards(board):
     empty_cells = []
-    for x,row in enumerate(board):
-        for y,case in enumerate(row):
+    for y,row in enumerate(board): #Switched y and x. Maybe it will cause issues
+        for x,case in enumerate(row):
             if x == 1 and y == 4:
                 print("board[4][1]",board[4][1])
                 print("board[1][4]",board[1][4])
