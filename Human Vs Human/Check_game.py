@@ -126,8 +126,9 @@ def empty_cells_small_boards(board):
     empty_cells = []
     for x,row in enumerate(board):
         for y,case in enumerate(row):
-            #if x == 1 and y == 4:
-                #print("board[4][1]",board[4][1])
+            if x == 1 and y == 4:
+                print("board[4][1]",board[4][1])
+                print("board[1][4]",board[1][4])
 
             if case == 0:
                 empty_cells.append([x,y])
