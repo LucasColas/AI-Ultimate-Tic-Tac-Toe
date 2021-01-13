@@ -51,10 +51,6 @@ def valid_locations(board,main_board,x,y, box):
             print("it's going to return True")
             return True
 
-    #if board[y][x] == 0 and main_board[y//3][x//3] == 0 and not is_empty_box(board, box):
-        #print("It's going to return True in the second if")
-        #return True
-
 
 def set_locations(board,main_board, x,y, player, box):
     if valid_locations(board,main_board,x,y, box):
