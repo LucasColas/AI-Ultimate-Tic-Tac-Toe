@@ -14,6 +14,7 @@ from Check_game import Check_horizontally, Check_vertically, Check_diagonals, Ch
 from Check_game import get_possible_moves, is_empty_box
 from Check_game import Validate_box
 from Check_game import valid_locations, set_locations
+from Check_game import check_game
 
 pygame.font.init()
 Width, Height = 810,810
@@ -36,19 +37,7 @@ Lines_color_2 = (250, 0, 0)
 
 Game_Board = new_Board()
 
-def check_game(board,main_board, player):
 
-    #Check horizontally
-    Check_horizontally(board, main_board, player)
-
-    #Check vertically
-    Check_vertically(board, main_board, player)
-
-    #Check diagonals
-    Check_diagonals(board, main_board, player)
-
-    #Check empty cells
-    Check_empty_cells(board)
 
 
 def update_window(Win, Lines_color, Lines_color_2, Width, Square, Small_Square, margin, Small_Cross, Small_Circle, Cross, Circle,board,big_board, player):

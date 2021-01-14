@@ -16,7 +16,6 @@ from Check_game import Check_empty_cells, set_locations, valid_locations
 
 from minimax import Minimax
 
-import copy
 
 pygame.font.init()
 Width, Height = 792,792
@@ -92,7 +91,7 @@ def main(small_boards, main_board):
                     game_over = False
 
             if event.type == pygame.MOUSEBUTTONDOWN and turn == HUMAN and not game_over:
-                
+
                 if pygame.mouse.get_pressed()[0] and turn == HUMAN and not game_over:
                     pos = pygame.mouse.get_pos()
                     if turn == HUMAN and not game_over:
