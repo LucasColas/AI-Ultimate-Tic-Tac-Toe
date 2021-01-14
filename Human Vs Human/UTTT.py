@@ -48,7 +48,7 @@ def is_full(x,y,Board):
 def valid_locations(board,main_board,x,y, box):
     if box == None or [x,y] in box:
         if board[y][x] == 0 and main_board[y//3][x//3] == 0:
-            print("it's going to return True")
+            #print("it's going to return True")
             return True
 
 
@@ -122,12 +122,12 @@ def main():
 
 
                     if set_locations(small_boards, main_board, pos[0]//(Small_Square), pos[1]//(Small_Square), turn, box):
-                        print("pos",pos[0]//(Small_Square), pos[1]//(Small_Square))
+                        #print("pos",pos[0]//(Small_Square), pos[1]//(Small_Square))
                         check_game(small_boards, main_board,turn)
                         new_box = get_possible_moves(small_boards,pos[0]//(Small_Square), pos[1]//(Small_Square))
                         #print("box after get_possible_moves", new_box)
                         box = Validate_box(small_boards, main_board, new_box,pos[0]//(Small_Square), pos[1]//(Small_Square))
-                        print("Box validated", box)
+                        #print("Box validated", box)
 
                         #print("small_boards", small_boards)
                         if Check_Big_Board(main_board, turn):

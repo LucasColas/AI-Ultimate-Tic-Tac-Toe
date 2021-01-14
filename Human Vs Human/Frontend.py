@@ -55,10 +55,10 @@ def draw_board(Win, Lines_color, Lines_color_2,Width, Square, Small_Square, marg
 
 def Winner(player):
     if player == -1:
-        print("Human wins")
+        print("Player with circles wins")
 
     if player == 1:
-        print("AI wins")
+        print("Player with crosses wins")
 
     else:
         print("no one wins")
