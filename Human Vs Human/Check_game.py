@@ -126,8 +126,8 @@ def empty_cells_small_boards(board):
     empty_cells = []
     for y,row in enumerate(board): #Switched y and x. Maybe it will cause issues
         for x,case in enumerate(row):
-            if x == 1 and y == 4:
-                
+            #if x == 1 and y == 4:
+                #pass
 
             if case == 0:
                 empty_cells.append([x,y])
