@@ -271,3 +271,19 @@ def Check_Big_Board(main_board, player):
     if len(empty_cells_big_board(main_board)) == 0:
         print("No One Wins")
         return True
+
+
+
+def check_game(board,main_board, player):
+
+    #Check horizontally
+    Check_horizontally(board, main_board, player)
+
+    #Check vertically
+    Check_vertically(board, main_board, player)
+
+    #Check diagonals
+    Check_diagonals(board, main_board, player)
+
+    #Check empty cells
+    Check_empty_cells(board)
