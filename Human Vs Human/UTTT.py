@@ -35,15 +35,6 @@ Lines_color_2 = (250, 0, 0)
 
 Game_Board = new_Board()
 
-def is_full(x,y,Board):
-    moves = get_possible_moves(x,y)
-    empty = []
-    for indx, values in enumerate(moves):
-        if Board[values[0]][values[1]] == 0:
-            empty.append(values)
-    if len(empty) == 0:
-        return True
-
 
 def valid_locations(board,main_board,x,y, box):
     if box == None or [x,y] in box:
