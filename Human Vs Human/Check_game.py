@@ -1,3 +1,18 @@
+def valid_locations(board,main_board,x,y, box):
+    if box == None or [x,y] in box:
+        if board[y][x] == 0 and main_board[y//3][x//3] == 0:
+            #print("it's going to return True")
+            return True
+
+
+def set_locations(board,main_board, x,y, player, box):
+    if valid_locations(board,main_board,x,y, box):
+        board[y][x] = player
+        return True
+    else:
+        return False
+
+
 def get_next_box(x,y):
     for i in range(0,7,3):
         for j in range(0,7,3):

@@ -13,6 +13,7 @@ from Frontend import draw_big_pieces
 from Check_game import Check_horizontally, Check_vertically, Check_diagonals, Check_Big_Board, empty_cells_big_board, Check_empty_cells
 from Check_game import get_possible_moves, is_empty_box
 from Check_game import Validate_box
+from Check_game import valid_locations, set_locations
 
 pygame.font.init()
 Width, Height = 810,810
@@ -34,22 +35,6 @@ Lines_color = (211,211,211)
 Lines_color_2 = (250, 0, 0)
 
 Game_Board = new_Board()
-
-
-def valid_locations(board,main_board,x,y, box):
-    if box == None or [x,y] in box:
-        if board[y][x] == 0 and main_board[y//3][x//3] == 0:
-            #print("it's going to return True")
-            return True
-
-
-def set_locations(board,main_board, x,y, player, box):
-    if valid_locations(board,main_board,x,y, box):
-        board[y][x] = player
-        return True
-    else:
-        return False
-
 
 def check_game(board,main_board, player):
 
