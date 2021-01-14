@@ -92,6 +92,7 @@ def main(small_boards, main_board):
                     game_over = False
 
             if event.type == pygame.MOUSEBUTTONDOWN and turn == HUMAN and not game_over:
+                
                 if pygame.mouse.get_pressed()[0] and turn == HUMAN and not game_over:
                     pos = pygame.mouse.get_pos()
                     if turn == HUMAN and not game_over:
