@@ -8,8 +8,8 @@ import copy
 #Board = new_Board()
 #boards = Board.every_small_boards()
 
-def all_moves(Box):
-    
+
+
 
 """
 def all_moves(Board, main_board, player):
