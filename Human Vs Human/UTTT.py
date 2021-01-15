@@ -38,8 +38,6 @@ Lines_color_2 = (250, 0, 0)
 Game_Board = new_Board()
 
 
-
-
 def update_window(Win, Lines_color, Lines_color_2, Width, Square, Small_Square, margin, Small_Cross, Small_Circle, Cross, Circle,board,big_board, player):
     Win.fill(Bg)
     Draw_pieces(Win,Small_Cross, Small_Circle,Cross, Circle, Small_Square, Square, board)
