@@ -8,6 +8,10 @@ import copy
 #Board = new_Board()
 #boards = Board.every_small_boards()
 
+def all_moves(Box):
+    
+
+"""
 def all_moves(Board, main_board, player):
     all_moves = []
 
@@ -20,7 +24,7 @@ def all_moves(Board, main_board, player):
                     all_moves.append(new_Board)
 
     return all_moves
-
+"""
 
 #all_moves(boards,1)
 
