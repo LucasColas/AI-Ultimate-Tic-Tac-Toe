@@ -39,8 +39,8 @@ Lines_color_2 = (250, 0, 0)
 
 Game_Board = new_Board()
 
-def ai_turn(small_boards, main_board, turn):
-    if small_boards[4][4] == 0 and turn == 1:
+def ai_turn(small_boards, main_board, turn, box):
+    if small_boards[4][4] == 0 and turn == 1 and [4,4] in box:
         new_board = copy.deepcopy(small_boards)
         new_board[4][4] = 1
         return new_board
@@ -116,7 +116,7 @@ def main(small_boards, main_board):
 
         if turn == AI and not game_over:
 
-            new_board = ai_turn(small_boards, main_board, turn)
+            new_board = ai_turn(small_boards, main_board, turn, box)
             small_boards = new_board
             check_game(small_boards,main_board, turn)
 
