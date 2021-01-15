@@ -12,6 +12,8 @@ def all_moves(Board, main_board,box,player):
     all_moves = []
 
     for [x,y] in box:
+        new_Board = copy.deepcopy(Board)
+        new_Board[y][x] = player
 
 
 
