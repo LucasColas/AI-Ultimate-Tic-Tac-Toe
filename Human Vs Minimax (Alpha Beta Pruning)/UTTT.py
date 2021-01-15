@@ -77,6 +77,8 @@ def main(small_boards, main_board):
     game_over = False
     good = False
 
+    box = None
+
     while run:
         clock.tick(FPS)
         fill(Circle_small,green)
