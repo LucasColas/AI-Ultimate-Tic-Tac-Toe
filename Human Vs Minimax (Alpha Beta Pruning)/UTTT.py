@@ -47,7 +47,7 @@ def ai_turn(small_boards, main_board, turn, box):
     else:
         alpha, beta = -infinity, +infinity
         depth = 2
-        value, new_board = Minimax(small_boards, main_board, depth, 1, alpha, beta, True)
+        value, new_board = Minimax(small_boards, main_board, depth, 1, alpha, beta, box, True)
         print("new b : ", new_board)
         print("final score : ", value)
         return new_board
