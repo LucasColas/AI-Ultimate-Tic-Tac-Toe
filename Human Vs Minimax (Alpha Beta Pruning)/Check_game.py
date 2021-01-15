@@ -1,3 +1,138 @@
+def valid_locations(board,main_board,x,y, box):
+    if box == None or [x,y] in box:
+        if board[y][x] == 0 and main_board[y//3][x//3] == 0:
+            #print("it's going to return True")
+            return True
+
+
+def set_locations(board,main_board, x,y, player, box):
+    if valid_locations(board,main_board,x,y, box):
+        board[y][x] = player
+        return True
+    else:
+        return False
+
+
+def get_next_box(x,y):
+    for i in range(0,7,3):
+        for j in range(0,7,3):
+            if (x,y) == (i,j):
+                possible_moves = []
+                for k in range(3):
+                    for h in range(3):
+                        possible_moves.append([k,h])
+                return possible_moves
+
+    for i in range(0,7,3):
+        for j in range(1,8,3):
+            if (x,y) == (i,j):
+                possible_moves = []
+                for k in range(3):
+                    for h in range(3,6):
+                        possible_moves.append([k,h])
+                return possible_moves
+
+    for i in range(0,7,3):
+        for j in range(2,9,3):
+            if (x,y) == (i,j):
+                possible_moves = []
+                for k in range(3):
+                    for h in range(6,9):
+                        possible_moves.append([k,h])
+                return possible_moves
+
+    for i in range(1,8,3):
+        for j in range(0,7,3):
+            if (x,y) == (i,j):
+                possible_moves = []
+                for k in range(3,6):
+                    for h in range(3):
+                        possible_moves.append([k,h])
+
+                return possible_moves
+
+    for i in range(1,8,3):
+        for j in range(1,8,3):
+            if (x,y) == (i,j):
+                possible_moves = []
+                for k in range(3,6):
+                    for h in range(3,6):
+                        possible_moves.append([k,h])
+                return possible_moves
+
+    for i in range(1,8,3):
+        for j in range(2,9,3):
+            if (x,y) == (i,j):
+                possible_moves = []
+                for k in range(3,6):
+                    for h in range(6,9):
+                        possible_moves.append([k,h])
+
+                return possible_moves
+
+    for i in range(2,9,3):
+        for j in range(0,9,3):
+            if (x,y) == (i,j):
+                possible_moves = []
+                for k in range(6,9):
+                    for h in range(3):
+                        possible_moves.append([k,h])
+                return possible_moves
+
+    for i in range(2,9,3):
+        for j in range(1,9,3):
+            if (x,y) == (i,j):
+                possible_moves = []
+                for k in range(6,9):
+                    for h in range(3,6):
+                        possible_moves.append([k,h])
+                return possible_moves
+
+    for i in range(2,9,3):
+        for j in range(2,9,3):
+            if (x,y) == (i,j):
+                possible_moves = []
+                for k in range(6,9):
+                    for h in range(6,9):
+                        possible_moves.append([k,h])
+                return possible_moves
+
+def is_empty_box(Board,main_board,box,x,y,):
+    empty_cells = []
+    print("Box", box)
+    for index, values in enumerate(box):
+        if Board[values[1]][values[0]] == 0:
+            empty_cells.append(values)
+
+    print("empty_cells" ,len(empty_cells))
+
+
+
+    if len(empty_cells) == 0:
+        return False
+
+    else:
+        return True
+
+def get_possible_moves(Board, x,y):
+    Box = get_next_box(x,y)
+    return Box
+
+def Validate_box(Board, main_board,Box,x,y):
+    print("Box in Val Box", Box)
+    print("main Board", main_board[Box[0][1]//3][Box[0][0]//3])
+    print("is empty box", is_empty_box(Board, main_board, Box,x,y))
+    if is_empty_box(Board, main_board, Box,x,y) and main_board[Box[0][1]//3][Box[0][0]//3] == 0:
+        print("main Board", main_board[Box[0][1]//3][Box[0][0]//3])
+        print("is empty box", is_empty_box(Board, main_board, Box,x,y))
+        return Box
+
+    else:
+        print("return empty_cells")
+        return empty_cells_small_boards(Board)
+
+
+
 def place_big_board(main_board,x, y, player):
     main_board[y][x] = player
 

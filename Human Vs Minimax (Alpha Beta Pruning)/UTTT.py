@@ -97,7 +97,7 @@ def main(small_boards, main_board):
                     pos = pygame.mouse.get_pos()
 
                     if turn == HUMAN and not game_over:
-                        if set_locations(small_boards, main_board, pos[0]//(Small_Square), pos[1]//(Small_Square), turn):
+                        if set_locations(small_boards, main_board, pos[0]//(Small_Square), pos[1]//(Small_Square), turn, box):
                             check_game(small_boards, main_board,turn)
 
                             new_box = get_possible_moves(small_boards,pos[0]//(Small_Square), pos[1]//(Small_Square))
