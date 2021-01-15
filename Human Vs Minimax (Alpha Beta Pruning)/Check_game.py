@@ -138,9 +138,10 @@ def place_big_board(main_board,x, y, player):
 
 def empty_cells_small_boards(board):
     empty_cells = []
-    for x,row in enumerate(board):
-        for y,case in enumerate(row):
+    for y,row in enumerate(board): # Switched x and y
+        for x,case in enumerate(row):
             if case == 0 and case != 1 and case != -1:
+
                 empty_cells.append([x,y])
 
     return empty_cells
