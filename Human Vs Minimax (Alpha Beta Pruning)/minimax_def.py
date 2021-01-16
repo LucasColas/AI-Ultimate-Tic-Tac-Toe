@@ -3,10 +3,13 @@ from Check_game import Check_Big_Board, set_locations
 from minimax_assets import See_diagonals, See_vertically, See_horizontally
 from minimax_assets import eval_small_boxes
 from Board import new_Board
+
+
 import copy
 
 #Board = new_Board()
 #boards = Board.every_small_boards()
+
 
 def all_moves(Board, main_board,box,player):
     all_moves = []
