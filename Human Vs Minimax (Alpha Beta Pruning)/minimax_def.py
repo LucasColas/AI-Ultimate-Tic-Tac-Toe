@@ -1,6 +1,6 @@
 from Check_game import empty_cells_small_boards, empty_cells_big_board
 from Check_game import Check_Big_Board, set_locations
-from Check_game import
+from Check_game import get_possible_moves, Validate_box
 from minimax_assets import See_diagonals, See_vertically, See_horizontally
 from minimax_assets import eval_small_boxes
 from Board import new_Board
