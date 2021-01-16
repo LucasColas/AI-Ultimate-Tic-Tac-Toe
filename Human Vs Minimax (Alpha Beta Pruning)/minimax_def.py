@@ -1,6 +1,6 @@
 from Check_game import empty_cells_small_boards, empty_cells_big_board
 from Check_game import Check_Big_Board, set_locations
-from Check_game import 
+from Check_game import
 from minimax_assets import See_diagonals, See_vertically, See_horizontally
 from minimax_assets import eval_small_boxes
 from Board import new_Board
@@ -15,6 +15,17 @@ import copy
 
 def all_moves(Board, main_board,box,player):
     all_moves = []
+
+    if box == None:
+        for y, row in enumerate(Board):
+            for x, cell in enumerate(row):
+                if cell == 0:
+                    new_Board = copy.deepcopy(Board)
+                    new_main_board = copy.deepcopy(main_board)
+                    if set_locations(new_Board, new_main_board, x,y, player):
+                        all_moves.append(new_Board)
+
+        return all_moves
 
     for [x,y] in box:
         new_Board = copy.deepcopy(Board)
