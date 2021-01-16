@@ -6,7 +6,6 @@ from minimax_assets import eval_small_boxes
 from Board import new_Board
 
 
-
 import copy
 
 #Board = new_Board()
