@@ -36,9 +36,11 @@ def all_moves(Board, main_board,box,player):
             new_Board = copy.deepcopy(Board)
             new_Board[y][x] = player
             new_main_board = copy.deepcopy(main_board)
-            Box = get_possible_moves(new_Board,x,y)
-            Good_Box = Validate_box(new_Board, new_main_board,Box,x,y)
-            all_moves.append(new_Board)
+            if set_locations(new_Board, new_main_board, x,y, player):
+                Box = get_possible_moves(new_Board,x,y)
+                Good_Box = Validate_box(new_Board, new_main_board,Box,x,y)
+                all_moves.append(new_Board)
+                all_boxes.append(Good_Box)
         return all_moves,all_boxes
 
 
