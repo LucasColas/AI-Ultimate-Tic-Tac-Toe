@@ -29,7 +29,7 @@ def all_moves(Board, main_board,box,player):
                         all_moves.append(new_Board)
                         all_boxes.append(Good_Box)
 
-        return all_moves
+        return all_moves,all_boxes
 
     else:
         for [x,y] in box:
@@ -39,7 +39,7 @@ def all_moves(Board, main_board,box,player):
             Box = get_possible_moves(new_Board,x,y)
             Good_Box = Validate_box(new_Board, new_main_board,Box,x,y)
             all_moves.append(new_Board)
-        return all_moves
+        return all_moves,all_boxes
 
 
 
