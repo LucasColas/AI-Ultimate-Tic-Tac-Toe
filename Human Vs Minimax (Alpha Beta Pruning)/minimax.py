@@ -8,7 +8,7 @@ def Minimax(Board, main_board, depth, player, alpha, beta, box,MaximizingPlayer)
         return (evaluate(Board, player),Board)
 
 
-    #print("all all_moves : ", all_moves(Board, player))
+    #print("all_moves : ", all_moves(Board, player))
 
     if MaximizingPlayer:
         score = float('-inf')
