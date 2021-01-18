@@ -66,8 +66,8 @@ def evaluate(Board, player):
     score = 0
     Gamma = 90
 
-    score = eval_small_boxes(Board, player) + Gamma*get_score(Board, player)
-
+    #score = eval_small_boxes(Board, player) + Gamma*get_score(Board, player)
+    score = eval_small_boxes(Board, player)
     return score
 
 def terminal_state(Board, player):
