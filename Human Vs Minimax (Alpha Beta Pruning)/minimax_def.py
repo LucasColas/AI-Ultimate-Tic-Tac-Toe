@@ -3,10 +3,8 @@ from Check_game import Check_Big_Board, set_locations
 from Check_game import get_possible_moves, Validate_box
 from minimax_assets import See_diagonals, See_vertically, See_horizontally
 from minimax_assets import eval_small_boxes
-from Board import new_Board
-
-
 import copy
+#from Board import new_Board
 
 #Board = new_Board()
 #boards = Board.every_small_boards()
@@ -68,7 +66,7 @@ def evaluate(Board, player):
 
     #score = eval_small_boxes(Board, player) + Gamma*get_score(Board, player)
     score = eval_small_boxes(Board, player)
-    
+
     return score
 
 def terminal_state(Board, player):
