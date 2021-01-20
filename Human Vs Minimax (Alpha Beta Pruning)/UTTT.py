@@ -14,7 +14,10 @@ from Frontend import draw_big_pieces
 from Check_game import Check_Big_Board, empty_cells_big_board, Check_empty_cells, check_game, empty_cells_small_boards
 from Check_game import check_game
 from Check_game import set_locations
+from Check_game import get_possible_moves, Validate_box
 from minimax import Minimax
+
+
 
 
 pygame.font.init()
@@ -100,8 +103,8 @@ def main(small_boards, main_board):
                     if turn == HUMAN and not game_over:
                         x = pos[0]//(Small_Square)
                         y = pos[1]//(Small_Square)
-                        
-                        if set_locations(small_boards, main_board, x, y, turn, box):
+
+                        if set_locations(small_boards, main_board, x, y, turn):
                             check_game(small_boards, main_board,turn)
 
                             new_box = get_possible_moves(small_boards,pos[0]//(Small_Square), pos[1]//(Small_Square))
