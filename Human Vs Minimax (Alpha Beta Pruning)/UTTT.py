@@ -12,7 +12,7 @@ from Frontend import draw_board
 from Frontend import draw_big_pieces
 
 from Check_game import Check_Big_Board, empty_cells_big_board, Check_empty_cells, check_game, empty_cells_small_boards
-from Check_game import Check_empty_cells, set_locations, valid_locations
+from Check_game import Check_empty_cells, set_locations
 from Check_game import check_game
 
 from minimax import Minimax
