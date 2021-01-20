@@ -12,9 +12,8 @@ from Frontend import draw_board
 from Frontend import draw_big_pieces
 
 from Check_game import Check_Big_Board, empty_cells_big_board, Check_empty_cells, check_game, empty_cells_small_boards
-from Check_game import Check_empty_cells, set_locations
 from Check_game import check_game
-
+from Check_game import set_locations
 from minimax import Minimax
 
 
@@ -68,10 +67,10 @@ small_boards = Game_Board.every_small_boards()
 def main(small_boards, main_board):
     print("Welcome ! ")
     run = True
-    turn = random.choice([-1,1])
+    #turn = random.choice([-1,1])
     AI = 1
     HUMAN = -1
-
+    turn = HUMAN
     FPS = 120
     green = (0,178,0,0)
     game_over = False
@@ -99,7 +98,10 @@ def main(small_boards, main_board):
                     pos = pygame.mouse.get_pos()
 
                     if turn == HUMAN and not game_over:
-                        if set_locations(small_boards, main_board, pos[0]//(Small_Square), pos[1]//(Small_Square), turn, box):
+                        x = pos[0]//(Small_Square)
+                        y = pos[1]//(Small_Square)
+                        
+                        if set_locations(small_boards, main_board, x, y, turn, box):
                             check_game(small_boards, main_board,turn)
 
                             new_box = get_possible_moves(small_boards,pos[0]//(Small_Square), pos[1]//(Small_Square))
