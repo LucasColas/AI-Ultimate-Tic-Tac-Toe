@@ -17,6 +17,12 @@ from Check_game import set_locations
 from Check_game import get_possible_moves, Validate_box
 from minimax import Minimax
 
+from inspect import signature
+
+sign = signature(set_locations)
+params = sign.parameters
+print(params)
+print(len(params))
 
 
 

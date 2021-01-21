@@ -16,12 +16,7 @@ from Check_game import Validate_box
 from Check_game import valid_locations, set_locations
 from Check_game import check_game
 
-from inspect import signature
 
-sign = signature(ta_fonction)
-params = sign.parameters
-print(params)
-print(len(params))
 
 pygame.font.init()
 Width, Height = 810,810
