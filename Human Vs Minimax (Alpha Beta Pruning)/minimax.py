@@ -5,10 +5,15 @@ import copy
 def minimax(Board, Main_board,Depth, Box, Player,MaximizingPlayer):
     if Depth == 0:
         pass
-        
+
     if MaximizingPlayer:
         for Board_, Box_ in zip(get_all_moves(Board,Main_board, Box, Player)[0], get_all_moves(Board,Main_board, Box, Player)[1]):
             pass
+
+    else:
+        for Board_, Box_ in zip(get_all_moves(Board,Main_board, Box, Player)[0], get_all_moves(Board,Main_board, Box, Player)[1]):
+            pass
+
 
 def get_all_moves(Board, Main_board, Box, Player):
     all_Boards = []
