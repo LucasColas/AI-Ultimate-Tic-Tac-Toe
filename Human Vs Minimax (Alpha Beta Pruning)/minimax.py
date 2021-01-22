@@ -1,9 +1,20 @@
 from Check_game import get_possible_moves, Validate_box
 from Check_game import set_locations
+from Check_game import empty_cells_small_boards, empty_cells_big_board, Check_Big_Board
 import copy
 
+def is_terminal(Board, Main_board,Player):
+    if len(empty_cells_small_boards(Board)) == 0:
+        return True
+
+    if len(empty_cells_big_board(Main_board)) == 0:
+        return True
+
+    if Check_Big_Board(Main_board, Pllayer):
+        return True
+
 def minimax(Board, Main_board,Depth, Box, Player,MaximizingPlayer):
-    if Depth == 0:
+    if Depth == 0 or is_terminal(Board, Main_board, Player) :
         pass
 
     if MaximizingPlayer:
