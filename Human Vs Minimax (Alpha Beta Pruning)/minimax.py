@@ -1,12 +1,12 @@
-import copy
 from Check_game import get_possible_moves, Validate_box
-
-
 from Check_game import set_locations
+import copy
 
 def minimax(Board, Main_board,Depth, Box, Player,MaximizingPlayer):
     if Depth == 0:
         pass
+
+    for Board_, Box_ in zip(get_all_moves(Board,Main_board, Box, Player)[0], get_all_moves(Board,Main_board, Box, Player)[1])
 
 def get_all_moves(Board, Main_board, Box, Player):
     all_Boards = []
