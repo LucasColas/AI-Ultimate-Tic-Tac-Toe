@@ -15,7 +15,7 @@ def is_terminal(Board, Main_board,Player):
 
 def minimax(Board, Main_board,Depth, Box, Player,MaximizingPlayer):
     if Depth == 0 or is_terminal(Board, Main_board, Player) :
-        return Board, evaluate()
+        return Board, evaluate() #Function to define
 
     if MaximizingPlayer:
         for Board_, Box_ in zip(get_all_moves(Board,Main_board, Box, Player)[0], get_all_moves(Board,Main_board, Box, Player)[1]):
