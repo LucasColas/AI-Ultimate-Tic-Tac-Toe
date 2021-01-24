@@ -30,6 +30,16 @@ def minimax(Board, Main_board,Depth, Box, Player,MaximizingPlayer):
 def evaluate():
     pass
 
+
+for i in range(0,9,3):
+    small_box = []
+    for j in range(0,9,3):
+        for h in range(3):
+            temp_list = []
+            for k in range(3):
+                temp_list.append(Board[h+i][j+k])
+            small_box.append(temp_list)
+
 def get_all_moves(Board, Main_board, Box, Player):
     all_Boards = []
     all_Big_Boards = []
