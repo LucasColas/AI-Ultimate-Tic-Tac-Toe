@@ -27,6 +27,8 @@ def minimax(Board, Main_board,Depth, Box, Player,MaximizingPlayer):
                 Best_Board = Board_
         return Best_Board, MinValue
 
+def evaluate():
+    pass
 
 def get_all_moves(Board, Main_board, Box, Player):
     all_Boards = []
