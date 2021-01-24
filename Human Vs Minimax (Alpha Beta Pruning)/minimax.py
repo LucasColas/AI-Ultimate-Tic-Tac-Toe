@@ -33,6 +33,9 @@ def minimax(Board, Main_board,Depth, Box, Player,MaximizingPlayer):
         for Board_, Main_board_,Box_ in zip(get_all_moves(Board,Main_board, Box, Player)[0], get_all_moves(Board,Main_board, Box, Player)[1]):
             value = minimax(Board_,Main_board, Box_,-Player, True)[1]
             MinValue = min(MinValue, value)
+            if MinValue == value:
+                Best_Board = Board_
+        return Best_Board, MinValue
 
 
 def get_all_moves(Board, Main_board, Box, Player):
