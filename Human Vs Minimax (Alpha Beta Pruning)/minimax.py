@@ -39,7 +39,9 @@ def get_each_box(Board):
                 for k in range(3):
                     temp_list.append(Board[h+i][j+k])
                 small_box.append(temp_list)
-            
+
+def eval_box(box):
+    pass
 
 def get_all_moves(Board, Main_board, Box, Player):
     all_Boards = []
