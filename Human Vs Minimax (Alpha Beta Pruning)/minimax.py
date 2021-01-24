@@ -18,12 +18,18 @@ def minimax(Board, Main_board,Depth, Box, Player,MaximizingPlayer):
         return Board, evaluate() #Function to define
 
     if MaximizingPlayer:
-        max = float('-inf')
+        MaxValue = float('-inf')
         Best_Board = None
-        for Board_, Box_ in zip(get_all_moves(Board,Main_board, Box, Player)[0], get_all_moves(Board,Main_board, Box, Player)[1]):
-            value = minimax()
+        for Board_,Main_board_, Box_ in zip(get_all_moves(Board,Main_board, Box, Player)[0], get_all_moves(Board,Main_board, Box, Player)[1]):
+            value = minimax(Board_,Main_board, Box_,-Player, False)[1]
+            MaxValue = max(MaxValue,value)
+            if MaxValue == value:
+                Best_Board = Board_
+        return Best_Board, MaxValue
 
     else:
+        MaxValue = float('inf')
+        Best_Board = None
         for Board_, Box_ in zip(get_all_moves(Board,Main_board, Box, Player)[0], get_all_moves(Board,Main_board, Box, Player)[1]):
             pass
 
