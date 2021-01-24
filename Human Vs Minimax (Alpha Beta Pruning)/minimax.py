@@ -76,6 +76,22 @@ def eval_box(box):
 
 def count_score(array, player):
     opp_player = -player
+    score = 0
+
+    if array.count(player) == 3:
+        score += 100
+
+    elif array.count(player) == 2:
+        score += 50
+
+    elif array.count(player) == 1:
+        score += 20
+
+    if array.count(opp_player) == 3:
+        score -= 150
+
+    if array.count(player) == 1 and array.count(opp_player) == 2:
+        score += 30
 
 def get_all_moves(Board, Main_board, Box, Player):
     all_Boards = []
