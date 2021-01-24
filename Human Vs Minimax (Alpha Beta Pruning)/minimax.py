@@ -39,7 +39,7 @@ def get_each_box(Board):
                 for k in range(3):
                     temp_list.append(Board[h+i][j+k])
                 box.append(temp_list)
-            eval_box(box)
+            score = eval_box(box)
             box.clear()
 
 def eval_box(box):
@@ -92,6 +92,8 @@ def count_score(array, player):
 
     if array.count(player) == 1 and array.count(opp_player) == 2:
         score += 30
+
+    return score
 
 def get_all_moves(Board, Main_board, Box, Player):
     all_Boards = []
