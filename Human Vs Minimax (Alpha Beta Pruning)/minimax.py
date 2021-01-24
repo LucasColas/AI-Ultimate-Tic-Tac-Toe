@@ -32,16 +32,47 @@ def evaluate():
 
 def get_each_box(Board):
     for i in range(0,9,3):
-        small_box = []
+        box = []
         for j in range(0,9,3):
             for h in range(3):
                 temp_list = []
                 for k in range(3):
                     temp_list.append(Board[h+i][j+k])
-                small_box.append(temp_list)
+                box.append(temp_list)
+            eval_box(box)
+            box.clear()
 
 def eval_box(box):
-    pass
+    score = 0
+    #print("small_box", small_box)
+
+    for row in small_box:
+        #print("row", row)
+        score += count_score(row,player)
+
+    for col in range(len(small_box)):
+        check = []
+        for row in small_box:
+            check.append(small_box[col])
+
+        score += count_score(small_box, player)
+
+    diags = []
+    for indx in range(len(small_box)):
+        diags.append(small_box[indx][indx])
+
+    score += count_score(diags, player)
+
+    diags_2 = []
+    for indx, rev_indx in enumerate(reversed(range(len(small_box)))):
+        diags_2.append(small_box[indx][rev_indx])
+    score += count_score(diags_2, player)
+
+    if len(empty_cells_small_boards(small_box)) == 0:
+        score += 5
+
+
+    return score
 
 def get_all_moves(Board, Main_board, Box, Player):
     all_Boards = []
