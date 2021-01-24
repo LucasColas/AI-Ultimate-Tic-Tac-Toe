@@ -37,11 +37,11 @@ def draw_board(Win, Lines_color, Lines_color_2,Width, Square, Small_Square, marg
     #Small Boards
     for move in range(0,3):
         for ab in range(0,3):
-            for x in range(1,3): #Vertical lines
+            for x in range(1,3): #Horizontal lines
                 pygame.draw.line(Win, Lines_color_2, (margin + Square*move, (x*Small_Square) + ab*Square), ((Square-margin) + Square*move,(x*Small_Square) + ab*Square), 1)
 
             for bc in range(0,2):
-                for y in range(3): #Horizontal lines
+                for y in range(3): #Vertical lines
                     pygame.draw.line(Win, Lines_color_2, (Small_Square + bc*Small_Square + move*Square, margin + ab*Square), (Small_Square + bc*Small_Square + move*Square, (Square-margin) + ab*Square), 1)
 
     #Big Board
