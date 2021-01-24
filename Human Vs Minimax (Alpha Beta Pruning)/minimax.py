@@ -74,6 +74,9 @@ def eval_box(box):
 
     return score
 
+def count_score(array, player):
+    opp_player = -player
+
 def get_all_moves(Board, Main_board, Box, Player):
     all_Boards = []
     all_Big_Boards = []
