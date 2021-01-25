@@ -27,10 +27,10 @@ def minimax(Board, Main_board,Depth, Box, Player,MaximizingPlayer):
                 Best_Board = Board_
         return Best_Board, MinValue
 
-def evaluate():
-    pass
+def evaluate(Board):
+    score
 
-def get_each_box(Board):
+def get_score(Board):
     score = 0
     for i in range(0,9,3):
         box = []
@@ -44,33 +44,33 @@ def get_each_box(Board):
             box.clear()
     return score
 
-def eval_box(box):
+def eval_box(box,player):
     score = 0
     #print("small_box", small_box)
 
-    for row in small_box:
+    for row in box:
         #print("row", row)
         score += count_score(row,player)
 
-    for col in range(len(small_box)):
+    for col in range(len(box)):
         check = []
-        for row in small_box:
-            check.append(small_box[col])
+        for row in box:
+            check.append(box[col])
 
-        score += count_score(small_box, player)
+        score += count_score(box, player)
 
     diags = []
-    for indx in range(len(small_box)):
-        diags.append(small_box[indx][indx])
+    for indx in range(len(box)):
+        diags.append(box[indx][indx])
 
     score += count_score(diags, player)
 
     diags_2 = []
-    for indx, rev_indx in enumerate(reversed(range(len(small_box)))):
-        diags_2.append(small_box[indx][rev_indx])
+    for indx, rev_indx in enumerate(reversed(range(len(box)))):
+        diags_2.append(box[indx][rev_indx])
     score += count_score(diags_2, player)
 
-    if len(empty_cells_small_boards(small_box)) == 0:
+    if len(empty_cells_small_boards(box)) == 0:
         score += 5
 
 
