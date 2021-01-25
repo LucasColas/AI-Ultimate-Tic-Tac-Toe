@@ -31,6 +31,7 @@ def evaluate():
     pass
 
 def get_each_box(Board):
+    score = 0
     for i in range(0,9,3):
         box = []
         for j in range(0,9,3):
@@ -39,8 +40,9 @@ def get_each_box(Board):
                 for k in range(3):
                     temp_list.append(Board[h+i][j+k])
                 box.append(temp_list)
-            score = eval_box(box)
+            score += eval_box(box)
             box.clear()
+    return score
 
 def eval_box(box):
     score = 0
