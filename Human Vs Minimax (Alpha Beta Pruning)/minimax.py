@@ -5,7 +5,7 @@ import copy
 
 def minimax(Board, Main_board,Depth, Box, Player,MaximizingPlayer):
     if Depth == 0 or is_terminal(Board, Main_board, Player) :
-        return Board, evaluate() #Function to define
+        return Board, evaluate(Board, Player)
 
     if MaximizingPlayer:
         MaxValue = float('-inf')
@@ -27,10 +27,11 @@ def minimax(Board, Main_board,Depth, Box, Player,MaximizingPlayer):
                 Best_Board = Board_
         return Best_Board, MinValue
 
-def evaluate(Board):
-    score
+def evaluate(Board,player):
+    score = get_score(Board,player)
+    return score
 
-def get_score(Board):
+def get_score(Board,player):
     score = 0
     for i in range(0,9,3):
         box = []
@@ -40,7 +41,7 @@ def get_score(Board):
                 for k in range(3):
                     temp_list.append(Board[h+i][j+k])
                 box.append(temp_list)
-            score += eval_box(box)
+            score += eval_box(box,player)
             box.clear()
     return score
 
