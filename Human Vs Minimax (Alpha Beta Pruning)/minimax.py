@@ -72,7 +72,7 @@ def eval_box(box,player):
     score += count_score(diags_2, player)
 
     if len(empty_cells_small_boards(box)) == 0:
-        score += 5
+        score += 1
 
 
     return score
