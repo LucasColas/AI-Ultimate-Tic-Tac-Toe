@@ -16,6 +16,8 @@ from Check_game import Validate_box
 from Check_game import valid_locations, set_locations
 from Check_game import check_game
 
+from minimax import Minimax
+
 
 
 pygame.font.init()
@@ -51,8 +53,8 @@ def update_window(Win, Lines_color, Lines_color_2, Width, Square, Small_Square, 
 def main():
     run = True
     turn = random.choice([-1,1])
-    Player_1 = 1
-    Player_2 = -1
+    AI = 1
+    Human = -1
     #Game_Board.test()
 
     FPS = 120
@@ -81,7 +83,7 @@ def main():
                     Game_Board.reset(small_boards, main_board, game_over)
                     game_over = False
 
-            if event.type == pygame.MOUSEBUTTONDOWN and not game_over:
+            if event.type == pygame.MOUSEBUTTONDOWN and turn == Human not game_over:
                 if pygame.mouse.get_pressed()[0]:
                     pos = pygame.mouse.get_pos()
 
@@ -98,10 +100,10 @@ def main():
                         if Check_Big_Board(main_board, turn):
                             game_over = True
 
-                        if turn == Player_1:
-                            turn = Player_2
-                        else:
-                            turn = Player_1
+                        turn = AI
+        if turn == AI:
+            new_Board,value = Minimax(small_boards, main_board,Depth, box,turn, True)
+
 
 
 
