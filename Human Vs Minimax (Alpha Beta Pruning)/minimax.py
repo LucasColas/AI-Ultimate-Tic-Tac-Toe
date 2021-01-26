@@ -49,17 +49,18 @@ def eval_box(box,player):
     score = 0
     #print("small_box", small_box)
 
-    for row in box:
+    for row in box: #Score for each row
         #print("row", row)
         score += count_score(row,player)
 
-    for col in range(len(box)):
+    for col in range(len(box)): #Score for each column
         check = []
         for row in box:
             check.append(box[col])
 
         score += count_score(box, player)
 
+    #A score for each diagonal
     diags = []
     for indx in range(len(box)):
         diags.append(box[indx][indx])
@@ -91,10 +92,13 @@ def count_score(array, player):
         score += 20
 
     if array.count(opp_player) == 3:
-        score -= 150
+        score -= 100
+
+    elif array.count(opp_player) == 2:
+        score -= 50
 
     if array.count(player) == 1 and array.count(opp_player) == 2:
-        score += 30
+        score += 10
 
     return score
 
