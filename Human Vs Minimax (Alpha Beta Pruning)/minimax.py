@@ -125,5 +125,5 @@ def is_terminal(Board, Main_board,Player):
     if len(empty_cells_big_board(Main_board)) == 0:
         return True
 
-    if Check_Big_Board(Main_board, Pllayer):
+    if Check_Big_Board(Main_board, Player):
         return True
