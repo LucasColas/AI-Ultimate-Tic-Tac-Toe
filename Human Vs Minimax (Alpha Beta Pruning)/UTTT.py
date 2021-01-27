@@ -106,6 +106,11 @@ def main():
             small_boards = new_Board
             check_game(small_boards,main_board,turn)
 
+            new_box = get_possible_moves(small_boards,pos[0]//(Small_Square), pos[1]//(Small_Square))
+            
+            box = Validate_box(small_boards, main_board, new_box,pos[0]//(Small_Square), pos[1]//(Small_Square))
+
+
             if Check_Big_Board(main_board, turn):
                 game_over = True
 
