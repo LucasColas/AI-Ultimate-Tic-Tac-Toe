@@ -103,7 +103,13 @@ def main():
                         turn = AI
         if turn == AI:
             new_Board,value = Minimax(small_boards, main_board,Depth, box,turn, True)
+            small_boards = new_Board
+            check_game(small_boards,main_board,turn)
 
+            if Check_Big_Board(main_board, turn):
+                game_over = True
+
+            turn = Human
 
 
 
