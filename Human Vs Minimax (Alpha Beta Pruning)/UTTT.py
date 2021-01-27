@@ -83,7 +83,7 @@ def main():
                     Game_Board.reset(small_boards, main_board, game_over)
                     game_over = False
 
-            if event.type == pygame.MOUSEBUTTONDOWN and turn == Human not game_over:
+            if event.type == pygame.MOUSEBUTTONDOWN and turn == Human and not game_over:
                 if pygame.mouse.get_pressed()[0]:
                     pos = pygame.mouse.get_pos()
 
@@ -102,12 +102,13 @@ def main():
 
                         turn = AI
         if turn == AI:
+            Depth = 2
             new_Board,value = Minimax(small_boards, main_board,Depth, box,turn, True)
             small_boards = new_Board
             check_game(small_boards,main_board,turn)
 
             new_box = get_possible_moves(small_boards,pos[0]//(Small_Square), pos[1]//(Small_Square))
-            
+
             box = Validate_box(small_boards, main_board, new_box,pos[0]//(Small_Square), pos[1]//(Small_Square))
 
 
