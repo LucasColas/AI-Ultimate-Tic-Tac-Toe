@@ -12,6 +12,7 @@ def Minimax(Board, Main_board,Depth, Box, Player,MaximizingPlayer):
         Best_Board = None
         pos = None
         List1,List2,List3,List4 = get_all_moves(Board,Main_board, Box, Player)
+        print(List1)
         for Board_,Main_board_, Box_,pos_ in zip(List1, List2, List3,List4):
             value = Minimax(Board_,Main_board_,Depth-1, Box_,-Player, False)[1]
             MaxValue = max(MaxValue,value)
@@ -25,7 +26,8 @@ def Minimax(Board, Main_board,Depth, Box, Player,MaximizingPlayer):
         Best_Board = None
         pos = None
         List1,List2,List3,List4 = get_all_moves(Board,Main_board, Box, Player)
-        for Board_, Main_board_,Box_,pos_ in zip(List1, List2, List3):
+        print(List1)
+        for Board_, Main_board_,Box_,pos_ in zip(List1, List2, List3,List4):
             value = Minimax(Board_,Main_board_,Depth-1, Box_,-Player, True)[1]
             MinValue = min(MinValue, value)
             if MinValue == value:
@@ -114,6 +116,7 @@ def get_all_moves(Board, Main_board, Box, Player):
     all_Boxes = []
     pos = []
     if Box == None:
+        print("")
         for [x,y] in empty_cells_small_boards(Board):
             new_Board = copy.deepcopy(Board)
             new_Main_board = copy.deepcopy(Main_board)
@@ -130,7 +133,9 @@ def get_all_moves(Board, Main_board, Box, Player):
         for [x,y] in Box:
             new_Board = copy.deepcopy(Board)
             new_Main_board = copy.deepcopy(Board)
+            print("get all moves in else")
             if set_locations(new_Board, new_Main_board,x,y, Player,Box):
+                print("get_all_moves in else, set_locations")
                 Box = get_possible_moves(new_Board,x,y)
                 Good_Box = Validate_box(new_Board, new_Main_board,Box,x,y)
                 all_Boards.append(new_Board)
