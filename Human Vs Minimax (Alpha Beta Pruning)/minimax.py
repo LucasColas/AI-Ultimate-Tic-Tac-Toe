@@ -108,6 +108,7 @@ def get_all_moves(Board, Main_board, Box, Player):
     all_Boards = []
     all_Big_Boards = []
     all_Boxes = []
+    pos = []
     if Box == None:
         for [x,y] in empty_cells_small_boards(Board):
             new_Board = copy.deepcopy(Board)
@@ -118,6 +119,7 @@ def get_all_moves(Board, Main_board, Box, Player):
                 all_Boards.append(new_Board)
                 all_Big_Boards.append(new_Main_board)
                 all_Boxes.append(Good_Box)
+                pos.append([x,y])
         return all_Boards,all_Big_Boards, all_Boxes
 
     else:
@@ -130,7 +132,8 @@ def get_all_moves(Board, Main_board, Box, Player):
                 all_Boards.append(new_Board)
                 all_Big_Boards.append(new_Main_board)
                 all_Boxes.append(Good_Box)
-        return all_Boards,all_Big_Boards, all_Boxes
+                pos.append([x,y])
+        return all_Boards,all_Big_Boards, all_Boxes,pos
 
 
 def is_terminal(Board, Main_board,Player):
