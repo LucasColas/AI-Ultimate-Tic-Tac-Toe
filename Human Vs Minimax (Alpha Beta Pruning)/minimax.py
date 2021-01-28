@@ -5,29 +5,33 @@ import copy
 
 def Minimax(Board, Main_board,Depth, Box, Player,MaximizingPlayer):
     if Depth == 0 or is_terminal(Board, Main_board, Player) :
-        return Board, evaluate(Board, Player)
+        return Board, evaluate(Board, Player), None
 
     if MaximizingPlayer:
         MaxValue = float('-inf')
         Best_Board = None
+        pos = None
         List1,List2,List3,List4 = get_all_moves(Board,Main_board, Box, Player)
-        for Board_,Main_board_, Box_,pos in zip(List1, List2, List3,List4):
+        for Board_,Main_board_, Box_,pos_ in zip(List1, List2, List3,List4):
             value = Minimax(Board_,Main_board_,Depth-1, Box_,-Player, False)[1]
             MaxValue = max(MaxValue,value)
             if MaxValue == value:
                 Best_Board = Board_
-        return Best_Board, MaxValue
+                pos = pos_
+        return Best_Board, MaxValue,pos
 
     else:
         MinValue = float('inf')
         Best_Board = None
+        pos = None
         List1,List2,List3,List4 = get_all_moves(Board,Main_board, Box, Player)
-        for Board_, Main_board_,Box_,pos in zip(List1, List2, List3):
+        for Board_, Main_board_,Box_,pos_ in zip(List1, List2, List3):
             value = Minimax(Board_,Main_board_,Depth-1, Box_,-Player, True)[1]
             MinValue = min(MinValue, value)
             if MinValue == value:
                 Best_Board = Board_
-        return Best_Board, MinValue
+                pos = pos_
+        return Best_Board, MinValue,pos
 
 def evaluate(Board,player):
     score = get_score(Board,player)
