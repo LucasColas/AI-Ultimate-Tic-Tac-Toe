@@ -128,10 +128,11 @@ def get_all_moves(Board, Main_board, Box, Player):
                 all_Big_Boards.append(new_Main_board)
                 all_Boxes.append(Good_Box)
                 pos.append([x,y])
-        return all_Boards,all_Big_Boards, all_Boxes
+        return all_Boards,all_Big_Boards, all_Boxes,pos
 
     else:
         for [x,y] in Box:
+            print("Box,",Box)
             new_Board = copy.deepcopy(Board)
             new_Main_board = copy.deepcopy(Board)
             print("get all moves in else")
