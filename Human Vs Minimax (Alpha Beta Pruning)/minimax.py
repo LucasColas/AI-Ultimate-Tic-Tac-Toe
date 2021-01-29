@@ -4,7 +4,7 @@ from Check_game import empty_cells_small_boards, empty_cells_big_board, Check_Bi
 import copy
 
 def Minimax(Board, Main_board,Depth, Box, Player,MaximizingPlayer):
-    if Depth == 0 or is_terminal(Board, Main_board, Player) :
+    if Depth == 0 or is_terminal(Board, Main_board, Box,Player) :
         return Board, evaluate(Board, Player), None
 
     if MaximizingPlayer:
@@ -12,7 +12,7 @@ def Minimax(Board, Main_board,Depth, Box, Player,MaximizingPlayer):
         Best_Board = None
         pos = None
         List1,List2,List3,List4 = get_all_moves(Board,Main_board, Box, Player)
-        print(List1)
+        #print(List1)
         for Board_,Main_board_, Box_,pos_ in zip(List1, List2, List3,List4):
             value = Minimax(Board_,Main_board_,Depth-1, Box_,-Player, False)[1]
             MaxValue = max(MaxValue,value)
@@ -26,7 +26,7 @@ def Minimax(Board, Main_board,Depth, Box, Player,MaximizingPlayer):
         Best_Board = None
         pos = None
         List1,List2,List3,List4 = get_all_moves(Board,Main_board, Box, Player)
-        print(List1)
+        #print(List1)
         for Board_, Main_board_,Box_,pos_ in zip(List1, List2, List3,List4):
             value = Minimax(Board_,Main_board_,Depth-1, Box_,-Player, True)[1]
             MinValue = min(MinValue, value)
@@ -132,10 +132,10 @@ def get_all_moves(Board, Main_board, Box, Player):
 
     else:
         for [x,y] in Box:
-            print("Box,",Box)
+
             new_Board = copy.deepcopy(Board)
             new_Main_board = copy.deepcopy(Board)
-            print("get all moves in else")
+
             if set_locations(new_Board, new_Main_board,x,y, Player,Box):
                 print("get_all_moves in else, set_locations")
                 Box = get_possible_moves(new_Board,x,y)
@@ -147,7 +147,7 @@ def get_all_moves(Board, Main_board, Box, Player):
         return all_Boards,all_Big_Boards, all_Boxes,pos
 
 
-def is_terminal(Board, Main_board,Player):
+def is_terminal(Board, Main_board,Box,Player):
     if len(empty_cells_small_boards(Board)) == 0:
         return True
 
@@ -155,4 +155,7 @@ def is_terminal(Board, Main_board,Player):
         return True
 
     if Check_Big_Board(Main_board, Player):
+        return True
+
+    if is_empty_box(Board, Main_board, Box):
         return True

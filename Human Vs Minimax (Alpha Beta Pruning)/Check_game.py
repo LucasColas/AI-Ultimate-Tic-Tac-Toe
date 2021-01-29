@@ -97,7 +97,7 @@ def get_next_box(x,y):
                         possible_moves.append([k,h])
                 return possible_moves
 
-def is_empty_box(Board,main_board,box,x,y,):
+def is_empty_box(Board,main_board,box):
     empty_cells = []
     print("Box", box)
     for index, values in enumerate(box):
@@ -121,10 +121,10 @@ def get_possible_moves(Board, x,y):
 def Validate_box(Board, main_board,Box,x,y):
     print("Box in Val Box", Box)
     print("main Board", main_board[Box[0][1]//3][Box[0][0]//3])
-    print("is empty box", is_empty_box(Board, main_board, Box,x,y))
-    if is_empty_box(Board, main_board, Box,x,y) and main_board[Box[0][1]//3][Box[0][0]//3] == 0:
+    print("is empty box", is_empty_box(Board, main_board, Box))
+    if is_empty_box(Board, main_board, Box) and main_board[Box[0][1]//3][Box[0][0]//3] == 0:
         print("main Board", main_board[Box[0][1]//3][Box[0][0]//3])
-        print("is empty box", is_empty_box(Board, main_board, Box,x,y))
+        print("is empty box", is_empty_box(Board, main_board, Box))
         return Box
 
     else:
