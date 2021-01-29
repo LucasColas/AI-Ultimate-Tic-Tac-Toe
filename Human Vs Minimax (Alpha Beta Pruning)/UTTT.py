@@ -102,14 +102,15 @@ def main():
 
                         turn = AI
         if turn == AI:
+            #print("in AI")
             Depth = 2
             new_Board,value, pos = Minimax(small_boards, main_board,Depth, box,turn, True)
+            #print("Board, value, pos", new_Board,value, pos)
             small_boards = new_Board
             check_game(small_boards,main_board,turn)
 
             new_box = get_possible_moves(small_boards,pos[0], pos[1])
-
-            box = Validate_box(small_boards, main_board, new_box,pos[0]//(Small_Square), pos[1]//(Small_Square))
+            box = Validate_box(small_boards, main_board, new_box,pos[0], pos[1])
 
 
             if Check_Big_Board(main_board, turn):

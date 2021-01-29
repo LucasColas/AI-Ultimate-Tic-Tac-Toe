@@ -12,13 +12,15 @@ def Minimax(Board, Main_board,Depth, Box, Player,MaximizingPlayer):
         Best_Board = None
         pos = None
         List1,List2,List3,List4 = get_all_moves(Board,Main_board, Box, Player)
-        #print(List1)
+        print(List1)
         for Board_,Main_board_, Box_,pos_ in zip(List1, List2, List3,List4):
             value = Minimax(Board_,Main_board_,Depth-1, Box_,-Player, False)[1]
+            print("value", value)
             MaxValue = max(MaxValue,value)
             if MaxValue == value:
                 Best_Board = Board_
                 pos = pos_
+                print("pos", pos)
         return Best_Board, MaxValue,pos
 
     else:
@@ -26,13 +28,15 @@ def Minimax(Board, Main_board,Depth, Box, Player,MaximizingPlayer):
         Best_Board = None
         pos = None
         List1,List2,List3,List4 = get_all_moves(Board,Main_board, Box, Player)
-        #print(List1)
+        print(List1)
         for Board_, Main_board_,Box_,pos_ in zip(List1, List2, List3,List4):
             value = Minimax(Board_,Main_board_,Depth-1, Box_,-Player, True)[1]
+            print("value", value)
             MinValue = min(MinValue, value)
             if MinValue == value:
                 Best_Board = Board_
                 pos = pos_
+                print("pos", pos)
         return Best_Board, MinValue,pos
 
 def evaluate(Board,player):
