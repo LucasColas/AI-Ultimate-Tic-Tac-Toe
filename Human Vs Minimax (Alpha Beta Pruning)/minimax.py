@@ -137,6 +137,7 @@ def get_all_moves(Board, Main_board, Box, Player):
 
     else:
         for [x,y] in Box:
+            print("in else", Box)
 
             new_Board = copy.deepcopy(Board)
             new_Main_board = copy.deepcopy(Board)
