@@ -1,4 +1,4 @@
-from Check_game import get_possible_moves, Validate_box
+from Check_game import get_possible_moves, Validate_box, is_empty_box
 from Check_game import set_locations
 from Check_game import empty_cells_small_boards, empty_cells_big_board, Check_Big_Board
 import copy
