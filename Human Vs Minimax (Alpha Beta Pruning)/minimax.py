@@ -11,8 +11,8 @@ def Minimax(Board, Main_board,Depth, Box, Player,MaximizingPlayer):
         MaxValue = float('-inf')
         Best_Board = None
         pos = None
-        List1,List2,List3,List4 = get_all_moves(Board,Main_board, Box, Player)
-        print(List1)
+        all_Boards,all_Big_Boards,all_Boxes,List4 = get_all_moves(Board,Main_board, Box, Player)
+
         for Board_,Main_board_, Box_,pos_ in zip(List1, List2, List3,List4):
             value = Minimax(Board_,Main_board_,Depth-1, Box_,-Player, False)[1]
             print("value", value)
@@ -132,6 +132,7 @@ def get_all_moves(Board, Main_board, Box, Player):
                 all_Big_Boards.append(new_Main_board)
                 all_Boxes.append(Good_Box)
                 pos.append([x,y])
+        print(all_Boards,all_Big_Boards,all_Boxes,pos)
         return all_Boards,all_Big_Boards, all_Boxes,pos
 
     else:
@@ -148,6 +149,7 @@ def get_all_moves(Board, Main_board, Box, Player):
                 all_Big_Boards.append(new_Main_board)
                 all_Boxes.append(Good_Box)
                 pos.append([x,y])
+        print(all_Boards,all_Big_Boards,all_Boxes,pos)
         return all_Boards,all_Big_Boards, all_Boxes,pos
 
 
