@@ -1,12 +1,14 @@
 def valid_locations(board,main_board,x,y, box):
     if box == None or [x,y] in box:
         if board[y][x] == 0 and main_board[y//3][x//3] == 0:
-            #print("it's going to return True")
+            print("it's going to return True")
             return True
 
 
 def set_locations(board,main_board, x,y, player, box):
+    print("in set_locations")
     if valid_locations(board,main_board,x,y, box):
+        print("in valid_locations")
         board[y][x] = player
         return True
     else:
