@@ -99,7 +99,7 @@ def get_next_box(x,y):
 
 def is_empty_box(Board,main_board,box):
     empty_cells = []
-    print("Box", box)
+    #print("Box", box)
     if box == None:
         return False
     else:
@@ -107,7 +107,7 @@ def is_empty_box(Board,main_board,box):
             if Board[values[1]][values[0]] == 0:
                 empty_cells.append(values)
 
-    print("empty_cells" ,len(empty_cells))
+    #print("empty_cells" ,len(empty_cells))
 
 
 
@@ -122,16 +122,16 @@ def get_possible_moves(Board, x,y):
     return Box
 
 def Validate_box(Board, main_board,Box,x,y):
-    print("Box in Val Box", Box)
-    print("main Board", main_board[Box[0][1]//3][Box[0][0]//3])
-    print("is empty box", is_empty_box(Board, main_board, Box))
+    #print("Box in Val Box", Box)
+    #print("main Board", main_board[Box[0][1]//3][Box[0][0]//3])
+    #print("is empty box", is_empty_box(Board, main_board, Box))
     if is_empty_box(Board, main_board, Box) and main_board[Box[0][1]//3][Box[0][0]//3] == 0:
-        print("main Board", main_board[Box[0][1]//3][Box[0][0]//3])
-        print("is empty box", is_empty_box(Board, main_board, Box))
+        #print("main Board", main_board[Box[0][1]//3][Box[0][0]//3])
+        #print("is empty box", is_empty_box(Board, main_board, Box))
         return Box
 
     else:
-        print("return empty_cells")
+        #print("return empty_cells")
         return empty_cells_small_boards(Board)
 
 
@@ -166,7 +166,7 @@ def Check_horizontally(board, main_board, player):
     for i in range(0,7,3):
         for indx, row in enumerate(board):
             if row[0+i] == row[1+i] == row[2+i] == player:
-                print(player, "horizontal")
+                #print(player, "horizontal")
                 good = True
                 if good:
                     place_big_board(main_board,i//3,indx//3,player)
@@ -181,7 +181,7 @@ def Check_vertically(board,main_board, player):
             #print(check)
             if len(check) >= 3:
                 if check.count(player) == len(check) and check[0] != 0:
-                    print(player, "succeeds (vertically)")
+                    #print(player, "succeeds (vertically)")
                     good_col = True
                     if good_col:
                         #print("indx : ", indx)
@@ -207,7 +207,7 @@ def Check_diagonals(board, main_board, player):
                 if len(stock_indx) >= 3:
                     if stock_indx.count(player) == len(stock_indx):
                         a,b = y+i, x+i
-                        print(player, "succeeds with a negative diagonal")
+                        #print(player, "succeeds with a negative diagonal")
                         place_big_board(main_board, b//3, a//3, player)
                         stock_indx.clear()
 
@@ -244,7 +244,7 @@ def Check_Big_Board(main_board, player):
         for i in range(len(main_board)):
             row_stock.append(row[i])
         if row_stock.count(player) == len(row_stock):
-            print(player, "Wins the match")
+            #print(player, "Wins the match")
             return True
 
     for col in range(len(main_board)):
@@ -252,14 +252,14 @@ def Check_Big_Board(main_board, player):
         for row in main_board:
             col_stock.append(row[col])
         if col_stock.count(player) == len(col_stock) and col_stock[0] != 0:
-            print(player, "Wins the match")
+            #print(player, "Wins the match")
             return True
 
     diag_1 = []
     for indx in range(len(main_board)):
         diag_1.append(main_board[indx][indx])
     if len(diag_1) == diag_1.count(player):
-        print(player, "Wins the Match")
+        #print(player, "Wins the Match")
         return True
 
 
@@ -267,12 +267,12 @@ def Check_Big_Board(main_board, player):
     for indx, rev_indx in enumerate(reversed(range(len(main_board)))):
         diag_2.append(main_board[indx][rev_indx])
     if diag_2.count(player) == len(diag_2):
-        print(player, "Wins the Match")
+        #print(player, "Wins the Match")
         return True
 
 
     if len(empty_cells_big_board(main_board)) == 0:
-        print("No One Wins")
+        #print("No One Wins")
         return True
 
 

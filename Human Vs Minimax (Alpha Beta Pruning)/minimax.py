@@ -127,6 +127,7 @@ def get_all_moves(Board, Main_board, Box, Player):
         for [x,y] in empty_cells_small_boards(Board):
             new_Board = copy.deepcopy(Board)
             new_Main_board = copy.deepcopy(Main_board)
+            print(Board[y][x])
             if set_locations(new_Board, new_Main_board,x,y, Player,Box):
                 print("in set set_locations")
                 Box = get_possible_moves(new_Board,x,y)
@@ -144,7 +145,7 @@ def get_all_moves(Board, Main_board, Box, Player):
 
             new_Board = copy.deepcopy(Board)
             new_Main_board = copy.deepcopy(Board)
-
+            print(Board[y][x])
             if set_locations(new_Board, new_Main_board,x,y, Player,Box):
                 print("get_all_moves in else, set_locations")
                 Box = get_possible_moves(new_Board,x,y)
@@ -170,6 +171,9 @@ def is_terminal(Board, Main_board,Box,Player):
         print("Big Board true")
         return True
 
+    """
     if not is_empty_box(Board, Main_board, Box):
         print("empty box true")
         return True
+
+    """
