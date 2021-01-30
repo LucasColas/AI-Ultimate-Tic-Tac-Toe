@@ -11,9 +11,9 @@ def Minimax(Board, Main_board,Depth, Box, Player,MaximizingPlayer):
         MaxValue = float('-inf')
         Best_Board = None
         pos = None
-        all_Boards,all_Big_Boards,all_Boxes,List4 = get_all_moves(Board,Main_board, Box, Player)
+        all_Boards,all_Big_Boards,all_Boxes,positions = get_all_moves(Board,Main_board, Box, Player)
 
-        for Board_,Main_board_, Box_,pos_ in zip(List1, List2, List3,List4):
+        for Board_,Main_board_, Box_,pos_ in zip(all_Boards, Main_board, Box_,positions):
             value = Minimax(Board_,Main_board_,Depth-1, Box_,-Player, False)[1]
             print("value", value)
             MaxValue = max(MaxValue,value)
@@ -27,9 +27,9 @@ def Minimax(Board, Main_board,Depth, Box, Player,MaximizingPlayer):
         MinValue = float('inf')
         Best_Board = None
         pos = None
-        List1,List2,List3,List4 = get_all_moves(Board,Main_board, Box, Player)
-        print(List1)
-        for Board_, Main_board_,Box_,pos_ in zip(List1, List2, List3,List4):
+        all_Boards,all_Big_Boards,all_Boxes,positions = get_all_moves(Board,Main_board, Box, Player)
+
+        for Board_, Main_board_,Box_,pos_ in zip(all_Boards,all_Big_Boards,all_Boxes,positions):
             value = Minimax(Board_,Main_board_,Depth-1, Box_,-Player, True)[1]
             print("value", value)
             MinValue = min(MinValue, value)
