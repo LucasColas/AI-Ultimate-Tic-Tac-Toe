@@ -103,7 +103,7 @@ def main():
                         turn = AI
         if turn == AI:
             #print("in AI")
-            Depth = 2
+            Depth = 3
             new_Board,value, pos = Minimax(small_boards, main_board,Depth, box,turn, True)
             #print("Board, value, pos", new_Board,value, pos)
             small_boards = new_Board

@@ -4,7 +4,10 @@ from Check_game import empty_cells_small_boards, empty_cells_big_board, Check_Bi
 import copy
 
 def Minimax(Board, Main_board,Depth, Box, Player,MaximizingPlayer):
-    if Depth == 0 or is_terminal(Board, Main_board, Box,Player) :
+    if Depth == 0 or is_terminal(Board, Main_board, Box,Player):
+        print("in end")
+        print("Depth", Depth)
+        print("is_terminal",is_terminal(Board, Main_board, Box,Player))
         return Board, evaluate(Board, Player), None
 
     if MaximizingPlayer:
@@ -156,13 +159,17 @@ def get_all_moves(Board, Main_board, Box, Player):
 
 def is_terminal(Board, Main_board,Box,Player):
     if len(empty_cells_small_boards(Board)) == 0:
+        print("empty_cells_small_boards")
         return True
 
     if len(empty_cells_big_board(Main_board)) == 0:
+        print("empty_cells_big_board")
         return True
 
     if Check_Big_Board(Main_board, Player):
+        print("Big Board true")
         return True
 
-    if is_empty_box(Board, Main_board, Box):
+    if not is_empty_box(Board, Main_board, Box):
+        print("empty box true")
         return True
