@@ -136,6 +136,7 @@ def get_all_moves(Board, Main_board, Box, Player):
                 all_Big_Boards.append(new_Main_board)
                 all_Boxes.append(Good_Box)
                 pos.append([x,y])
+                print("appended")
         print(all_Boards,all_Big_Boards,all_Boxes,pos)
         return all_Boards,all_Big_Boards, all_Boxes,pos
 
