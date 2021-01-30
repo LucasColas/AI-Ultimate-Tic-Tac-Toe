@@ -100,10 +100,9 @@ def get_next_box(x,y):
 def is_empty_box(Board,main_board,box):
     empty_cells = []
     print("Box", box)
-    if Box == None:
+    if box == None:
         return False
     else:
-
         for index, values in enumerate(box):
             if Board[values[1]][values[0]] == 0:
                 empty_cells.append(values)
