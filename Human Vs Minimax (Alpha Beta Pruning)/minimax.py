@@ -141,7 +141,9 @@ def get_all_moves(Board, Main_board, Box, Player):
                 print("all_Boards", all_Boards)
                 all_Big_Boards.append(new_Main_Board)
                 print("all_Big_Boards", all_Big_Boards)
-                
+                Box_ = get_possible_moves(new_Board,x, y)
+                new_box = Validate_box(new_Board, new_Main_Board,Box_,x,y)
+                print("new box",new_box)
         print(all_Boards)
 
 
