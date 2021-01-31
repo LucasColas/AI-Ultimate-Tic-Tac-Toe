@@ -121,7 +121,7 @@ def get_all_moves(Board, Main_board, Box, Player):
     all_Boards = []
     all_Big_Boards = []
     all_Boxes = []
-    pos = []
+    all_pos = []
     if Box == None:
         print("Box = None")
 
@@ -144,7 +144,15 @@ def get_all_moves(Board, Main_board, Box, Player):
                 Box_ = get_possible_moves(new_Board,x, y)
                 new_box = Validate_box(new_Board, new_Main_Board,Box_,x,y)
                 print("new box",new_box)
+                all_Boxes.append(new_box)
+                print("all_Boxes",all_Boxes)
+                print("pos",pos)
+                all_pos.append(pos)
+                print("all_pos",all_pos)
+
+
         print(all_Boards)
+        return all_Boards,all_Big_Boards,all_Boxes,all_pos
 
 
 
