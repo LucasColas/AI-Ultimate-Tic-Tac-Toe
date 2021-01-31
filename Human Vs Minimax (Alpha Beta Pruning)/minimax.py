@@ -123,45 +123,22 @@ def get_all_moves(Board, Main_board, Box, Player):
     all_Boxes = []
     pos = []
     if Box == None:
-        print(" in if get_all_moves")
-        for [x,y] in empty_cells_small_boards(Board):
-            new_Board = copy.deepcopy(Board)
-            new_Main_board = copy.deepcopy(Main_board)
-            print("set set_locations", set_locations(new_Board, new_Main_board,x,y, Player,Box))
-            if set_locations(new_Board, new_Main_board,x,y, Player,Box):
-                print("in set set_locations")
-                Box = get_possible_moves(new_Board,x,y)
-                Good_Box = Validate_box(new_Board, new_Main_board,Box,x,y)
-                all_Boards.append(new_Board)
-                all_Big_Boards.append(new_Main_board)
-                all_Boxes.append(Good_Box)
-                pos.append([x,y])
-                print("appended")
-        print(all_Boards,all_Big_Boards,all_Boxes,pos)
-        return all_Boards,all_Big_Boards, all_Boxes,pos
+        print("Box = None")
 
     else:
-        for [x,y] in Box:
-            print("in else", Box)
-
+        print("Box != None")
+        for indx,pos in enumerate(Box):
+            print(pos)
             new_Board = copy.deepcopy(Board)
-            new_Main_board = copy.deepcopy(Board)
-            print("set_locations", set_locations(new_Board, new_Main_board,x,y, Player,Box))
-            if set_locations(new_Board, new_Main_board,x,y,Player,Box):
-                print("yes")
-            """
-            if set_locations(new_Board, new_Main_board,x,y, Player,Box):
-                print("get_all_moves in else, set_locations")
-                Box = get_possible_moves(new_Board,x,y)
-                Good_Box = Validate_box(new_Board, new_Main_board,Box,x,y)
+            new_Main_Board = copy.deepcopy(Main_board)
+            x = pos[0]
+            y = pos[1]
+
+            if set_locations(new_Board,new_Main_Board,x,y,Player,Box):
+                print("yes good place")
                 all_Boards.append(new_Board)
-                print("all_Boards",all_Boards)
-                all_Big_Boards.append(new_Main_board)
-                all_Boxes.append(Good_Box)
-                pos.append([x,y])
-            """
-        print(all_Boards,all_Big_Boards,all_Boxes,pos)
-        return all_Boards,all_Big_Boards, all_Boxes,pos
+
+
 
 
 def is_terminal(Board, Main_board,Box,Player):

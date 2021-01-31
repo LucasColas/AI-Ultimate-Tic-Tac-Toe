@@ -6,9 +6,9 @@ def valid_locations(board,main_board,x,y, box):
 
 
 def set_locations(board,main_board, x,y, player, box):
-    print("in set_locations")
+    #print("in set_locations")
     if valid_locations(board,main_board,x,y, box):
-        print("in valid_locations")
+        #print("in valid_locations")
         board[y][x] = player
         return True
     else:
