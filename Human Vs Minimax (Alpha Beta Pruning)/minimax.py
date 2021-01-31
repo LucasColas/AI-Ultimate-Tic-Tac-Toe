@@ -131,12 +131,18 @@ def get_all_moves(Board, Main_board, Box, Player):
             print(pos)
             new_Board = copy.deepcopy(Board)
             new_Main_Board = copy.deepcopy(Main_board)
+            print("new_Main_Board", new_Main_Board)
             x = pos[0]
             y = pos[1]
 
             if set_locations(new_Board,new_Main_Board,x,y,Player,Box):
                 print("yes good place")
                 all_Boards.append(new_Board)
+                print("all_Boards", all_Boards)
+                all_Big_Boards.append(new_Main_Board)
+                print("all_Big_Boards", all_Big_Boards)
+                
+        print(all_Boards)
 
 
 
