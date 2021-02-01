@@ -2,7 +2,7 @@
 
 Here is my new project ! I am very excited to announce that I have finished it !
 
-I will add other features but the code is working.
+I will add other features (I'm trying to improve my heuristic function). But the code is working.
 
 ## How does it work ?
 
