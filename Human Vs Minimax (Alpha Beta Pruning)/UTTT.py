@@ -52,9 +52,10 @@ def update_window(Win, Lines_color, Lines_color_2, Width, Square, Small_Square, 
 
 def main():
     run = True
-    turn = random.choice([-1,1])
+    #turn = random.choice([-1,1])
     AI = 1
     Human = -1
+    turn = AI
     #Game_Board.test()
 
     FPS = 120

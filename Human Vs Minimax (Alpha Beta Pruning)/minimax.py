@@ -124,6 +124,30 @@ def get_all_moves(Board, Main_board, Box, Player):
     all_pos = []
     if Box == None:
         print("Box = None")
+        for indx, pos in enumerate(empty_cells_small_boards(Board)):
+            print(pos)
+            new_Board = copy.deepcopy(Board)
+            new_Main_Board = copy.deepcopy(Main_board)
+            print("Box none, new_Board", new_Board)
+            x = pos[0]
+            y = pos[1]
+
+            if set_locations(new_Board,new_Main_Board,x,y,Player,Box):
+                print("Box none, in set_locations")
+                all_Boards.append(new_Board)
+                print("all_Boards", all_Boards)
+                all_Big_Boards.append(new_Main_Board)
+                print("all_Big_Boards", all_Big_Boards)
+                Box_ = get_possible_moves(new_Board,x,y)
+                new_box = Validate_box(new_Board,new_Main_Board,Box_,x,y)
+                print("Box none, new_box", new_box)
+                all_Boxes.append(new_box)
+                print("Box none,all_Boxes",all_Boxes)
+                print("pos", pos)
+                all_pos.append(pos)
+                print("all_pos",all_pos)
+                
+        return all_Boards, all_Big_Boards,all_Boxes,all_pos
 
     else:
         print("Box != None")
