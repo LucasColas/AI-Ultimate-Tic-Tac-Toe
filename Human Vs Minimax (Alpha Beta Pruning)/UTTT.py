@@ -21,12 +21,14 @@ from minimax import Minimax
 
 
 pygame.font.init()
+
 Width, Height = 810,810
 Square = Width//3
 Small_Square = Square//3
 margin = Width//30
 
 Win = pygame.display.set_mode((Width, Height))
+pygame.display.set_caption("Ultimate Tic Tac Toe")
 clock = pygame.time.Clock()
 
 Cross_small = pygame.transform.scale(pygame.image.load(os.path.join("Assets", "cross.png")), (Small_Square, Small_Square))
