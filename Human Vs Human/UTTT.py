@@ -25,6 +25,7 @@ Small_Square = Square//3
 margin = Width//30
 
 Win = pygame.display.set_mode((Width, Height))
+pygame.display.set_caption("Ultimate Tic Tac Toe")
 clock = pygame.time.Clock()
 
 Cross_small = pygame.transform.scale(pygame.image.load(os.path.join("Assets", "cross.png")), (Small_Square, Small_Square))
