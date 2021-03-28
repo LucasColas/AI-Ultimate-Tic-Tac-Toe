@@ -1,6 +1,5 @@
 import pygame
 import os
-import sys
 import random
 
 from Board import new_Board
